@@ -19,6 +19,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiePolicy from './pages/CookiePolicy';
 import CompanyDeck from './pages/CompanyDeck';
 import HomeDeck from './pages/HomeDeck';
+import Brochure from './pages/Brochure';
 import __Layout from './Layout.tsx';
 
 export const PAGES = {
@@ -43,6 +44,7 @@ export const PAGES = {
     "CookiePolicy": CookiePolicy,
     "presentation-deck": CompanyDeck,
     "home-deck": HomeDeck,
+    "Brochure": Brochure,
 }
 
 export const pagesConfig = {

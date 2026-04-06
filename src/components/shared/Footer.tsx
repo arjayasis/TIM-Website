@@ -51,8 +51,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-blue-100">
               <li><Link to={createPageUrl('AboutUs')} className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to={`${createPageUrl('Home')}#IndustriesSection`} className="hover:text-white transition-colors">Industries</Link></li>
-              <li><Link to={createPageUrl('home-deck')} className="hover:text-white transition-colors">Home Deck</Link></li>
-              <li><Link to={createPageUrl('presentation-deck')} className="hover:text-white transition-colors">Company Deck</Link></li>
+              <li><Link to={createPageUrl('Brochure')} className="hover:text-white transition-colors">Brochure</Link></li>
               <li><Link to={createPageUrl('SupportPortal')} className="hover:text-white transition-colors">Support Portal</Link></li>
               <li><Link to={createPageUrl('ContactUs')} className="hover:text-white transition-colors">Contact</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
