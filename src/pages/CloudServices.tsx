@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 
 import RelatedServices from '@/components/shared/RelatedServices';
-import CloudArchitectureDiagram from '@/components/tim/CloudArchitectureDiagram';
 
 const timCloudLogo = "https://marketing.timcorp.net.ph/hubfs/website/TIM%20CLOUD%20LOGO.png";
 
@@ -272,11 +271,6 @@ export default function CloudServices() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Architecture Diagram */}
-      <section className="bg-[#00021a] overflow-hidden border-t border-white/5">
-        <CloudArchitectureDiagram />
       </section>
 
       {/* Capabilities Grid */}
