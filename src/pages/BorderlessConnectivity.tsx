@@ -23,8 +23,13 @@ export default function BorderlessConnectivity() {
   const services = [
     {
       icon: Network,
-      title: 'Enterprise-grade IP Transit',
-      description: 'TIM manages its own network backbone (AS#135423) to provide a legitimate alternative for business-critical connectivity.'
+      title: 'Enterprise-Grade Internet Connectivity',
+      description: 'High-performance connectivity with ultra-low latency, full redundancy, and a proven track record of years without breaching SLA.'
+    },
+    {
+      icon: Server,
+      title: 'Direct Cloud Connectivity',
+      description: 'Connect directly to your cloud workloads in AWS, Azure, Google, and more. Secure connectivity that minimizes hops and drastically improves latency.'
     },
     {
       icon: Globe,
@@ -34,22 +39,18 @@ export default function BorderlessConnectivity() {
     {
       icon: TrendingUp,
       title: 'Scale on Demand',
-      description: 'Start with 1G ports and grow to multiple 100G ports at your own pace on a per-Mbps basis.'
-    },
-    {
-      icon: Server,
-      title: 'Direct Cloud Interconnects',
-      description: 'Peer directly with global carriers, internet exchanges, and cloud hyperscalers for minimal latency.'
-    },
-    {
-      icon: Shield,
-      title: 'DDoS Protection',
-      description: 'Enterprise-grade security at the network edge to ensure your connectivity remains uninterrupted.'
+      description: 'Seamlessly scale your bandwidth based on business needs. Rapidly provision ports and adjust capacity on-the-fly without long lead times.'
     },
     {
       icon: Activity,
-      title: 'Managed SD-WAN',
-      description: 'Intelligent routing and centralized control for your distributed enterprise network.'
+      title: '24x7 Managed Services',
+      description: 'Our dedicated NOC team monitors your network 24/7/365, ensuring proactive threat detection and rapid incident response.'
+    },
+    {
+      icon: Shield,
+      title: 'Secure Connectivity',
+      description: 'Advanced network security featuring Cleanpipe, Anti-DDoS, Shield, and content filtering. Secure your data at the transit level.',
+      isAddOn: true
     }
   ];
 
@@ -264,46 +265,26 @@ export default function BorderlessConnectivity() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-500/20 transition-all group"
+                className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-500/20 transition-all group flex flex-col h-full"
               >
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300">
                   <item.icon className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase tracking-tight text-slate-900">{item.title}</h3>
-                <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities Grid */}
-      <section className="py-32 relative overflow-hidden bg-white text-slate-900 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-7xl font-bold tracking-tighter uppercase mb-6 leading-[0.9]">
-              Unmatched <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">Connectivity</span>
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto font-medium text-xl">
-              We simplify the complex, allowing you to focus on what matters most: your business growth.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-blue-500/20 transition-all group hover:shadow-lg"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-all">
-                  <item.icon className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 uppercase tracking-tight text-slate-900">{item.title}</h3>
-                <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.description}</p>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed mb-6">{item.description}</p>
+                {item.isAddOn && (
+                  <div className="mt-auto">
+                    <Link 
+                      to={createPageUrl('Cybersecurity')} 
+                      className="text-xs font-black uppercase tracking-widest text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-2 group/link"
+                    >
+                      Know More
+                      <motion.span animate={{ x: [0, 4, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
+                        →
+                      </motion.span>
+                    </Link>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -311,7 +292,7 @@ export default function BorderlessConnectivity() {
       </section>
 
       {/* Why TIM GNS? Section */}
-      <section className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
+      <section className="py-32 bg-white relative overflow-hidden border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -319,7 +300,7 @@ export default function BorderlessConnectivity() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-6xl font-bold tracking-tighter uppercase mb-8 text-slate-900 leading-[0.9]">
+              <h2 className="text-4xl lg:text-7xl font-bold tracking-tighter uppercase mb-8 text-slate-900 leading-[0.9]">
                 Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">TIM GNS?</span>
               </h2>
               <div className="space-y-6 text-slate-500 font-medium leading-relaxed text-xl">
@@ -356,6 +337,39 @@ export default function BorderlessConnectivity() {
         </div>
       </section>
 
+      {/* Unmatched Connectivity Section */}
+      <section className="py-32 relative overflow-hidden bg-slate-50 text-slate-900 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-7xl font-bold tracking-tighter uppercase mb-6 leading-[0.9]">
+              Unmatched <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">Connectivity</span>
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto font-medium text-xl">
+              We simplify the complex, allowing you to focus on what matters most: your business growth.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:border-blue-500/20 transition-all group hover:shadow-lg"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-all">
+                  <item.icon className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 uppercase tracking-tight text-slate-900">{item.title}</h3>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Closing Section */}
       <section className="py-32 bg-blue-600 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" 
@@ -372,6 +386,30 @@ export default function BorderlessConnectivity() {
       </section>
 
       <RelatedServices />
+
+      {/* Floating Inquiry Button */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="fixed bottom-8 right-8 z-50 px-4"
+      >
+        <Link to={createPageUrl('GNSInquiry')}>
+          <Button 
+            className="h-16 w-16 group hover:w-[360px] px-0 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-2xl shadow-blue-500/40 flex items-center transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-95 overflow-hidden border-none"
+          >
+            <div className="flex items-center w-full">
+              <div className="relative shrink-0 flex items-center justify-center w-16 h-16">
+                <Globe className="w-7 h-7 animate-[spin_10s_linear_infinite]" />
+                <div className="absolute inset-0 bg-blue-400 blur-lg opacity-0 group-hover:opacity-50 transition-opacity" />
+              </div>
+              <span className="font-black uppercase tracking-[0.2em] text-[10px] whitespace-nowrap max-w-0 opacity-0 group-hover:max-w-[280px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden pointer-events-none pr-8">
+                Check Service Availability In Your Area
+              </span>
+            </div>
+          </Button>
+        </Link>
+      </motion.div>
     </div>
   );
 }

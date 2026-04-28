@@ -12,6 +12,7 @@ import ManagedInfrastructure from './pages/ManagedInfrastructure';
 import VAPT from './pages/VAPT';
 import SystemIntegration from './pages/SystemIntegration';
 import TIMCorpAI from './pages/TIMCorpAI';
+import GNSInquiry from './pages/GNSInquiry';
 import NewsEvents from './pages/NewsEvents';
 import SupportPortal from './pages/SupportPortal';
 import InquiryForm from './pages/InquiryForm';
@@ -37,6 +38,7 @@ export const PAGES = {
     "VAPT": VAPT,
     "SystemIntegration": SystemIntegration,
     "TIMCorpAI": TIMCorpAI,
+    "GNSInquiry": GNSInquiry,
     "NewsEvents": NewsEvents,
     "SupportPortal": SupportPortal,
     "InquiryForm": InquiryForm,
