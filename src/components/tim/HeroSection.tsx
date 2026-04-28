@@ -89,15 +89,6 @@ export default function HeroSection() {
           />
         ))}
 
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay"
-        >
-          <source src="https://marketing.timcorp.net.ph/hubfs/website/hero%20background%20720.mp4" type="video/mp4" />
-        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#00021a] via-transparent to-[#00021a]" />
       </div>
 

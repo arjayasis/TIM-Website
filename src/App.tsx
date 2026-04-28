@@ -75,10 +75,7 @@ const AuthenticatedApp = () => {
 
 
 function App() {
-  const [showPreloader, setShowPreloader] = useState(() => {
-    // Only show preloader if we are on the home page (root path)
-    return window.location.pathname === '/' || window.location.pathname === '/AboutUs';
-  });
+  const [showPreloader, setShowPreloader] = useState(false);
 
   return (
     <AuthProvider>

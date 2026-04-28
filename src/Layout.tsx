@@ -32,7 +32,7 @@ export default function Layout({ children, currentPageName }: LayoutProps) {
   const hasOwnHeader = isHome;
 
   // Pages that should use the dark variant of the header
-  const isDarkPage = isAbout || isServicePage || ['Compliance', 'NewsEvents', 'SupportPortal', 'ContactUs', 'InquiryForm', 'CookiePolicy', 'PrivacyPolicy', 'PlaceholderPage'].includes(currentPageName);
+  const isDarkPage = (isAbout || isServicePage || ['Compliance', 'NewsEvents', 'SupportPortal', 'ContactUs', 'InquiryForm', 'CookiePolicy', 'PrivacyPolicy', 'PlaceholderPage'].includes(currentPageName)) && currentPageName !== 'BorderlessConnectivity';
 
   if (currentPageName === 'presentation-deck' || currentPageName === 'home-deck') {
     return <main className="min-h-screen">{children}</main>;

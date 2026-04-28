@@ -1045,15 +1045,6 @@ export default function CompanyDeck() {
             transition={{ duration: 1.5 }}
             className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-            >
-              <source src="https://marketing.timcorp.net.ph/hubfs/website/hero%20background%20720.mp4" type="video/mp4" />
-            </video>
             <div className="absolute inset-0 bg-gradient-to-b from-[#00021a] via-transparent to-[#00021a]" />
           </motion.div>
         )}
