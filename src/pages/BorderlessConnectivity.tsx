@@ -404,7 +404,7 @@ export default function BorderlessConnectivity() {
                 <div className="absolute inset-0 bg-blue-400 blur-lg opacity-0 group-hover:opacity-50 transition-opacity" />
               </div>
               <span className="font-black uppercase tracking-[0.2em] text-[10px] whitespace-nowrap max-w-0 opacity-0 group-hover:max-w-[280px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden pointer-events-none pr-8">
-                Check Service Availability In Your Area
+                Check Service Availability
               </span>
             </div>
           </Button>
