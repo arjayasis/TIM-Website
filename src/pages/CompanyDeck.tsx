@@ -825,7 +825,7 @@ const slides = [
         { icon: ShieldCheck, title: 'ISO 22301:2019', desc: 'Business Continuity Management System (BCMS)', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso-22301.png?v=20260311' },
         { icon: Award, title: 'PCI-DSS v4.0', desc: 'Payment Card Industry Data Security Standard', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
         { icon: FileCheck, title: 'SOC 2 Type II', desc: 'Security, Availability, and Confidentiality Controls', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
-        { icon: Shield, title: 'HIPAA Compliance', desc: 'Health Insurance Portability and Accountability Act', logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa.png' },
+        { icon: Shield, title: 'HIPAA Compliance', desc: 'Health Insurance Portability and Accountability Act', logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png' },
         { icon: ShieldCheck, title: 'NPC COMPLIANT', desc: 'National Privacy Commission Compliance', logo: 'https://marketing.timcorp.net.ph/hubfs/website/npc.png' }
       ]
     }

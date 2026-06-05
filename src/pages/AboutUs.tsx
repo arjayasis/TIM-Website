@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
 import CTASection from '@/components/tim/CTASection';
-import ServicesGrid from '@/components/tim/ServicesGrid';
-import IndustriesSection from '@/components/tim/IndustriesSection';
-import TestimonialsCarousel from '@/components/tim/TestimonialsCarousel';
-import FeaturedEvents from '@/components/tim/FeaturedEvents';
 import { Award, Users, TrendingUp, Globe, Shield, Zap, Server, ArrowRight, CheckCircle2, Cpu, Network, Database } from 'lucide-react';
 
 const boardMembers = [
@@ -81,7 +77,7 @@ const certifications = [
   },
   {
     name: 'HIPAA',
-    logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa.png'
+    logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png'
   }
 ];
 
@@ -283,11 +279,6 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-
-      <ServicesGrid />
-      <IndustriesSection />
-      <TestimonialsCarousel />
-      <FeaturedEvents />
 
       {/* Leadership Section - Reimagined */}
       <section className="relative py-32 lg:py-64 bg-black/50">

@@ -40,13 +40,17 @@ const services = [
   },
   {
     icon: ShieldCheck,
-    title: 'End-to-End Cyber Defense',
+    title: 'End-to-End Cybersecurity',
     description: 'Comprehensive security protecting applications, data, and infrastructure against digital threats.',
-    color: 'from-blue-500 to-blue-700'
+    color: 'from-blue-500 to-blue-700',
+    links: [
+      { name: 'NIST Framework', url: '/Cybersecurity' },
+      { name: 'Core Cybersecurity', url: '/CoreCybersecurity' }
+    ]
   },
   {
     icon: Brain,
-    title: 'Agentic AI',
+    title: 'Enterprise AI',
     description: 'Automate your cycle of intelligence with AI-driven productivity and process automation.',
     color: 'from-blue-300 to-blue-500'
   },
@@ -101,8 +105,8 @@ export default function ServicesGrid() {
             const isManagedServices = service.title === 'Managed Services';
             const isBorderlessNetwork = service.title === 'Global Network Services';
             const isSystemIntegration = service.title === 'Systems Integration';
-            const isCyberDefense = service.title === 'End-to-End Cyber Defense';
-            const isEnterpriseAI = service.title === 'Agentic AI';
+            const isCyberDefense = service.title === 'End-to-End Cybersecurity';
+            const isEnterpriseAI = service.title === 'Enterprise AI';
             
             const getUrl = () => {
               if (isCloudService) return createPageUrl('CloudServices');

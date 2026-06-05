@@ -64,7 +64,7 @@ const certifications = [
     id: 'hipaa',
     name: 'HIPAA',
     title: 'HIPAA Compliance: Safeguarding Healthcare Data',
-    logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa.png',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png',
     desc: 'As a pioneered ICT leader in the Philippines, our alignment with HIPAA standards is critical for local businesses serving the global healthcare market (such as Medical BPOs, Telehealth providers, and Revenue Cycle Management firms).',
     meaning: 'Our "HIPAA-ready" infrastructure ensures that your operations meet the strict Administrative, Physical, and Technical safeguards required to handle Protected Health Information (PHI). By partnering with us, you eliminate the risk of massive federal fines and reputational damage, allowing you to confidently manage healthcare data for international clients while staying compliant with both U.S. laws and the Philippine Data Privacy Act.',
     icon: Activity

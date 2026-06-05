@@ -89,9 +89,11 @@ export default function TIMCorpAI() {
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 text-sm rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,99,235,0.3)]">
                 <Link to={createPageUrl('ContactUs')}>Deploy AI Strategy</Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 px-6 py-4 text-sm rounded-full text-white">
-                Explore Solutions
-              </Button>
+              <Link to="/#ServicesGrid">
+                <Button variant="outline" size="lg" className="border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 px-6 py-4 text-sm rounded-full text-white">
+                  Explore Solutions
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

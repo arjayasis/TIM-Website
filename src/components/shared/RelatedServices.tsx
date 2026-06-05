@@ -133,11 +133,11 @@ export default function RelatedServices() {
   }
 
   return (
-    <section className="py-24 bg-[#00021a] border-t border-white/5">
+    <section className="py-24 bg-[#00021a] border-t border-white/5 text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-white text-left">
           <div>
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tighter uppercase mb-4">
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tighter uppercase mb-4 text-white">
               Explore More <span className="text-blue-500">Services</span>
             </h2>
             <p className="text-blue-100/40 font-medium max-w-xl">

@@ -338,17 +338,8 @@ export default function BorderlessConnectivity() {
       </section>
 
       {/* Unmatched Connectivity Section */}
-      <section className="py-32 relative overflow-hidden bg-slate-50 text-slate-900 border-t border-slate-100">
+      <section className="py-32 relative overflow-hidden bg-white text-slate-900 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-7xl font-bold tracking-tighter uppercase mb-6 leading-[0.9]">
-              Unmatched <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">Connectivity</span>
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto font-medium text-xl">
-              We simplify the complex, allowing you to focus on what matters most: your business growth.
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((item, i) => (
               <motion.div
@@ -375,7 +366,6 @@ export default function BorderlessConnectivity() {
         <div className="absolute inset-0 opacity-10" 
              style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%)', backgroundSize: '10px 10px' }} />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl lg:text-8xl font-black mb-8 tracking-tighter uppercase leading-[0.85]">Connect Without Borders</h2>
           <p className="text-2xl text-blue-100 mb-12 font-medium max-w-2xl mx-auto leading-relaxed">
             With TIM GNS, you gain a reliable partner dedicated to maintaining your network infrastructure so you can focus on strategic initiatives and business expansion.
           </p>
@@ -392,21 +382,16 @@ export default function BorderlessConnectivity() {
         initial={{ opacity: 0, scale: 0.8, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="fixed bottom-8 right-8 z-50 px-4"
+        className="fixed bottom-8 right-8 z-50"
       >
         <Link to={createPageUrl('GNSInquiry')}>
           <Button 
-            className="h-16 w-16 group hover:w-[360px] px-0 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-2xl shadow-blue-500/40 flex items-center transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-95 overflow-hidden border-none"
+            className="h-10 px-6 rounded-full bg-blue-600 text-white shadow-xl flex items-center gap-2 transition-all duration-300 border-none"
           >
-            <div className="flex items-center w-full">
-              <div className="relative shrink-0 flex items-center justify-center w-16 h-16">
-                <Globe className="w-7 h-7 animate-[spin_10s_linear_infinite]" />
-                <div className="absolute inset-0 bg-blue-400 blur-lg opacity-0 group-hover:opacity-50 transition-opacity" />
-              </div>
-              <span className="font-black uppercase tracking-[0.2em] text-[10px] whitespace-nowrap max-w-0 opacity-0 group-hover:max-w-[280px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden pointer-events-none pr-8">
-                Check Service Availability
-              </span>
-            </div>
+            <Globe className="w-4 h-4 animate-[spin_10s_linear_infinite]" />
+            <span className="font-black uppercase tracking-[0.1em] text-[9px] whitespace-nowrap">
+              CHECK SERVICE AVAILABILITY NOW
+            </span>
           </Button>
         </Link>
       </motion.div>

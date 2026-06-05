@@ -14,8 +14,8 @@ interface HeaderProps {
 const navItems = [
   { name: 'About', path: 'AboutUs' },
   { name: 'News & Events', path: 'NewsEvents' },
-  { name: 'Services', path: 'AboutUs', hash: '#ServicesGrid' },
-  { name: 'Industries', path: 'AboutUs', hash: '#IndustriesSection' },
+  { name: 'Services', path: 'Home', hash: '#ServicesGrid' },
+  { name: 'Industries', path: 'Home', hash: '#IndustriesSection' },
 ];
 
 export default function Header({ variant = 'default', isHome = false }: HeaderProps) {
