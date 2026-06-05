@@ -75,7 +75,7 @@ const AuthenticatedApp = () => {
 
 
 function App() {
-  const [showPreloader, setShowPreloader] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
 
   return (
     <AuthProvider>
