@@ -21,7 +21,7 @@ const certifications = [
   },
   {
     id: 'soc3',
-    name: 'AICPA SOC',
+    name: 'AICPA SOC 3',
     logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311'
   },
   {
