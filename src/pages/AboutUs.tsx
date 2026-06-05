@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
 import CTASection from '@/components/tim/CTASection';
-import { Award, Users, TrendingUp, Globe, Shield, Zap, Server, ArrowRight, CheckCircle2, Cpu, Network, Database } from 'lucide-react';
+import { Award, Users, TrendingUp, Globe, Shield, Zap, Server, ArrowRight, CheckCircle2, Cpu, Network, Database, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const boardMembers = [
   { name: 'Jose Mari M. Antunez', title: 'Chairman' },
@@ -39,15 +39,198 @@ const managementTeam = [
 ];
 
 const milestones = [
-  { year: '1985', event: 'Founded as ICT Pioneer', icon: Award },
-  { 
-    year: '1994', 
-    event: 'Pioneered Commercial Data Center Services', 
-    details: 'Infrastructure acquired by Equinix in 2025',
-    icon: Server 
+  {
+    year: '1985',
+    event: 'Incorporated TIM Corporation',
+    category: 'Strategic',
+    era: '1985–2015',
+    icon: Award,
+    description: 'Began as Total Information Management Corporation, pioneering ICT solutions and equiping enterprises.'
   },
-  { year: '2020', event: 'Regional Expansion & Cloud Leadership', icon: Globe },
-  { year: '2025', event: 'AI-Powered Enterprise Solutions', icon: Zap }
+  {
+    year: '1994',
+    event: 'Launched Kings Court Data Center',
+    category: 'Infrastructure',
+    era: '1985–2015',
+    icon: Server,
+    description: 'Pioneered early commercial data center services in the Philippines.'
+  },
+  {
+    year: '2014',
+    event: 'Inaugurated Carmona Data Center to Expand Operational Capacity',
+    category: 'Infrastructure',
+    era: '1985–2015',
+    icon: Server,
+    description: 'Expanded physical data center footprints and hosting capacity to cater to enterprise scale.'
+  },
+  {
+    year: '2016',
+    event: 'Secured NTC Value-Added Service License to Enable Telecommunications Services',
+    category: 'Network',
+    era: '2016–2019',
+    icon: CheckCircle2,
+    description: 'Secured critical telecommunication licensing for high-speed value-added connectivity.'
+  },
+  {
+    year: '2016',
+    event: 'Launched Global Network Services (GNS) to Expand Connectivity Solutions',
+    category: 'Network',
+    era: '2016–2019',
+    icon: Network,
+    description: 'Built a core carrier-neutral transit network connecting the Philippines globally.'
+  },
+  {
+    year: '2017',
+    event: 'Established Managed Network Operations Center (MNOC) to Strengthen Network Management',
+    category: 'Network',
+    era: '2016–2019',
+    icon: Database,
+    description: 'Reinforced global operations oversight with continuous system health and connection analysis.'
+  },
+  {
+    year: '2017',
+    event: 'Activated Hong Kong Point of Presence to Expand Regional Presence',
+    category: 'Network',
+    era: '2016–2019',
+    icon: Globe,
+    description: 'Broadened transit pathways with active terminal routing in Hong Kong.'
+  },
+  {
+    year: '2018',
+    event: 'Introduced TIM Cloud as a Core Product to Enable Cloud Services Portfolio',
+    category: 'Infrastructure',
+    era: '2016–2019',
+    icon: Cpu,
+    description: 'Launched localized, sovereign multi-tenant enterprise cloud hosting solutions.'
+  },
+  {
+    year: '2018',
+    event: 'Achieved ISO 9001 Certification to Ensure Quality Management Excellence',
+    category: 'Compliance',
+    era: '2016–2019',
+    icon: Shield,
+    description: 'Standardized operational quality frameworks to match dynamic SLA expectations.'
+  },
+  {
+    year: '2018',
+    event: 'Achieved ISO 27001 Certification to Strengthen Information Security Management',
+    category: 'Compliance',
+    era: '2016–2019',
+    icon: Shield,
+    description: 'Established the gold standard for state-level data security and posture defense.'
+  },
+  {
+    year: '2018',
+    event: 'Achieved PCI DSS Certification to Reinforce Payment Security Compliance',
+    category: 'Compliance',
+    era: '2016–2019',
+    icon: Shield,
+    description: 'Aligned payment gateway operations with top global security standards.'
+  },
+  {
+    year: '2019',
+    event: 'Completed National Privacy Commission (NPC) Registration to Strengthen Data Privacy Compliance',
+    category: 'Compliance',
+    era: '2016–2019',
+    icon: Shield,
+    description: 'Ensured absolute safety and privacy of client databases under the Data Privacy Act.'
+  },
+  {
+    year: '2020',
+    event: 'Activated Singapore PoP to Expand Regional Connectivity',
+    category: 'Network',
+    era: '2020–2022',
+    icon: Globe,
+    description: 'Completed multi-region latency reduction by connecting key routing hubs in SG.'
+  },
+  {
+    year: '2020',
+    event: 'Operationalized the Managed Security Operations Center (MSOC) to Enhance Cybersecurity Operations',
+    category: 'Cybersecurity',
+    era: '2020–2022',
+    icon: Shield,
+    description: 'Incepted continuous log collection, correlation and security Incident Response.'
+  },
+  {
+    year: '2020',
+    event: 'Achieved ANSI/TIA-942-B Rated-3 Certification for Carmona Data Center 1 to Validate Infrastructure Resilience',
+    category: 'Compliance',
+    era: '2020–2022',
+    icon: Award,
+    description: 'Highest tier concurrent maintainability rating for physical power and cooling.'
+  },
+  {
+    year: '2021',
+    event: 'Recognized by DICT as RCAP for VAPT & ISMS to Advance Cybersecurity Leadership',
+    category: 'Compliance',
+    era: '2020–2022',
+    icon: Award,
+    description: 'Named an officially recognized provider of Vulnerability Assessment and Penetration Testing.'
+  },
+  {
+    year: '2021',
+    event: 'Launched Anti-DDoS and Cybersecurity Services to Strengthen Threat Protection Capabilities',
+    category: 'Cybersecurity',
+    era: '2020–2022',
+    icon: Shield,
+    description: 'Deployed enterprise scrubbing layers protecting infrastructure from edge attacks.'
+  },
+  {
+    year: '2021',
+    event: 'Established the Project Management Office (PMO) to Enable Enterprise Project Governance',
+    category: 'Strategic',
+    era: '2020–2022',
+    icon: Users,
+    description: 'Created centralized oversight and reporting for national deployment delivery.'
+  },
+  {
+    year: '2022',
+    event: 'Achieved SOC 2 Type 1 Certification to Strengthen Service Organization Controls',
+    category: 'Compliance',
+    era: '2020–2022',
+    icon: Shield,
+    description: 'Verified operational security process designs over defined timeline checkpoints.'
+  },
+  {
+    year: '2023',
+    event: 'Inaugurated Carmona Data Center 2 to Further Scale Data Center Capacity',
+    category: 'Infrastructure',
+    era: '2023–2026',
+    icon: Server,
+    description: 'Deployed next-generation colocation server environments for hyperscaler tenants.'
+  },
+  {
+    year: '2023',
+    event: 'Achieved SOC 2 Type 2 Certification to Demonstrate Sustained Operational Compliance',
+    category: 'Compliance',
+    era: '2023–2026',
+    icon: Shield,
+    description: 'Earned full certification for the sustained, day-to-day enforcement of data security controls.'
+  },
+  {
+    year: '2025',
+    event: 'Completed sale of Data Center Assets & Operations to Equinix',
+    category: 'Strategic',
+    era: '2023–2026',
+    icon: TrendingUp,
+    description: 'Successfully transacted physical Data Center operations to global leader Equinix.'
+  },
+  {
+    year: '2026',
+    event: 'Achieved HIPAA Certification to ensure compliance with healthcare data privacy regulations',
+    category: 'Compliance',
+    era: '2023–2026',
+    icon: Shield,
+    description: 'Secured healthcare industry frameworks for protecting patient privacy and medical records.'
+  },
+  {
+    year: '2026',
+    event: 'Launched TIM AI Innovation Program to Accelerate Digital Transformation',
+    category: 'Strategic',
+    era: '2023–2026',
+    icon: Cpu,
+    description: 'Positioned TIM to pioneer intelligence workflows, predictive models, and enterprise-grade generative AI.'
+  }
 ];
 
 const certifications = [
@@ -87,6 +270,18 @@ export default function AboutUs() {
     target: containerRef,
     offset: ["start start", "end end"]
   });
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 380;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const heroTextY = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -151,68 +346,77 @@ export default function AboutUs() {
       </section>
 
       {/* Legacy Section - Editorial Layout */}
-      <section className="relative py-32 lg:py-64 border-y border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      <section className="relative py-32 lg:py-48 border-y border-white/5 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/5 blur-[120px] rounded-full" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="sticky top-32"
+                className="space-y-8"
               >
-                <h2 className="text-4xl lg:text-7xl font-black mb-12 tracking-tighter leading-none">
-                  UNWAVERING <br />
-                  <span className="text-blue-500">TRUST</span>
+                <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-300">Fortified Since 1985</span>
+                </div>
+
+                <h2 className="tracking-tight leading-none">
+                  <span className="block text-2xl lg:text-3xl uppercase tracking-[0.3em] font-light text-slate-400 mb-2">UNWAVERING</span>
+                  <span className="block text-6xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500 select-none">TRUST</span>
                 </h2>
-                <p className="text-2xl text-blue-100/40 font-medium leading-snug mb-12">
-                  Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers.
+
+                <p className="text-lg sm:text-xl text-slate-400 leading-relaxed font-medium max-w-md">
+                  Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology partners.
                 </p>
-                <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-blue-500 group-hover:border-blue-500 transition-all">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm uppercase tracking-widest font-bold">Our Full History</span>
+
+                <div className="hidden lg:block pt-12">
+                  <div className="w-px h-24 bg-gradient-to-b from-blue-500/60 to-transparent" />
                 </div>
               </motion.div>
             </div>
 
-            <div className="lg:col-span-7 space-y-24 lg:pt-32">
+            <div className="lg:col-span-7 space-y-12 lg:pl-12">
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative p-12 bg-white/[0.02] border border-white/5 rounded-[3rem] backdrop-blur-3xl"
+                transition={{ duration: 0.6 }}
+                className="space-y-3"
               >
-                <div className="absolute -top-12 -right-12 text-[15rem] font-black text-white/[0.03] select-none pointer-events-none">01</div>
-                <h3 className="text-xl font-bold mb-6 text-blue-400">The Inception</h3>
-                <p className="text-lg text-blue-100/60 font-light leading-relaxed">
+                <h3 className="text-2xl font-bold text-white tracking-tight">The Inception</h3>
+                <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed">
                   Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers, helping organizations accelerate their digital transformation and unlock the full potential of modern IT. What began as a supplier of IT equipment and peripherals has grown into a full-service technology solutions company delivering systems integration, data center services, cloud platforms, cybersecurity, and managed IT operations.
                 </p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative p-12 bg-white/[0.02] border border-white/5 rounded-[3rem] backdrop-blur-3xl"
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="space-y-3"
               >
-                <div className="absolute -top-12 -right-12 text-[15rem] font-black text-white/[0.03] select-none pointer-events-none">02</div>
-                <h3 className="text-xl font-bold mb-6 text-blue-400">The Evolution</h3>
-                <p className="text-lg text-blue-100/60 font-medium leading-relaxed">
+                <h3 className="text-2xl font-bold text-white tracking-tight">The Evolution</h3>
+                <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed">
                   For four decades, TIM has supported leading enterprises, financial institutions, and emerging businesses with reliable infrastructure and strategic technology expertise. Its solutions help organizations modernize their IT environments, strengthen data protection, and operate resilient digital platforms in an increasingly connected world.
                 </p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="relative p-12 bg-white/[0.02] border border-white/5 rounded-[3rem] backdrop-blur-3xl"
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-3"
               >
-                <div className="absolute -top-12 -right-12 text-[15rem] font-black text-white/[0.03] select-none pointer-events-none">03</div>
-                <h3 className="text-xl font-bold mb-6 text-blue-400">The Future</h3>
-                <p className="text-lg text-blue-100/60 font-medium leading-relaxed">
+                <h3 className="text-2xl font-bold text-white tracking-tight">The Future</h3>
+                <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed">
                   Today, TIM continues to deliver secure, scalable, and future-ready technology solutions that empower businesses to accelerate digital transformation and unlock the full potential of modern IT.
                 </p>
               </motion.div>
@@ -221,61 +425,140 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Milestones - High Tech Timeline */}
-      <section className="relative py-32 lg:py-64 bg-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <div className="flex flex-col lg:flex-row justify-between items-start mb-32 gap-12">
+      {/* Milestones - Light Mode Horizontal Timeline */}
+      <section className="relative py-24 sm:py-32 bg-white overflow-hidden border-t border-slate-100">
+        <div className="absolute inset-0 z-0 opacity-15 bg-[radial-gradient(#3b82f6_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none" />
+        
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 z-10">
+          {/* Header Area */}
+          <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="max-w-3xl"
             >
-              <h2 className="text-5xl lg:text-8xl font-black tracking-tighter leading-none mb-12">
-                SYSTEM <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">LOG</span>
+              <div className="text-xs uppercase tracking-[0.3em] text-blue-600 font-extrabold mb-3">TIM Milestone</div>
+              <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 mb-6">
+                Our Journey & Evolution
               </h2>
-              <p className="text-xl text-blue-100/40 font-medium max-w-xl">
-                A chronological record of our technological impact and strategic growth over four decades.
+              <p className="text-lg text-slate-600 font-medium max-w-xl">
+                A direct record of our technological impact, industry conformance, and strategic growth over four decades.
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-2 gap-4 w-full lg:w-auto">
-              {[
-                { label: 'Data Centers', icon: Server },
-                { label: 'Cloud Ops', icon: Network },
-                { label: 'AI Ready', icon: Cpu },
-                { label: 'Managed', icon: Database }
-              ].map((item, i) => (
-                <div key={i} className="p-6 bg-white/5 border border-white/10 rounded-2xl flex flex-col gap-4">
-                  <item.icon className="w-5 h-5 text-blue-400" />
-                  <span className="text-[10px] uppercase tracking-widest font-bold text-white/60">{item.label}</span>
-                </div>
-              ))}
+            {/* Navigation controls */}
+            <div className="flex items-center gap-4 w-full lg:w-auto">
+              {/* Scroll buttons */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => scroll('left')}
+                  className="p-3 rounded-full border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-slate-700 transition-all shadow-sm active:scale-95"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => scroll('right')}
+                  className="p-3 rounded-full border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-slate-700 transition-all shadow-sm active:scale-95"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={milestone.year}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group bg-[#00021a] p-12 hover:bg-blue-600/5 transition-colors duration-500"
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-500 transition-all duration-700" />
-                <div className="text-6xl font-black text-white/20 mb-12 group-hover:text-blue-400 transition-colors drop-shadow-lg">{milestone.year}</div>
-                <div className="mb-8">
-                  <milestone.icon className="w-8 h-8 text-blue-400" />
-                </div>
-                <h3 className="text-lg font-bold mb-4 tracking-tight leading-tight">{milestone.event}</h3>
-                {milestone.details && (
-                  <p className="text-xs text-blue-100/40 font-medium leading-relaxed uppercase tracking-widest">{milestone.details}</p>
-                )}
-              </motion.div>
-            ))}
+          {/* Horizontal Track Structure */}
+          <div className="relative mt-16">
+            {/* Horizontal timeline track line */}
+            <div className="absolute top-[230px] left-0 right-0 h-[2px] bg-slate-200/80 pointer-events-none z-0" />
+
+            {/* Horizontal interactive carriage */}
+            <div
+              ref={scrollRef}
+              className="overflow-x-auto flex gap-6 pb-6 pt-4 px-2 scroll-smooth select-none snap-x snap-mandatory h-[480px]"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {milestones.map((milestone, idx) => {
+                const getCategoryStyles = (category: string) => {
+                  switch (category) {
+                    case 'Strategic': return {
+                      badgeClass: 'bg-amber-50 text-amber-700 border border-amber-200/80',
+                      dotClass: 'bg-amber-500 border-amber-300 shadow-[0_0_8px_rgba(245,158,11,0.4)]',
+                    };
+                    case 'Infrastructure': return {
+                      badgeClass: 'bg-cyan-50 text-cyan-700 border border-cyan-200/80',
+                      dotClass: 'bg-cyan-500 border-cyan-300 shadow-[0_0_8px_rgba(6,182,212,0.4)]',
+                    };
+                    case 'Network': return {
+                      badgeClass: 'bg-blue-50 text-blue-700 border border-blue-200/80',
+                      dotClass: 'bg-blue-500 border-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.4)]',
+                    };
+                    case 'Cybersecurity': return {
+                      badgeClass: 'bg-rose-50 text-rose-700 border border-rose-200/80',
+                      dotClass: 'bg-rose-500 border-rose-300 shadow-[0_0_8px_rgba(244,63,94,0.4)]',
+                    };
+                    case 'Compliance': return {
+                      badgeClass: 'bg-emerald-50 text-emerald-700 border border-emerald-200/80',
+                      dotClass: 'bg-emerald-500 border-emerald-300 shadow-[0_0_8px_rgba(16,185,129,0.4)]',
+                    };
+                    default: return {
+                      badgeClass: 'bg-slate-50 text-slate-700 border border-slate-200/80',
+                      dotClass: 'bg-slate-500 border-slate-300',
+                    };
+                  }
+                };
+
+                const style = getCategoryStyles(milestone.category);
+                const isTop = idx % 2 === 0;
+
+                return (
+                  <div
+                    key={`${milestone.year}-${idx}`}
+                    className="flex-shrink-0 w-[290px] sm:w-[330px] snap-start relative h-[450px]"
+                  >
+                    {/* Vertical Connector Line */}
+                    {isTop ? (
+                      <div className="absolute top-[175px] bottom-[220px] left-1/2 w-[1.5px] border-l border-dashed border-slate-300 pointer-events-none z-0" />
+                    ) : (
+                      <div className="absolute top-[240px] bottom-[175px] left-1/2 w-[1.5px] border-l border-dashed border-slate-300 pointer-events-none z-0" />
+                    )}
+
+                    {/* Node marker pinpoint centered on the track line */}
+                    <div className="absolute top-[230px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                      <div className="w-5 h-5 rounded-full bg-white border-[3px] border-slate-200 flex items-center justify-center shadow-sm">
+                        <div className={`w-[11px] h-[11px] rounded-full ${style.dotClass}`} />
+                      </div>
+                    </div>
+
+                    {/* Timeline Event Card (Alternating Top / Bottom) */}
+                    <div
+                      className={`absolute left-1/2 -translate-x-1/2 w-[270px] sm:w-[310px] p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_2px_8px_-3px_rgba(0,0,0,0.05)] hover:border-blue-400 hover:shadow-md transition-all duration-300 flex flex-col justify-between h-[175px] group ${
+                        isTop ? 'top-0' : 'bottom-0'
+                      }`}
+                    >
+                      <div>
+                        <div className="flex justify-between items-center mb-2.5">
+                          <span className="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">
+                            {milestone.year}
+                          </span>
+                          <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${style.badgeClass}`}>
+                            {milestone.category}
+                          </span>
+                        </div>
+                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-950 mb-1.5 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">
+                          {milestone.event}
+                        </h4>
+                        <p className="text-[11px] text-slate-500 leading-relaxed line-clamp-3 font-medium">
+                          {milestone.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
