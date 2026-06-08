@@ -54,104 +54,45 @@ export default function ManagedNOC() {
                style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-16 w-full py-20 text-left flex flex-col items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-start text-left"
+          >
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-8 font-sans"
             >
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-8"
-              >
-                <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                <span className="text-[10px] uppercase tracking-[0.2em] text-blue-400 font-bold">24/7 Network Monitoring. Proactive Support. Reliable Performance</span>
-              </motion.div>
-              
-              <h1 className="text-[3.5rem] lg:text-[5rem] font-bold mb-8 leading-[0.9] tracking-tighter uppercase">
-                Managed <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
-                  Network Operations Center
-                </span>
-              </h1>
-              
-              <p className="text-lg text-blue-100/60 mb-12 max-w-xl font-medium leading-relaxed">
-                Your network is the backbone of your business. Any downtime, latency, or system failure can directly impact productivity, revenue, and customer experience. TIM Managed NOC is a locally based NOC that delivers 24/7 monitoring, management, and support to ensure your IT infrastructure remains secure, stable, and fully operational.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-sm rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(37,99,235,0.3)]">
-                  <Link to={createPageUrl('ContactUs')}>Deploy Monitoring</Link>
-                </Button>
-                <div className="flex items-center gap-4 px-6">
-                  <div className="flex -space-x-3">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-[#00021a] bg-blue-900 flex items-center justify-center text-[10px] font-bold">
-                        {i === 3 ? '24/7' : ''}
-                      </div>
-                    ))}
-                  </div>
-                  <span className="text-xs text-blue-100/40 uppercase tracking-widest font-bold">Expert Support</span>
-                </div>
-              </div>
+              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              <span className="text-[10px] uppercase tracking-[0.2em] text-blue-400 font-bold">24/7 Network Monitoring. Proactive Support. Reliable Performance</span>
             </motion.div>
+            
+            <h1 className="text-[3.5rem] lg:text-[5.5rem] font-bold mb-8 leading-[0.95] tracking-tighter uppercase text-left">
+              Managed <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
+                Network Operations Center
+              </span>
+            </h1>
+            
+            <p className="text-lg text-blue-100/60 mb-12 max-w-3xl font-medium leading-relaxed text-left">
+              TIM Managed NOC delivers 24/7 monitoring, management, and operational support to help organizations maintain network stability, performance, and availability across critical infrastructure environments.
+            </p>
 
-            {/* Visual Element: Tech Dashboard Mockup */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 1.2, delay: 0.3 }}
-              className="hidden lg:block relative"
-            >
-              <div className="relative p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-3xl overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-                <div className="flex justify-between items-center mb-8">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/50" />
-                  </div>
-                  <div className="text-[10px] font-mono text-blue-400/50 tracking-widest uppercase">Live Network Status</div>
-                </div>
-                
-                <div className="space-y-6">
-                  {[
-                    { label: 'Core Switch A', status: 'Optimal', val: '99.9%', color: 'text-green-400' },
-                    { label: 'Edge Router 01', status: 'Active', val: '1.2ms', color: 'text-blue-400' },
-                    { label: 'Cloud Gateway', status: 'Syncing', val: '8.4Gbps', color: 'text-blue-400' }
-                  ].map((stat, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
-                      <div>
-                        <div className="text-xs text-blue-100/40 mb-1">{stat.label}</div>
-                        <div className="text-sm font-bold">{stat.status}</div>
-                      </div>
-                      <div className={`text-xl font-mono ${stat.color}`}>{stat.val}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Animated Waveform */}
-                <div className="mt-8 h-20 flex items-end gap-1">
-                  {Array.from({ length: 30 }).map((_, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{ height: [20, 40, 20] }}
-                      transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.05 }}
-                      className="flex-1 bg-blue-500/20 rounded-t-sm"
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-6 justify-start items-start">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-sm rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(37,99,235,0.3)] cursor-pointer">
+                <a href="#what-we-do">Explore Manage NOC</a>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* What We Do Section */}
-      <section className="py-24 bg-[#00021a] relative overflow-hidden border-t border-white/5">
+      <section id="what-we-do" className="py-24 bg-[#00021a] relative overflow-hidden border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -164,7 +105,7 @@ export default function ManagedNOC() {
               </h2>
               <div className="space-y-6 text-blue-100/60 font-medium leading-relaxed text-lg">
                 <p>
-                  TIM Managed NOC act as an extension of your IT team, proactively monitoring and managing your Network devices (routers, switches, firewalls), Servers, Cloud Infrastructure, Connectivity & bandwidth and critical business systems. Our goal is to prevent issues before they disrupt your operations.
+                  TIM Managed NOC acts as an extension of your IT team, proactively monitoring and managing network infrastructure, cloud environments, servers, connectivity, and critical business systems to help prevent disruptions before they impact operations.
                 </p>
               </div>
             </motion.div>
@@ -175,10 +116,15 @@ export default function ManagedNOC() {
                   <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <Network className="w-6 h-6 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight">Infrastructure Monitoring</h3>
+                  <h3 className="text-xl font-bold uppercase tracking-tight">End-to-End Infrastructure Visibility</h3>
                 </div>
                 <ul className="space-y-4">
-                  {['Network Devices', 'Servers & Storage', 'Cloud Infrastructure', 'Connectivity & Bandwidth'].map((item, i) => (
+                  {[
+                    '24/7 Infrastructure Monitoring',
+                    'Rapid Incident Escalation',
+                    'Multi-Environment Visibility',
+                    'Performance & Availability Management'
+                  ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-blue-100/40">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                       {item}
@@ -205,10 +151,10 @@ export default function ManagedNOC() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: '24/7 Network Monitoring', desc: 'Continuous monitoring of network performance, availability, and system health.', icon: Activity },
+              { title: '24/7 Network Monitoring', desc: 'Continuous monitoring of network availability, performance, and infrastructure health.', icon: Activity },
               { title: 'Proactive Incident Management', desc: 'Early detection and rapid resolution of network issues to minimize downtime.', icon: ShieldAlert },
               { title: 'Performance Optimization', desc: 'Ongoing analysis and tuning to ensure optimal network efficiency and reliability.', icon: Zap },
-              { title: 'Reporting & Visibility', desc: 'Comprehensive reports and dashboards providing insights into network health and performance trends.', icon: BarChart }
+              { title: 'Reporting & Visibility', desc: 'Centralized reporting and visibility into infrastructure health, availability, and performance trends.', icon: BarChart }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -239,7 +185,7 @@ export default function ManagedNOC() {
                 <span className="text-blue-500">TIM Managed NOC?</span>
               </h2>
               <p className="text-blue-100/40 font-medium text-lg">
-                Choosing the right Managed Network Operations Center (MNOC) provider matters. The right partner not only monitors your network but becomes an extension of your team.
+                TIM Managed NOC combines proactive monitoring, experienced engineers, and responsive local support to help organizations maintain reliable, high-performing infrastructure operations.
               </p>
             </div>
             <Button asChild variant="outline" className="border-blue-500/30 text-blue-400 hover:bg-blue-500/10 rounded-full px-8">
@@ -249,12 +195,11 @@ export default function ManagedNOC() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-3xl overflow-hidden">
             {[
-              { icon: Search, title: 'Fast Issue Detection & Resolution', desc: '24/7 monitoring to catch and fix problems before they impact your business.' },
-              { icon: ShieldAlert, title: 'Reduced Downtime & Risk', desc: 'Keep systems running smoothly with proactive management' },
-              { icon: Activity, title: 'Optimized Performance & Availability', desc: 'Ensure your critical systems always perform at their best.' },
-              { icon: BarChart, title: 'Cost-Efficient & Scalable', desc: 'Enterprise-level support without the expense of an in-house NOC; grows with your business.' },
-              { icon: Users, title: 'Expert Engineers & Local Support', desc: 'Certified professionals provide personalized service with quick response times.' },
-              { icon: Settings, title: 'SEAMLESS TECH INTEGRATION', desc: 'Our solutions integrate effortlessly with your existing infrastructure, ensuring a smooth transition and immediate impact.' }
+              { icon: Search, title: 'Fast Issue Detection & Resolution', desc: 'Continuous monitoring and rapid issue resolution to minimize operational impact and downtime.' },
+              { icon: ShieldAlert, title: 'Reduced Downtime & Risk', desc: 'Proactive infrastructure management designed to reduce service interruptions and operational risk.' },
+              { icon: Activity, title: 'Optimized Performance & Availability', desc: 'Maintain stable, high-performing systems across critical business operations.' },
+              { icon: BarChart, title: 'Cost-Efficient & Scalable', desc: 'Enterprise-grade operational support without the complexity of building an in-house NOC.' },
+              { icon: Users, title: 'Expert Engineers & Local Support', desc: 'A fully homegrown team of experienced engineers delivering responsive local support and operational expertise.' }
             ].map((item, i) => (
               <div key={i} className="bg-[#00021a] p-10 hover:bg-white/[0.02] transition-colors">
                 <item.icon className="w-8 h-8 text-blue-500 mb-6" />
@@ -291,17 +236,17 @@ export default function ManagedNOC() {
               <h2 className="text-4xl lg:text-7xl font-black mb-8 tracking-tighter uppercase leading-[0.9]">
                 Focus on Growth. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800">
-                  We’ll Handle your Network
+                  We’ll Handle Operations
                 </span>
               </h2>
 
-              <p className="text-xl text-blue-100/60 font-medium leading-relaxed mb-12 max-w-2xl mx-auto">
-                With TIM Managed NOC services, you gain a reliable partner dedicated to maintaining your infrastructure so you can focus on strategic initiatives and business expansion.
+              <p className="text-xl text-blue-100/60 font-medium leading-relaxed mb-12 max-w-3xl mx-auto">
+                TIM Managed NOC provides continuous monitoring, operational support, and proactive infrastructure management — helping your teams stay focused on business priorities while we maintain network stability and performance.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 h-16 rounded-2xl text-lg font-bold transition-all hover:scale-105 shadow-2xl shadow-blue-900/40 w-full sm:w-auto">
-                  <Link to={createPageUrl('ContactUs')}>Partner with Us</Link>
+                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 h-16 rounded-2xl text-lg font-bold transition-all hover:scale-105 shadow-2xl shadow-blue-900/40 w-full sm:w-auto cursor-pointer">
+                  <Link to={createPageUrl('ContactUs')}>Talk to our Experts</Link>
                 </Button>
                 <div className="flex items-center gap-3 text-blue-200/40">
                   <Activity className="w-5 h-5 animate-pulse" />

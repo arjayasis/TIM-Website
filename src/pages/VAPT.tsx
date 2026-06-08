@@ -118,8 +118,13 @@ export default function VAPT() {
                   <p>22/tcp   open  ssh     OpenSSH 7.6p1</p>
                   <p>80/tcp   open  http    Apache httpd 2.4.29</p>
                   <p>443/tcp  open  ssl/http Apache httpd 2.4.29</p>
-                  <p className="text-yellow-500/80 mt-4">[!] VULNERABILITY DETECTED: CVE-2023-XXXXX</p>
-                  <p className="text-red-500/80">[!!] CRITICAL: SQL INJECTION POINT FOUND</p>
+                  <p className="text-red-500/90 font-bold mt-4">Critical Findings: 2</p>
+                  <p className="text-amber-500/90 font-bold">High Risk Findings: 5</p>
+                  <p className="text-emerald-500/80 mt-2">Exposed Services Detected</p>
+                  <p className="text-emerald-500/80">Outdated SSL/TLS Configuration</p>
+                  <p className="text-emerald-500/80">Weak Authentication Policy</p>
+                  <p className="text-emerald-600/60 mt-2">Vulnerability ID: CVE-2023-4863 | CVSS Score: 9.8 (CRITICAL)</p>
+                  <p className="text-emerald-600/60">Asset Classification: Production-External-IP</p>
                   <motion.p 
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity }}
@@ -145,10 +150,10 @@ export default function VAPT() {
                 What is <span className="text-emerald-500">VAPT?</span>
               </h2>
               <p className="text-emerald-100/60 font-medium leading-relaxed mb-6">
-                Vulnerability Assessment and Penetration Testing (VAPT) is a proactive approach to identifying, evaluating, and mitigating security weaknesses in your IT infrastructure.
+                Vulnerability Assessment and Penetration Testing (VAPT) helps organizations identify, validate, and remediate security weaknesses across infrastructure, applications, and cloud environments.
               </p>
               <p className="text-emerald-100/40 text-sm font-medium leading-relaxed">
-                VA and PT serve different purposes. While Vulnerability Assessment (VA) focuses on evaluating key systems, networks, and applications to identify configuration issues, Penetration Testing (PT) is more targeted and goal-driven, identifying possible entry points an attacker could use.
+                Vulnerability Assessment focuses on identifying security gaps and misconfigurations, while Penetration Testing simulates real-world attack scenarios to validate exploitability and business impact.
               </p>
             </motion.div>
             
@@ -180,7 +185,7 @@ export default function VAPT() {
             {[
               { title: 'Identify Weak Points', desc: 'Detect security gaps in networks, applications, and endpoints before attackers do.', icon: Search },
               { title: 'Prevent Data Breaches', desc: 'Reduce the risk of costly data leaks and system compromises.', icon: ShieldAlert },
-              { title: 'Ensure Compliance', desc: 'Meet industry standards and regulatory requirements such as PCI-DSS, HIPAA, and GDPR.', icon: ShieldCheck },
+              { title: 'Ensure Compliance', desc: 'Meet industry standards and regulatory requirements such as ISO 27001, PCI-DSS, SOC 2 Type II, and ISO 22301.', icon: ShieldCheck },
               { title: 'Build Trust', desc: 'Show clients and partners that your business prioritizes cybersecurity.', icon: Lock },
               { title: 'Cost-Effective Security', desc: 'Identifying and fixing vulnerabilities early is more cost-effective than dealing with the aftermath of a breach.', icon: Zap }
             ].map((item, i) => (
@@ -205,33 +210,17 @@ export default function VAPT() {
         </div>
       </section>
 
-      {/* Choosing the Right Provider - Recipe 4 vibe */}
-      <section className="py-32 bg-[#00021a] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/20 blur-[120px] rounded-full" />
-        </div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-light tracking-tight mb-8 leading-tight">
-            Choosing the Right <span className="italic font-serif">VAPT Provider</span> Matters
-          </h2>
-          <p className="text-emerald-100/60 text-lg font-medium leading-relaxed">
-            Selecting the right VAPT provider is critical. A trusted partner ensures accurate testing, actionable results, and minimal disruption to your operations. Poorly executed testing can leave gaps undetected or create unnecessary risks. With the right provider, you gain confidence that your organization is secure against evolving cyber threats.
-          </p>
-        </div>
-      </section>
-
-      {/* Why Choose TIM VAPT? - Recipe 12 vibe */}
+      {/* Why TIM VAPT? - Recipe 12 vibe */}
       <section className="py-32 bg-[#00021a] text-white relative overflow-hidden border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="text-5xl lg:text-7xl font-bold tracking-tighter uppercase leading-[0.8] mb-12">
-                Why Choose <br />
-                <span className="text-emerald-500 italic">TIM VAPT?</span>
+                Why <span className="text-emerald-500 italic">TIM VAPT?</span>
               </h2>
               <div className="space-y-10">
                 {[
-                  { title: 'Expertise and Experience', desc: 'Our team of certified security professionals has extensive experience in conducting VAPT across various industries.', icon: Users },
+                  { title: 'Expertise and Experience', desc: 'Certified security professionals with experience conducting VAPT engagements across enterprise infrastructure, applications, and cloud environments.', icon: Users },
                   { title: 'Comprehensive Testing', desc: 'We provide a thorough evaluation of your entire IT infrastructure, including networks, applications, and cloud environments.', icon: ShieldCheck },
                   { title: 'Actionable Insights', desc: 'Our detailed reports provide clear, prioritized recommendations for remediating identified vulnerabilities.', icon: FileText },
                   { title: 'Continuous Support', desc: 'We offer ongoing support and guidance to help you maintain a strong security posture.', icon: RefreshCw },
@@ -260,7 +249,7 @@ export default function VAPT() {
             <div className="relative hidden lg:block">
               <div className="aspect-[3/4] rounded-[4rem] overflow-hidden shadow-2xl border border-white/10">
                 <img 
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" 
+                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000" 
                   alt="Security Expert" 
                   className="w-full h-full object-cover opacity-60"
                   referrerPolicy="no-referrer"
@@ -309,8 +298,8 @@ export default function VAPT() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-12 h-16 rounded-2xl text-lg font-bold transition-all hover:scale-105 shadow-2xl shadow-emerald-900/40 w-full sm:w-auto">
-                  <Link to={createPageUrl('ContactUs')}>Partner with Us</Link>
+                <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-12 h-16 rounded-2xl text-lg font-bold transition-all hover:scale-105 shadow-2xl shadow-emerald-900/40 w-full sm:w-auto cursor-pointer">
+                  <Link to={createPageUrl('ContactUs')}>Talk to our security expert</Link>
                 </Button>
                 <div className="flex items-center gap-3 text-emerald-200/40">
                   <Bug className="w-5 h-5 animate-pulse" />
