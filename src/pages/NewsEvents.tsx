@@ -39,81 +39,108 @@ export default function NewsEvents() {
         >
           {/* Full Page Article View */}
           <div className="relative">
-            {/* Header/Hero for Article */}
-            <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
-              <motion.img
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                src={selectedEvent.image}
-                alt={selectedEvent.title}
-                className="w-full h-full object-cover opacity-60"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00021a] via-[#00021a]/60 to-transparent" />
-              
-              <div className="absolute inset-0 flex items-end">
-                <div className="max-w-7xl mx-auto px-6 lg:px-16 pb-16 md:pb-24">
+            {/* Header/Hero for Article - Formatted Exactly like Screenshot */}
+            <div className="relative h-screen min-h-[700px] w-full overflow-hidden flex flex-col justify-between">
+              {/* Background cover image with parallax & gorgeous dark-blue overlay masks */}
+              <div className="absolute inset-0 z-0 select-none pointer-events-none">
+                <motion.img
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  src={selectedEvent.image}
+                  alt={selectedEvent.title}
+                  className="w-full h-full object-cover opacity-85"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-[#00021a]/30" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00021a]/75 via-[#00021a]/35 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00021a]/95 via-transparent to-[#00021a]/25" />
+              </div>
+
+              {/* Ambient Glows */}
+              <div className="absolute inset-0 opacity-20 z-0 pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/15 blur-[120px] rounded-full animate-pulse" />
+                <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 blur-[150px] rounded-full" />
+              </div>
+
+              {/* Relative Content Area */}
+              <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full h-full flex flex-col justify-between py-12 md:py-20 animate-fade-in">
+                {/* Top Section: Back Button */}
+                <div className="pt-4">
+                  <button
+                    onClick={() => setSelectedEvent(null)}
+                    className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[11px] transition-colors group cursor-pointer"
+                  >
+                    <span>←</span> BACK TO NEWS
+                  </button>
+                </div>
+
+                {/* Middle Section: Solid Pill Badge & Large Title */}
+                <div className="max-w-5xl mt-auto mb-6 py-4">
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="max-w-4xl"
+                    transition={{ delay: 0.1, duration: 0.8 }}
                   >
-                    <button
-                      onClick={() => setSelectedEvent(null)}
-                      className="flex items-center gap-2 text-blue-400 font-black uppercase tracking-[0.3em] text-xs mb-8 group"
-                    >
-                      <ArrowRight className="w-4 h-4 rotate-180 transition-transform group-hover:-translate-x-2" />
-                      Back to News
-                    </button>
-                    
-                    <div className="flex flex-wrap gap-3 mb-6">
-                      <span className="px-4 py-1.5 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full">
+                    <div className="mb-4">
+                      <span className="inline-block px-4 py-1.5 bg-blue-600/80 backdrop-blur-sm text-white text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest rounded-full shadow-lg shadow-blue-600/30">
                         {selectedEvent.type}
                       </span>
                     </div>
                     
-                    <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-tight uppercase">
+                    <h1 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-sans font-black text-white leading-[1.15] tracking-tight uppercase max-w-3xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
                       {selectedEvent.title}
                     </h1>
                   </motion.div>
                 </div>
+
+                {/* Bottom Section: Divider & Metadata Bar */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="flex flex-row items-center justify-between gap-4 border-t border-white/10 pt-8"
+                >
+                  <div className="flex flex-wrap items-center gap-6 md:gap-8">
+                    {/* Timeline Item */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-blue-950/60 rounded-xl flex items-center justify-center border border-blue-900/30 text-blue-400 shadow-inner">
+                        <Calendar className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-[8px] uppercase tracking-[0.15em] text-white/40 font-bold mb-0.5">Timeline</p>
+                        <p className="text-white/90 font-bold text-xs tracking-tight">{selectedEvent.date}</p>
+                      </div>
+                    </div>
+
+                    {/* Category Item */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-blue-950/60 rounded-xl flex items-center justify-center border border-blue-900/30 text-indigo-400 shadow-inner">
+                        <Tag className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-[8px] uppercase tracking-[0.15em] text-white/40 font-bold mb-0.5">Category</p>
+                        <p className="text-white/90 font-bold text-xs tracking-tight font-sans">Strategic Insight</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Share and Save Action buttons */}
+                  <div className="flex items-center gap-2">
+                    <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
+                      <Share2 size={15} />
+                    </button>
+                    <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
+                      <Bookmark size={15} />
+                    </button>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Article Content */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-16 py-12">
+            <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 md:py-24">
               <div className="max-w-4xl mx-auto">
-                <div className="flex flex-wrap items-center gap-10 mb-16 pb-10 border-b border-white/10">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20">
-                      <Calendar className="w-6 h-6 text-blue-400" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-black">Timeline</p>
-                    <p className="text-white font-black text-base">{selectedEvent.date}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center border border-indigo-500/20">
-                      <Tag className="w-6 h-6 text-indigo-400" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-black">Category</p>
-                      <p className="text-white font-black text-base">Strategic Insight</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 ml-auto">
-                    <button className="p-4 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 transition-all bg-white/5">
-                      <Share2 size={20} />
-                    </button>
-                    <button className="p-4 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 transition-all bg-white/5">
-                      <Bookmark size={20} />
-                    </button>
-                  </div>
-                </div>
-
                 <div className="space-y-12">
                   <div className="flex items-center gap-4 text-blue-400 font-black text-xs uppercase tracking-[0.3em]">
                     <div className="w-8 h-[2px] bg-blue-400" />
@@ -156,7 +183,7 @@ export default function NewsEvents() {
                   
                   <Button 
                     onClick={() => setSelectedEvent(null)}
-                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-16 py-8 h-auto font-black uppercase tracking-widest text-sm transition-all shadow-xl shadow-blue-600/20"
+                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-16 py-8 h-auto font-black uppercase tracking-widest text-sm transition-all shadow-xl shadow-blue-600/20 cursor-pointer"
                   >
                     Back to All News
                   </Button>
@@ -187,154 +214,170 @@ export default function NewsEvents() {
           ref={containerRef} 
           className="min-h-screen bg-[#00021a] overflow-x-hidden"
         >
-      {/* Hero Section with Stock Image Background */}
-      <section className="relative h-screen flex items-center justify-center bg-[#00021a] overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      {/* Immersive Featured Event Hero Section */}
+      <section className="relative h-screen min-h-[700px] w-full overflow-hidden flex flex-col justify-between bg-[#00021a]">
+        {/* Full Hero Background Image */}
+        <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <motion.div 
             style={{ y: yParallax }}
             className="absolute inset-0"
           >
             <img 
-              src="https://picsum.photos/seed/corporate-tech/1920/1080" 
-              alt="Background" 
-              className="w-full h-full object-cover opacity-30 scale-110"
+              src={featuredEvent.image} 
+              alt={featuredEvent.title} 
+              className="w-full h-full object-cover opacity-85 scale-100 transition-all duration-700"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00021a] via-[#00021a]/80 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#00021a] via-transparent to-transparent" />
+            {/* Elegant multi-layered gradient backdrop to ensure text is perfectly crisp and readable */}
+            <div className="absolute inset-0 bg-[#00021a]/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00021a]/75 via-[#00021a]/35 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#00021a]/95 via-transparent to-transparent" />
           </motion.div>
           
-          {/* Animated Overlay Elements */}
+          {/* Ambient Glows */}
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 blur-[100px] rounded-full animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-500/10 blur-[150px] rounded-full" />
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/15 blur-[120px] rounded-full animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 blur-[150px] rounded-full" />
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10 w-full">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        {/* Relative Content Area */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full h-full flex flex-col justify-between py-12 md:py-20 animate-fade-in">
+          {/* Top Section: Back Button linking to Homepage */}
+          <div className="pt-4">
+            <Link
+              to={createPageUrl('')}
+              className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[11px] transition-colors group cursor-pointer"
             >
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <span className="px-4 py-1.5 bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-full shadow-lg shadow-blue-600/20">
-                  TIM News & Events
+              <span>←</span> BACK TO HOME
+            </Link>
+          </div>
+
+          {/* Middle Section: Badge & Title with Read Story CTA or hover read */}
+          <div className="max-w-5xl mt-auto mb-6 py-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="mb-4">
+                <span className="inline-block px-4 py-1.5 bg-[#2563eb]/80 backdrop-blur-sm text-white text-[10px] sm:text-xs font-black uppercase tracking-widest rounded-full shadow-lg shadow-blue-600/30">
+                  {featuredEvent.type}
                 </span>
-                <div className="h-[1px] w-12 bg-white/20" />
-                <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">Est. 1985</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-[6rem] font-black text-white mb-8 tracking-tighter leading-[0.85] uppercase">
-                Stay Ahead<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400"> of the </span>
-                <span className="text-white/20">Curve</span>
+              <h1 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-sans font-black text-white leading-[1.15] tracking-tight uppercase max-w-3xl cursor-pointer hover:text-blue-400 transition-colors drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" onClick={() => handleSelectEvent(featuredEvent)}>
+                {featuredEvent.title}
               </h1>
-              
-              <div className="flex flex-col items-center gap-12 mt-12">
-                <p className="text-lg md:text-xl text-blue-100/60 font-medium leading-relaxed max-w-2xl">
-                  Explore our latest corporate milestones, strategic industry partnerships, and expert insights driving the future of enterprise technology.
-                </p>
-              </div>
+              <p className="text-blue-100/75 leading-relaxed text-sm md:text-base font-medium max-w-xl mt-3 line-clamp-3 drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
+                {featuredEvent.content}
+              </p>
             </motion.div>
           </div>
+
+          {/* Bottom Section: Divider & Metadata Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="flex flex-row items-center justify-between gap-4 border-t border-white/10 pt-8"
+          >
+            <div className="flex flex-wrap items-center gap-6 md:gap-8">
+              {/* Timeline Item */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-950/60 rounded-xl flex items-center justify-center border border-blue-900/30 text-blue-400 shadow-inner">
+                  <Calendar className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase tracking-[0.15em] text-white/40 font-bold mb-0.5">Timeline</p>
+                  <p className="text-white/90 font-bold text-xs tracking-tight">{featuredEvent.date}</p>
+                </div>
+              </div>
+
+              {/* Category Item */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-950/60 rounded-xl flex items-center justify-center border border-blue-900/30 text-indigo-400 shadow-inner">
+                  <Tag className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase tracking-[0.15em] text-white/40 font-bold mb-0.5">Category</p>
+                  <p className="text-white/90 font-bold text-xs tracking-tight font-sans">Strategic Insight</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Read Button & Action group */}
+            <div className="flex items-center gap-2">
+              <Button 
+                onClick={() => handleSelectEvent(featuredEvent)}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 text-[11px] rounded-full transition-all hover:scale-105 shadow-[0_0_15px_rgba(37,99,235,0.25)] cursor-pointer tracking-wider font-extrabold uppercase h-auto"
+              >
+                Read Story
+                <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
+              </Button>
+
+              <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
+                <Share2 size={15} />
+              </button>
+              <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
+                <Bookmark size={15} />
+              </button>
+            </div>
+          </motion.div>
         </div>
 
         {/* Floating Scroll Indicator */}
         <motion.div 
+          onClick={() => {
+            document.getElementById('all-events')?.scrollIntoView({ behavior: 'smooth' });
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 right-10 hidden lg:flex flex-col items-end gap-4"
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer group z-20"
         >
-          <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] rotate-90 origin-right translate-y-20">Scroll to Explore</span>
-          <div className="w-[1px] h-32 bg-gradient-to-b from-blue-500 to-transparent" />
+          <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] group-hover:text-blue-400 transition-colors">Discover More Events</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            className="w-6 h-10 rounded-full border border-white/20 flex justify-center p-1.5"
+          >
+            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+          </motion.div>
         </motion.div>
       </section>
 
       {/* Breaking News Marquee */}
-      <div className="bg-blue-600 py-4 overflow-hidden whitespace-nowrap border-y border-blue-400/30 relative z-20">
+      <div className="bg-blue-600/10 py-5 overflow-hidden whitespace-nowrap border-y border-white/5 relative z-20 backdrop-blur-sm">
         <motion.div 
           animate={{ x: [0, -1000] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
           className="flex gap-12 items-center"
         >
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center gap-4">
-              <span className="text-white font-black text-sm uppercase tracking-widest">Breaking: TIM Partners with KCAT for Protective DNS</span>
-              <div className="w-2 h-2 bg-white rounded-full" />
-              <span className="text-white/70 font-black text-sm uppercase tracking-widest">Innovation: Carmona Data Center Zone 2 Pre-Launch</span>
-              <div className="w-2 h-2 bg-white rounded-full" />
+              <span className="text-white/80 font-black text-xs uppercase tracking-widest">Sovereign AI Ecosystem: RackCorp.ai Launch</span>
+              <div className="w-2 h-2 bg-blue-500 rounded-full" />
+              <span className="text-white/60 font-black text-xs uppercase tracking-widest">Resiliency Forum: TIM and Rubrik executive summit</span>
+              <div className="w-2 h-2 bg-indigo-500 rounded-full" />
+              <span className="text-white/50 font-black text-xs uppercase tracking-widest">TIM 40 Years of Enterprise Technology Innovation</span>
+              <div className="w-2 h-2 bg-purple-500 rounded-full" />
             </div>
           ))}
         </motion.div>
       </div>
 
-      {/* Featured Article - Cinematic Layout */}
-      <section className="py-20 relative overflow-hidden bg-[#00021a]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-16 items-center"
-          >
-            <div className="relative group cursor-pointer" onClick={() => handleSelectEvent(featuredEvent)}>
-              <div className="relative aspect-[4/5] md:aspect-video lg:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
-                <motion.img 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 1.5, ease: "circOut" }}
-                  src={featuredEvent.image} 
-                  alt={featuredEvent.title}
-                  className="w-full h-full object-cover opacity-80"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#00021a] via-transparent to-transparent opacity-80" />
-              </div>
-              {/* Floating Badge */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center border-8 border-[#00021a] shadow-xl transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                <span className="text-white font-black text-xs text-center leading-tight uppercase tracking-widest">Latest <br />Update</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col justify-center">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-blue-400 font-black text-xs uppercase tracking-[0.3em]">Featured Story</span>
-                <div className="h-[1px] w-20 bg-blue-400/30" />
-                <span className="text-white/40 font-bold text-xs uppercase tracking-widest">{featuredEvent.date}</span>
-              </div>
-              <h2 className="text-2xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-tight uppercase">
-                {featuredEvent.title}
-              </h2>
-              <p className="text-lg text-blue-100/60 leading-relaxed mb-10 line-clamp-4">
-                {featuredEvent.content}
-              </p>
-              <div className="flex items-center gap-6">
-                <Button 
-                  onClick={() => handleSelectEvent(featuredEvent)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-8 rounded-full text-sm font-black uppercase tracking-widest h-auto transition-all group shadow-xl shadow-blue-600/20"
-                >
-                  Read Full Article
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                </Button>
-                <button className="p-4 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 transition-all bg-white/5">
-                  <Share2 size={20} />
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* News Grid - Editorial Style */}
-      <section className="py-20 bg-white/5 relative border-y border-white/5">
+      <section id="all-events" className="py-24 bg-[#00021a] relative border-t border-white/5 scroll-mt-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <div className="flex items-end justify-between mb-20">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-6">
             <div>
               <span className="text-blue-400 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Archive</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">Recent <br />Insights</h2>
+              <h2 className="text-3xl md:text-5xl font-sans font-black text-white tracking-tighter uppercase">Recent <br />Insights</h2>
             </div>
+            <p className="text-blue-100/40 text-sm max-w-sm font-medium leading-relaxed">
+              Explore the timeline of our recent technology milestones, corporate achievements, and strategic alignments.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">

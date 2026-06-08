@@ -10,6 +10,49 @@ export interface NewsEvent {
 
 export const newsEvents: NewsEvent[] = [
   {
+    id: 'rackcorp-ai-launch-2026',
+    title: "A significant milestone for the Philippine digital ecosystem.",
+    date: "June 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/rackcorp.jpg",
+    content: `RackCorp.ai by TIM has been formally launched at Lanson Place, Mall of Asia. The discussion centered on AI sovereignty and governance.
+
+As data becomes a critical strategic asset, maintaining operational control, data residency, and governance over AI infrastructure is emerging as a baseline requirement across the Philippine enterprise landscape. Localizing these capabilities enables organizations to address regulatory requirements, mitigate data risks, and retain full lifecycle oversight of AI workloads.
+
+By deploying sovereign AI infrastructure within the country, Filipino enterprises are better positioned to scale AI adoption, accelerate innovation pipelines, and maintain competitive advantage while ensuring compliance and data integrity.
+
+This marks the transition toward sovereign, governed, and high-performance AI systems in the Philippines.`,
+    theme: "AI Sovereignty, Data Residency, AI Governance",
+    type: "Formal Launch / Press Release"
+  },
+  {
+    id: 'cyber-resiliency-rubrik-2026',
+    title: "The New Face of Cyber Resiliency",
+    date: "May 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/rubrik-post-5.jpg",
+    content: `TIM and Rubrik recently gathered IT leaders at New World Makati last May 19, 2026, for an exclusive session on Cyber Resilience & Data Security, charting the path from traditional security to modern Digital Identity.
+
+The afternoon kicked off with strategic insights from TIM President Sunver Bastes and Rubrik Regional VP for Asia Chee Wai Yeong, followed by a deep dive into Rubrik's latest cyber resiliency tech updates. Through interactive round-robin discussions and direct customer sharing over a networking lunch, attendees collaborated on the future of data sovereignty and unshakeable enterprise defense.
+
+Thank you to all the executives who joined us in fortifying the local tech ecosystem!`,
+    theme: "Cyber Resilience, Data Security, Digital Identity",
+    type: "Exclusive Executive Session"
+  },
+  {
+    id: 'pcta-tech-show-2026',
+    title: "TIM Participates in PCTA Philippine Tech Show 2026",
+    date: "March 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/pcta_1.jpg",
+    content: `Total Information Management Corporation (TIM) participated as a delegate in the PCTA Philippine Tech Show 2026, held from March 24–26, 2026 at the SMX Convention Center.
+
+The event highlighted a clear industry direction: while connectivity remains essential, today’s focus is on advancing resilience, security, and regulatory compliance. These priorities shaped discussions among telecommunications and technology leaders throughout the show.
+
+TIM engaged with industry peers and partners in conversations that reinforced the need for secure, compliant, and future-ready technology solutions.
+
+As the industry continues to evolve, standards are rising—and TIM remains committed to building what’s next.`,
+    theme: "Resilience, Security, Regulatory Compliance",
+    type: "Industry Event / Tech Show"
+  },
+  {
     id: 'fictap-2026',
     title: "TIM Engages with Industry Leaders at FICTAP 2026 to Advance Secure and Resilient Connectivity",
     date: "March 2026",
