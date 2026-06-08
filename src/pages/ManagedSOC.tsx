@@ -26,12 +26,11 @@ import RelatedServices from '@/components/shared/RelatedServices';
 
 export default function ManagedSOC() {
   const msocCapabilities = [
-    { title: '24/7 Security Monitoring', desc: 'Continuous monitoring of logs, alerts, and security events to detect suspicious activities in real time.', icon: Activity },
-    { title: 'Threat Detection & Analysis', desc: 'Advanced correlation, behavioral analysis, and threat intelligence to identify known and emerging threats.', icon: Radar },
-    { title: 'Incident Response', desc: 'Rapid containment, investigation, and remediation support to minimize operational impact.', icon: Zap },
-    { title: 'SIEM & Log Management', desc: 'Centralized visibility across your infrastructure for better control, audit readiness, and compliance alignment.', icon: Database },
-    { title: 'Reporting & Compliance', desc: 'Detailed incident reports for executive and technical stakeholders, along with compliance-ready documentation.', icon: FileText },
-    { title: 'Continuous Improvement', desc: 'Ongoing tuning, rule optimization, and security posture enhancement to stay ahead of evolving threats.', icon: RefreshCw }
+    { title: '24/7 Security Monitoring', desc: 'Continuous round-the-clock monitoring of logs, alerts, and security events to detect suspicious activities in real time.', icon: Activity },
+    { title: 'Real-time Threat Intelligence', desc: 'Integration of global threat feeds and localized telemetry to identify emerging attack vectors.', icon: Radar },
+    { title: 'Proactive Threat Hunting', desc: 'Actively searching for hidden threats and vulnerabilities within your networks before they can trigger an alert.', icon: Search },
+    { title: 'Rapid Incident Response', desc: 'Swift containment, verification, and guided remediation support to minimize operational impact and neutralize threats.', icon: Zap },
+    { title: 'Expert Analysis', desc: 'Dedicated security analysts investigating complex alerts to separate genuine threats from false positives.', icon: ShieldCheck }
   ];
 
   return (
@@ -75,20 +74,20 @@ export default function ManagedSOC() {
                 <span className="text-[10px] uppercase tracking-[0.2em] text-red-400 font-bold">24/7 Threat Monitoring. Rapid Response. Complete Visibility</span>
               </motion.div>
               
-              <h1 className="text-[3.5rem] lg:text-[5rem] font-bold mb-8 leading-[0.9] tracking-tighter uppercase">
-                Managed <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600">
-                  Security Operations Center
+              <h1 className="text-2xl sm:text-4xl lg:text-[2.5rem] xl:text-[3rem] font-bold mb-8 leading-[1.1] tracking-tighter uppercase">
+                <span className="block">Cyber threats are</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                  evolving faster than ever
                 </span>
               </h1>
               
               <p className="text-lg text-red-100/60 mb-12 max-w-xl font-medium leading-relaxed">
-                In today's evolving threat landscape, cyberattacks are becoming more sophisticated, persistent, and damaging making cybersecurity no longer optional, it is mission critical. TIM Managed Security Operations Center (MSOC) is a locally based SOC that delivers 24/7 monitoring, detection, and response to protect your organization from cyber threats before they impact your business.
+                TIM Managed Security Operations Center (MSOC) provides 24/7 monitoring, threat detection, and rapid incident response through a locally operated SOC — helping organizations stay protected before threats disrupt operations.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-10 py-7 text-sm rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.3)]">
-                  <Link to={createPageUrl('ContactUs')}>Secure Your Infrastructure</Link>
+                  <Link to={createPageUrl('ContactUs')}>Talk to a Security Expert</Link>
                 </Button>
                 <div className="flex items-center gap-4 px-6">
                   <div className="relative">
@@ -164,10 +163,10 @@ export default function ManagedSOC() {
               </h2>
               <div className="space-y-6 text-red-100/60 font-medium leading-relaxed text-lg">
                 <p>
-                  TIM Managed SOC service acts as an extension of your internal IT and security team. We continuously monitor your environment, analyze security events, and respond to threats across your entire environment, ensuring immediate action against suspicious activity.
+                  TIM Managed SOC acts as an extension of your internal IT and security teams — delivering 24/7 monitoring, threat detection, and rapid incident response through a dedicated team of security analysts.
                 </p>
                 <p>
-                  From early threat detection to full incident containment, we provide end-to-end security coverage so your internal teams can focus on core business operations.
+                  From early threat detection to full incident containment, we provide end-to-end security operations that help organizations reduce risk, maintain business continuity, and stay continuously protected.
                 </p>
               </div>
             </motion.div>
@@ -178,10 +177,16 @@ export default function ManagedSOC() {
                   <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
                     <ShieldCheck className="w-6 h-6 text-red-500" />
                   </div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight">End-to-End Coverage</h3>
+                  <h3 className="text-xl font-bold uppercase tracking-tight">Core Competencies</h3>
                 </div>
                 <ul className="space-y-4">
-                  {['Real-time Intelligence', 'Proactive Defense', 'Rapid Incident Response', 'Expert Analysis'].map((item, i) => (
+                  {[
+                    '24x7 monitoring',
+                    'real-time threat intelligence',
+                    'proactive threat hunting',
+                    'rapid incident response',
+                    'expert analysis'
+                  ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-red-100/40">
                       <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
                       {item}
@@ -201,12 +206,12 @@ export default function ManagedSOC() {
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tighter uppercase mb-6">
               What You <span className="text-red-500">Can Expect</span>
             </h2>
-            <p className="text-red-100/40 max-w-2xl mx-auto font-medium">
+            <p className="text-red-100/40 max-w-2xl mx-auto font-medium text-base sm:text-lg">
               Comprehensive security operations to detect, respond, and protect your organization from evolving cyber threats.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {msocCapabilities.map((item, i) => (
               <motion.div
                 key={i}
@@ -230,39 +235,38 @@ export default function ManagedSOC() {
       {/* Why Choose TIM - Recipe 1 vibe */}
       <section className="py-32 bg-[#00021a] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
-            <div className="max-w-2xl">
+          <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-8">
+            <div className="max-w-4xl">
               <h2 className="text-4xl lg:text-6xl font-bold tracking-tighter uppercase mb-6">
                 Why Partner <br />
-                With <span className="text-red-500">TIM SOC?</span>
+                With <span className="text-red-500">TIM MSOC?</span>
               </h2>
-              <p className="text-red-100/40 font-medium text-lg">
-                Our Managed SOC provides the expertise, technology, and 24/7 vigilance required to protect your business in an increasingly complex threat landscape.
+              <p className="text-red-100/40 font-medium text-lg leading-relaxed max-w-3xl">
+                TIM MSOC combines advanced security technologies, experienced analysts, and 24/7 monitoring to help organizations detect threats faster, respond rapidly, and strengthen their overall security posture.
               </p>
             </div>
-            <Button asChild variant="outline" className="border-red-500/30 text-red-400 hover:bg-red-500/10 rounded-full px-8">
-              <Link to={createPageUrl('AboutUs')}>Learn More About TIM</Link>
-            </Button>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-3xl overflow-hidden">
             {[
               { icon: Zap, title: 'Agility & Faster Response', desc: 'TIM locally based SOC enables rapid escalation and direct coordination with your IT team during critical incidents — minimizing damage and downtime.' },
-              { icon: Settings, title: 'Flexible Services', desc: 'We customize our security monitoring based on your infrastructure, risk profile, and compliance requirements. Technology-agnostic. Business-aligned.' },
-              { icon: Users, title: 'Experienced Analysts & Local Support', desc: 'Skilled cybersecurity experts deliver accurate analysis, actionable recommendations, and clear communication.' },
-              { icon: ShieldCheck, title: 'Proven Tools & Industry Standards', desc: 'We leverage enterprise-grade technologies and align with standards such as PCI-DSS, ISO 27001, and SOC 3 to strengthen your compliance posture.' }
+              { icon: Settings, title: 'Flexible Services', desc: 'We customize our service offerings based on your infrastructure, risk profile, and compliance requirements.' },
+              { icon: Users, title: 'Local Expertise and Dedicated Support', desc: 'Our fully homegrown team of cybersecurity analysts and engineers delivers rapid response, expert guidance, and responsive local support tailored to the local threat landscape.' },
+              { icon: ShieldCheck, title: 'Proven Tools & Industry Standards', desc: 'We leverage enterprise-grade technologies and align with standards such as PCI-DSS, ISO 27001, SOC 2 Type II, HIPAA, and DTAP to strengthen your compliance posture.' }
             ].map((item, i) => (
-              <div key={i} className="bg-[#00021a] p-10 hover:bg-white/[0.02] transition-colors">
-                <item.icon className="w-8 h-8 text-red-500 mb-6" />
-                <h3 className="text-lg font-bold mb-4 uppercase tracking-tight">{item.title}</h3>
-                <p className="text-red-100/40 text-sm font-medium leading-relaxed mb-6">{item.desc}</p>
+              <div key={i} className="bg-[#00021a] p-10 hover:bg-white/[0.02] transition-colors relative flex flex-col justify-between">
+                <div>
+                  <item.icon className="w-8 h-8 text-red-500 mb-6" />
+                  <h3 className="text-lg font-bold mb-4 uppercase tracking-tight">{item.title}</h3>
+                  <p className="text-red-100/40 text-sm font-medium leading-relaxed mb-6">{item.desc}</p>
+                </div>
                 
                 {item.title === 'Proven Tools & Industry Standards' && (
-                  <div className="flex flex-wrap gap-4 pt-4 border-t border-white/5">
+                  <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/5">
                     {[
                       { name: 'PCI-DSS', id: 'pcidss', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
                       { name: 'ISO 27001', id: 'iso27001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311' },
-                      { name: 'SOC 3', id: 'soc3', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' }
+                      { name: 'SOC 2 Type II', id: 'soc2', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' }
                     ].map((cert) => (
                       <Link 
                         key={cert.id}
@@ -278,6 +282,14 @@ export default function ManagedSOC() {
                         />
                       </Link>
                     ))}
+                    {/* HIPAA badge */}
+                    <div className="h-10 px-3 bg-white/5 border border-white/10 hover:border-red-500/30 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all select-none">
+                      <span className="text-[10px] font-black tracking-widest text-red-500 uppercase font-mono">HIPAA</span>
+                    </div>
+                    {/* DTAP badge */}
+                    <div className="h-10 px-3 bg-white/5 border border-white/10 hover:border-red-500/30 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all select-none">
+                      <span className="text-[10px] font-black tracking-widest text-red-500 uppercase font-mono">DTAP</span>
+                    </div>
                   </div>
                 )}
               </div>
@@ -309,19 +321,19 @@ export default function ManagedSOC() {
               </div>
 
               <h2 className="text-4xl lg:text-7xl font-black mb-8 tracking-tighter uppercase leading-[0.9]">
-                Security is a <br />
+                Security Beyond <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-600 to-red-800">
-                  Partnership
+                  Monitoring
                 </span>
               </h2>
 
               <p className="text-xl text-red-100/60 font-medium leading-relaxed mb-12 max-w-2xl mx-auto">
-                We don’t just detect threats. We respond, collaborate, and continuously improve your security posture. With TIM, you gain a responsive, reliable, and scalable security partner not just a SOC provider.
+                We don’t just detect threats. We respond, collaborate, and continuously improve your security posture. With TIM, you gain a responsive, reliable, and scalable security partner — not just a SOC provider.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-12 h-16 rounded-2xl text-lg font-bold transition-all hover:scale-105 shadow-2xl shadow-red-900/40 w-full sm:w-auto">
-                  <Link to={createPageUrl('ContactUs')}>Partner with Us</Link>
+                  <Link to={createPageUrl('ContactUs')}>Talk to a Security Expert</Link>
                 </Button>
                 <div className="flex items-center gap-3 text-red-200/40">
                   <Radar className="w-5 h-5 animate-pulse" />

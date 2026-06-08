@@ -51,9 +51,8 @@ export default function ContactUs() {
               transition={{ delay: 0.1 }}
               className="text-6xl lg:text-9xl font-black mb-8 tracking-tighter uppercase leading-[0.8]"
             >
-              Contact <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/20">
-                Command
+                Contact Us
               </span>
             </motion.h1>
             
@@ -92,7 +91,7 @@ export default function ContactUs() {
                     <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
                       <Send className="w-6 h-6 text-blue-400" />
                     </div>
-                    <h2 className="text-2xl font-black uppercase tracking-tight">Service Inquiry</h2>
+                    <h2 className="text-2xl font-black uppercase tracking-tight">Solution & Service Inquiry</h2>
                   </div>
                   <p className="text-blue-100/60 text-lg max-w-md leading-relaxed mb-8">
                     Ready to transform your digital infrastructure? Connect with our architects for a tailored solution proposal.

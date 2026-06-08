@@ -3,6 +3,55 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/Avant.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/AvantGarde Demi.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/AvantGarde Demi.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/AvantGarde Demi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/AvantGarde Demi.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/AvantGarde Demi.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/AvantGarde Demi.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -37,7 +86,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --font-avantgarde: "AvantGarde Md BT", "ITC Avant Garde Gothic", "Questrial", sans-serif;
+  --font-avantgarde: "AvantGarde", "AvantGarde Md BT", "ITC Avant Garde Gothic", "Questrial", sans-serif;
 
   @keyframes spin-slow {
     from { transform: rotate(0deg); }
@@ -169,7 +218,7 @@
 }
 
 @theme inline {
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-avantgarde);
   --font-sans: 'Geist Variable', sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -278,4 +327,17 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'AvantGarde', "AvantGarde Md BT", "ITC Avant Garde Gothic", "Questrial", sans-serif;
+  }
+}
+
+/* OPT-OUT of AvantGarde font for Intrusion, NexusGuard, and Whalebone sections */
+#intrusion-section h1, #intrusion-section h2, #intrusion-section h3, #intrusion-section h4, #intrusion-section h5, #intrusion-section h6,
+#nexusguard-section h1, #nexusguard-section h2, #nexusguard-section h3, #nexusguard-section h4, #nexusguard-section h5, #nexusguard-section h6,
+#whalebone-section h1, #whalebone-section h2, #whalebone-section h3, #whalebone-section h4, #whalebone-section h5, #whalebone-section h6 {
+  font-family: 'Geist Variable', sans-serif !important;
 }

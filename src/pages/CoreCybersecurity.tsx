@@ -148,7 +148,7 @@ export default function CoreCybersecurity() {
       </section>
 
       {/* Intrusion Section */}
-      <section ref={intrusionRef} className="py-32 bg-[#fafbff] text-[#14267f] relative overflow-hidden scroll-mt-24 border-y border-stone-200">
+      <section id="intrusion-section" ref={intrusionRef} className="py-32 bg-[#fafbff] text-[#14267f] relative overflow-hidden scroll-mt-24 border-y border-stone-200">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20"
              style={{ 
                backgroundImage: 'radial-gradient(circle at 70% 30%, #e8ecff 0%, transparent 60%)',
@@ -479,7 +479,7 @@ export default function CoreCybersecurity() {
       </section>
 
       {/* NXG / Nexusguard Section */}
-      <section ref={nxgRef} className="bg-[#fefcfb] text-[#101828] relative overflow-hidden scroll-mt-24 py-32 border-y border-stone-200">
+      <section id="nexusguard-section" ref={nxgRef} className="bg-[#fefcfb] text-[#101828] relative overflow-hidden scroll-mt-24 py-32 border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 w-full">
           {/* Top Row containing Logo and Pill / Tag */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12 pb-8 border-b border-stone-200/60">
@@ -639,7 +639,7 @@ export default function CoreCybersecurity() {
       </section>
 
       {/* Whalebone Section */}
-      <section ref={whaleboneRef} className="py-32 bg-[#f4fafb] text-[#0f172a] relative overflow-hidden scroll-mt-24 border-y border-stone-200">
+      <section id="whalebone-section" ref={whaleboneRef} className="py-32 bg-[#f4fafb] text-[#0f172a] relative overflow-hidden scroll-mt-24 border-y border-stone-200">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20"
              style={{ 
                backgroundImage: 'radial-gradient(circle at 30% 70%, #d4f0f3 0%, transparent 60%)',

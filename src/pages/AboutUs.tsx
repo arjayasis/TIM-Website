@@ -318,9 +318,9 @@ export default function AboutUs() {
             style={{ y: heroTextY, opacity: heroOpacity }}
             className="max-w-5xl"
           >
-            <h1 className="text-[clamp(4.2rem,14.4vw,10.8rem)] font-avantgarde font-black leading-[0.85] tracking-tighter mb-12 uppercase">
-              THE LEGACY OF <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">EXCELLENCE</span>
+            <h1 className="text-[clamp(2rem,7vw,5.5rem)] font-avantgarde font-black leading-[0.95] tracking-tighter mb-12 uppercase">
+              <span className="block">THE LEGACY OF</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">EXCELLENCE</span>
             </h1>
             
             <div className="grid lg:grid-cols-2 gap-12 items-end">

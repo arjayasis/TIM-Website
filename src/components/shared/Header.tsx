@@ -103,7 +103,7 @@ export default function Header({ variant = 'default', isHome = false }: HeaderPr
             alt="TIM Corporation"
             className={cn(
               "h-10 lg:h-12 transition-all duration-500",
-              !isDark && isAtTop ? "invert brightness-0" : ""
+              !isDark && isAtTop ? "brightness-0" : ""
             )}
           />
         </Link>
