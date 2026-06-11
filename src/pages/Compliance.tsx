@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { createPageUrl } from '@/utils';
 import CTASection from '@/components/tim/CTASection';
-import { Shield, CheckCircle2, Award, Server, Lock, FileCheck, Globe, Activity, Clock, Target, TrendingUp, MessageSquare, Briefcase, Users, ChevronRight, ChevronLeft, Quote, Settings, MapPin, Flag, Navigation, BookOpen, Trophy, ShieldCheck } from 'lucide-react';
+import { Shield, CheckCircle2, Award, Server, Lock, FileCheck, Globe, Activity, Clock, Target, TrendingUp, MessageSquare, Briefcase, Users, ChevronRight, ChevronLeft, Quote, Settings, MapPin, Flag, Navigation, BookOpen, Trophy, ShieldCheck, Scale } from 'lucide-react';
 
 const certifications = [
   {
@@ -92,6 +92,7 @@ const certifications = [
 import RelatedServices from '@/components/shared/RelatedServices';
 import ServiceDeliverySection from '@/components/tim/ServiceDeliverySection';
 import PMCOESection from '@/components/tim/PMCOESection';
+import GovernanceSection from '@/components/tim/GovernanceSection';
 
 export default function Compliance() {
   const location = useLocation();
@@ -99,12 +100,12 @@ export default function Compliance() {
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 500); // Small delay to ensure elements are rendered/animated
-      }
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 500);
     }
   }, [location]);
 
@@ -191,7 +192,7 @@ export default function Compliance() {
                       e.preventDefault();
                       const element = document.getElementById(cert.id);
                       if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                       }
                     }}
                     className="block transition-all duration-300 hover:scale-110"
@@ -227,74 +228,111 @@ export default function Compliance() {
         </div>
       </section>
 
-      {/* Global Standards & Security Frameworks */}
-      <section className="py-32 relative overflow-hidden">
+      {/* Governance, Risk & Compliance Framework (Merged Section) */}
+      <section id="grc-framework-root" className="py-32 relative overflow-hidden scroll-mt-32">
         {/* HUD Background Elements */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.02]" 
                style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-600/5 blur-[150px] rounded-full" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-8">
+          
+          {/* Main Title Section */}
+          <div className="text-center mb-16">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-8"
+            >
               <Shield className="w-4 h-4 text-blue-400" />
-              <span className="text-[10px] uppercase tracking-[0.4em] text-blue-400 font-black">Verified Security</span>
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-black tracking-tighter mb-6 uppercase">
-              GLOBAL STANDARDS & <br />
-              <span className="text-blue-500">SECURITY FRAMEWORKS</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.id}
-                id={cert.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-3xl p-10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-500 group relative overflow-hidden scroll-mt-32"
-              >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] group-hover:bg-blue-500/20 transition-colors duration-700" />
-                
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <cert.icon className="w-8 h-8 text-blue-400" />
-                    </div>
-                    {cert.logo && (
-                      <div className="h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm px-4 rounded-xl border border-white/10 group-hover:border-blue-500/30 transition-colors">
-                        <img 
-                          src={cert.logo} 
-                          alt={cert.name} 
-                          className="max-h-12 w-auto object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-500" 
-                          referrerPolicy="no-referrer"
-                        />
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors">{cert.title}</h3>
-                  <p className="text-blue-100/60 mb-6 font-medium leading-relaxed">
-                    {cert.desc}
-                  </p>
-                  <div className="bg-blue-900/20 border border-blue-500/20 rounded-2xl p-6 group-hover:bg-blue-900/40 transition-colors">
-                    <h4 className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-2">What it means for you</h4>
-                    <p className="text-sm text-blue-100/80 leading-relaxed">
-                      {cert.meaning}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+              <span className="text-[10px] uppercase tracking-[0.4em] text-blue-400 font-black">Governance, Risk & Compliance (GRC)</span>
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-6"
+            >
+              GOVERNANCE & <br />
+              <span className="text-blue-500 italic font-serif">STANDARDS</span>
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-lg lg:text-xl text-blue-100/60 font-medium leading-relaxed max-w-3xl mx-auto text-center"
+            >
+              Our dual-engine commitment: validating our cloud & infrastructure via elite global standard certifications while steering our organizational ethics with transparent corporate governance.
+            </motion.p>
           </div>
+
+          {/* Global Certifications & Standards Section */}
+          <div id="certifications" className="scroll-mt-32 mb-24">
+            <div className="flex items-center gap-3 mb-10 pb-4 border-b border-white/10">
+              <Award className="w-6 h-6 text-blue-400" />
+              <h3 className="text-2xl font-black uppercase tracking-wider text-white">Global Certifications & Standards</h3>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={cert.id}
+                  id={cert.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="bg-white/5 border border-white/10 rounded-3xl p-10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-500 group relative overflow-hidden scroll-mt-32"
+                >
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] group-hover:bg-blue-500/20 transition-colors duration-700" />
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <cert.icon className="w-8 h-8 text-blue-400" />
+                      </div>
+                      {cert.logo && (
+                        <div className="h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm px-4 rounded-xl border border-white/10 group-hover:border-blue-500/30 transition-colors">
+                          <img 
+                            src={cert.logo} 
+                            alt={cert.name} 
+                            className="max-h-12 w-auto object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-500" 
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors">{cert.title}</h3>
+                    <p className="text-blue-100/60 mb-6 font-medium leading-relaxed">
+                      {cert.desc}
+                    </p>
+                    <div className="bg-blue-900/20 border border-blue-500/20 rounded-2xl p-6 group-hover:bg-blue-900/40 transition-colors">
+                      <h4 className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-2">What it means for you</h4>
+                      <p className="text-sm text-blue-100/80 leading-relaxed">
+                        {cert.meaning}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Corporate Oversight & Controls Section */}
+          <div id="governance" className="scroll-mt-32 pt-12 border-t border-white/5">
+            <div className="flex items-center gap-3 mb-10 pb-4 border-b border-white/10">
+              <Scale className="w-6 h-6 text-emerald-400" />
+              <h3 className="text-2xl font-black uppercase tracking-wider text-white">Corporate Governance & Oversight</h3>
+            </div>
+
+            <GovernanceSection isMerged={true} />
+          </div>
+
         </div>
       </section>
 

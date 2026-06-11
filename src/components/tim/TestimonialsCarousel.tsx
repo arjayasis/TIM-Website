@@ -160,8 +160,8 @@ export default function TestimonialsCarousel() {
             <span className="text-xs uppercase tracking-widest text-blue-400 font-bold">Client Testimonials</span>
           </div>
           <h2 className="text-3xl lg:text-6xl font-bold text-white mb-6 tracking-tighter">
-            Trusted by <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">Industry Leaders</span>
+            What They Say 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500"> About Us</span>
           </h2>
         </motion.div>
 

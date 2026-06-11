@@ -26,8 +26,8 @@ export default function BrandStory() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 tracking-tighter leading-tight max-w-none text-slate-900">
             <span>Decades of </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">Reliability</span>
-            <span>, A Future of </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 font-extrabold">Innovation</span>
+            <span>, Relevance and </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 font-extrabold">Impact</span>
           </h2>
           
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-6 font-medium">

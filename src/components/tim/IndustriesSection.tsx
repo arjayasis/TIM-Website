@@ -78,7 +78,7 @@ export default function IndustriesSection() {
           </div>
           <h2 className="text-3xl lg:text-6xl font-bold text-[#00021a] mb-6 tracking-tighter">
             Trusted Across <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">Local Industries</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">Industries</span>
           </h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto font-medium">
             Delivering specialized ICT solutions tailored to the unique challenges of diverse industries across the Philippines.

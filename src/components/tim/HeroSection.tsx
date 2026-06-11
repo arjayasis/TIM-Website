@@ -26,7 +26,7 @@ const certifications = [
   },
   {
     id: 'bsi',
-    name: 'BSI ISO 22301',
+    name: 'ISO 22301',
     logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301%20white.png'
   },
   {

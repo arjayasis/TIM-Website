@@ -47,9 +47,8 @@ export default function CTASection() {
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-7xl font-bold text-white mb-8 tracking-tighter leading-[1] sm:leading-[0.9]">
-            Ready to <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Re-Engineer</span> <br />
-            Your Future?
+            How Can We Support<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Your Business?</span>            
           </h2>
           
           <p className="text-lg lg:text-2xl text-blue-100/40 mb-12 max-w-2xl mx-auto font-medium leading-relaxed px-4">
