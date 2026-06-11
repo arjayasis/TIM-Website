@@ -11,7 +11,7 @@ export default function ManagedOps() {
     <div className="min-h-screen bg-[#00021a] text-white">
       
       {/* Hero Section - The Vigilance Theme */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen pt-36 pb-20 flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://marketing.timcorp.net.ph/hubfs/website/operations-center.jpg"

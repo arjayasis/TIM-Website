@@ -111,7 +111,7 @@ export default function Compliance() {
   return (
     <div className="min-h-screen bg-[#00021a] text-white selection:bg-blue-500/30">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen pt-36 pb-20 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full" />
           

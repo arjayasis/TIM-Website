@@ -57,7 +57,7 @@ export default function SystemIntegration() {
     <div className="min-h-screen bg-[#00021a] text-white overflow-hidden">
       
       {/* Hero Section - The Integration Hub */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen pt-36 pb-20 flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full animate-pulse" />
