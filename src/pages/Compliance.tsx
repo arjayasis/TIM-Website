@@ -175,7 +175,7 @@ export default function Compliance() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 w-full max-w-5xl mx-auto px-6"
+              className="flex flex-row flex-nowrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 w-full max-w-7xl mx-auto px-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             >
               {certifications.map((cert, index) => (
                 <motion.div
@@ -199,7 +199,7 @@ export default function Compliance() {
                     <img
                       src={cert.logo}
                       alt={cert.name}
-                      className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       referrerPolicy="no-referrer"
                     />
                   </a>
