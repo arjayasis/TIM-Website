@@ -98,9 +98,11 @@ const services = [
 const certifications = [
   { name: 'ISO 9001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/high%20res.png?v=20260311' },
   { name: 'ISO 27001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311' },
-  { name: 'SOC 3', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
-  { name: 'ISO 22301', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso-22301.png?v=20260311' },
-  { name: 'PCI-DSS', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' }
+  { name: 'SOC 2 Type II', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
+  { name: 'ISO 22301', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301.png' },
+  { name: 'PCI-DSS', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
+  { name: 'DICT D-TAP', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png' },
+  { name: 'CSA STAR Level 1', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/CSA%20STAR%201.svg' }
 ];
 
 export default function Brochure() {

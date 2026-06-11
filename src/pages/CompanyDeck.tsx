@@ -822,11 +822,13 @@ const slides = [
         { icon: ShieldCheck, title: 'ISO 27001:2022', desc: 'Information Security Management System (ISMS)', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311' },
         { icon: Settings, title: 'ISO 20000-1:2018', desc: 'Information Technology Service Management (ITSM)', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/ISO-20000.png?v=20260311' },
         { icon: CheckCircle2, title: 'ISO 9001:2015', desc: 'Quality Management System (QMS)', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/high%20res.png?v=20260311' },
-        { icon: ShieldCheck, title: 'ISO 22301:2019', desc: 'Business Continuity Management System (BCMS)', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso-22301.png?v=20260311' },
+        { icon: ShieldCheck, title: 'ISO 22301:2019', desc: 'Business Continuity Management System (BCMS)', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301%20white.png' },
         { icon: Award, title: 'PCI-DSS v4.0', desc: 'Payment Card Industry Data Security Standard', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
         { icon: FileCheck, title: 'SOC 2 Type II', desc: 'Security, Availability, and Confidentiality Controls', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
         { icon: Shield, title: 'HIPAA Compliance', desc: 'Health Insurance Portability and Accountability Act', logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png' },
-        { icon: ShieldCheck, title: 'NPC COMPLIANT', desc: 'National Privacy Commission Compliance', logo: 'https://marketing.timcorp.net.ph/hubfs/website/npc.png' }
+        { icon: ShieldCheck, title: 'NPC COMPLIANT', desc: 'National Privacy Commission Compliance', logo: 'https://marketing.timcorp.net.ph/hubfs/website/npc.png' },
+        { icon: ShieldCheck, title: 'DICT D-TAP', desc: 'Digital Trust Assurance Program Certified by DICT', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png' },
+        { icon: ShieldCheck, title: 'CSA STAR Level 1', desc: 'Cloud Security Alliance STAR Level 1 Assessment', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/CSA%20STAR%201.svg' }
       ]
     }
   },
@@ -1216,10 +1218,7 @@ export default function CompanyDeck() {
                       key={c.title}
                       src={c.logo} 
                       alt={c.title} 
-                      className={cn(
-                        "h-6 lg:h-8 object-contain opacity-40 hover:opacity-100 transition-opacity duration-500",
-                        c.title.includes('ISO 22301') && "filter brightness-0 invert"
-                      )}
+                      className="h-6 lg:h-8 object-contain opacity-40 hover:opacity-100 transition-opacity duration-500"
                       referrerPolicy="no-referrer"
                     />
                   ))}
@@ -1610,10 +1609,7 @@ export default function CompanyDeck() {
                                 <img 
                                   src={c.logo} 
                                   alt={c.title} 
-                                  className={cn(
-                                    "h-8 lg:h-10 object-contain opacity-70 group-hover/c:opacity-100 transition-opacity",
-                                    c.title.includes('ISO 22301') && "filter brightness-0 invert"
-                                  )}
+                                  className="h-8 lg:h-10 object-contain opacity-70 group-hover/c:opacity-100 transition-opacity"
                                   referrerPolicy="no-referrer"
                                 />
                               </div>

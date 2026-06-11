@@ -20,14 +20,14 @@ const certifications = [
     logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311'
   },
   {
-    id: 'soc3',
-    name: 'AICPA SOC 3',
+    id: 'soc2',
+    name: 'SOC 2 Type II',
     logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311'
   },
   {
     id: 'bsi',
-    name: 'BSI Certified',
-    logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso-22301.png?v=20260311'
+    name: 'BSI ISO 22301',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301%20white.png'
   },
   {
     id: 'pcidss',
@@ -43,6 +43,16 @@ const certifications = [
     id: 'hipaa',
     name: 'HIPAA Compliant',
     logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png'
+  },
+  {
+    id: 'dict-dtap',
+    name: 'DICT D-TAP',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png'
+  },
+  {
+    id: 'csa-star-1',
+    name: 'CSA STAR Level 1',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/CSA%20STAR%201.svg'
   }
 ];
 
@@ -140,7 +150,7 @@ export default function HeroSection() {
                   <img 
                     src={cert.logo} 
                     alt={cert.name} 
-                    className={`h-10 lg:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-110 ${cert.id === 'bsi' ? 'brightness-100 invert' : ''}`}
+                    className="h-10 lg:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
                 </Link>

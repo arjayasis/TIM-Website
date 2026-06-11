@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { createPageUrl } from '@/utils';
 import CTASection from '@/components/tim/CTASection';
-import { Shield, CheckCircle2, Award, Server, Lock, FileCheck, Globe, Activity, Clock, Target, TrendingUp, MessageSquare, Briefcase, Users, ChevronRight, ChevronLeft, Quote, Settings, MapPin, Flag, Navigation, BookOpen, Trophy } from 'lucide-react';
+import { Shield, CheckCircle2, Award, Server, Lock, FileCheck, Globe, Activity, Clock, Target, TrendingUp, MessageSquare, Briefcase, Users, ChevronRight, ChevronLeft, Quote, Settings, MapPin, Flag, Navigation, BookOpen, Trophy, ShieldCheck } from 'lucide-react';
 
 const certifications = [
   {
@@ -25,12 +25,12 @@ const certifications = [
     icon: Lock
   },
   {
-    id: 'soc3',
-    name: 'SOC 3',
-    title: 'AICPA SOC 3',
+    id: 'soc2',
+    name: 'SOC 2 Type II',
+    title: 'SOC 2 Type II: Security, Availability, & Confidentiality Controls',
     logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311',
-    desc: "SOC 3 reports are designed for users who need confidence in a service organization's controls but do not need the detailed information found in a SOC 2 report. It is a public-facing report that provides a high-level summary of the organization's security, availability, and privacy.",
-    meaning: 'The SOC 3 report provides a publicly available summary of our internal controls, offering transparency and assurance to our clients and partners. It confirms that our systems meet the highest standards for security and reliability without exposing sensitive operational details.',
+    desc: "The SOC 2 Type II report is an independent audit that evaluates a service organization's controls over a sustained evaluation period (ranging from 6 to 12 months). Conducted by an independent CPA firm in accordance with the AICPA standard, it verifies our operational readiness and consistent execution of security controls.",
+    meaning: 'This represents our verified, day-to-day enforcement of rigorous security boundaries. Unlike a point-in-time assessment, our SOC 2 Type II attestation guarantees to your auditors, compliance officers, and leadership that our corporate security policies are deeply integrated into our daily workflows and reliably managed.',
     icon: FileCheck
   },
   {
@@ -46,7 +46,7 @@ const certifications = [
     id: 'iso22301',
     name: 'ISO 22301',
     title: 'ISO 22301: Business Continuity Management',
-    logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso-22301.png?v=20260311',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301%20white.png',
     desc: 'ISO 22301 is the international standard for Business Continuity Management Systems (BCMS). It helps organizations prepare for, respond to, and recover from disruptive incidents.',
     meaning: 'Your operations are safeguarded against unexpected disruptions. This certification ensures we have robust plans in place to maintain critical functions and quickly restore services during any crisis.',
     icon: Activity
@@ -68,6 +68,24 @@ const certifications = [
     desc: 'As a pioneered ICT leader in the Philippines, our alignment with HIPAA standards is critical for local businesses serving the global healthcare market (such as Medical BPOs, Telehealth providers, and Revenue Cycle Management firms).',
     meaning: 'Our "HIPAA-ready" infrastructure ensures that your operations meet the strict Administrative, Physical, and Technical safeguards required to handle Protected Health Information (PHI). By partnering with us, you eliminate the risk of massive federal fines and reputational damage, allowing you to confidently manage healthcare data for international clients while staying compliant with both U.S. laws and the Philippine Data Privacy Act.',
     icon: Activity
+  },
+  {
+    id: 'dict-dtap',
+    name: 'DICT D-TAP',
+    title: 'DICT D-TAP Certified',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png',
+    desc: 'The Digital Trust Assurance Program (D-TAP) by the Department of Information and Communications Technology (DICT) evaluates and verifies digital service providers in the Philippines for their excellence, data privacy, security, and operational standards.',
+    meaning: 'By achieving D-TAP recognition, we are formally recognized by the Philippine government as a trusted digital partner. This assures our local public and private sector clients that our processes, data handling, and infrastructure adhere to local regulatory requirements and meet the stringent national trust, safety, and resilience standards.',
+    icon: ShieldCheck
+  },
+  {
+    id: 'csa-star-1',
+    name: 'CSA STAR Level 1',
+    title: 'CSA STAR Level 1 Assessment',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/CSA%20STAR%201.svg',
+    desc: 'The Cloud Security Alliance (CSA) Security Trust Assurance and Risk (STAR) Level 1 is an internationally recognized cloud security certification that involves a rigorous self-assessment of cloud providers against the CSA Cloud Controls Matrix (CCM). It verifies that cloud offerings are secure, compliant, and operate with maximum transparency.',
+    meaning: 'This certification directly applies to our TIM Cloud offerings. It guarantees to our clients that our cloud security architecture has been fully evaluated against top industry best practices, giving you complete visibility and absolute trust in how your workloads are hosted, monitored, and protected in the cloud.',
+    icon: Server
   }
 ];
 
@@ -181,7 +199,7 @@ export default function Compliance() {
                     <img
                       src={cert.logo}
                       alt={cert.name}
-                      className={`h-10 sm:h-12 lg:h-14 w-auto object-contain ${cert.name === 'ISO 22301' ? 'filter brightness-0 invert' : ''}`}
+                      className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
                       referrerPolicy="no-referrer"
                     />
                   </a>
@@ -257,7 +275,7 @@ export default function Compliance() {
                         <img 
                           src={cert.logo} 
                           alt={cert.name} 
-                          className={`max-h-12 w-auto object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-500 ${cert.name === 'ISO 22301' ? 'filter brightness-0 invert' : ''}`} 
+                          className="max-h-12 w-auto object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-500" 
                           referrerPolicy="no-referrer"
                         />
                       </div>
