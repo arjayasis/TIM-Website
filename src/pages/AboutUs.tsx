@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
 import CTASection from '@/components/tim/CTASection';
@@ -280,6 +280,19 @@ export default function AboutUs() {
   });
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 500);
+    }
+  }, [location]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -434,7 +447,7 @@ export default function AboutUs() {
       </section>
 
       {/* Milestones - Light Mode Horizontal Timeline */}
-      <section className="relative py-24 sm:py-32 bg-white overflow-hidden border-t border-slate-100">
+      <section id="milestones" className="relative py-24 sm:py-32 bg-white overflow-hidden border-t border-slate-100 scroll-mt-24">
         <div className="absolute inset-0 z-0 opacity-15 bg-[radial-gradient(#3b82f6_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none" />
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-16 z-10">
