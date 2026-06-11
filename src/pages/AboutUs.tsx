@@ -582,8 +582,8 @@ export default function AboutUs() {
             >
               <div className="text-xs uppercase tracking-[0.5em] text-blue-500 font-black mb-8">Leadership</div>
               <h2 className="text-5xl lg:text-8xl font-black tracking-tighter leading-none mb-8">
-                THE <br />
-                <span className="text-blue-500">ARCHITECTS</span>
+                TIM
+                <span className="text-blue-500"> LEADERSHIP</span>
               </h2>
               <p className="text-xl text-blue-100/40 font-medium leading-snug max-w-2xl">
                 The strategic minds guiding TIM into the next era of enterprise computing.
