@@ -114,20 +114,20 @@ export default function ExcellenceSection() {
                 </div>
                 
                 <h3 className="text-xl lg:text-2xl font-black mb-4 uppercase tracking-tight text-white">
-                  Corporate <br />
-                  <span className="text-emerald-400">Governance</span>
+                  Corporate Governance <br />
+                  <span className="text-emerald-400">& Resiliency</span>
                 </h3>
                 
                 <p className="text-sm sm:text-base text-blue-100/70 mb-6 font-semibold leading-relaxed">
-                  A rigorous framework overseeing our operational ethics, systematic risk identification, and strict adherence to the Philippines Data Privacy Act under the National Privacy Commission.
+                  Our Corporate Governance & Resiliency framework ensures we uphold the highest standards of integrity, accountability, and transparency, driven directly by our dedicated in-house GRC team.
                 </p>
                 
                 <div className="space-y-3.5 mb-8">
                   {[
-                    'NPC Data Privacy compliance',
-                    'COBIT® & NIST aligned controls',
-                    'Enterprise Risk Management',
-                    'Whistleblowing retaliatory protection'
+                    'Dedicated In-House GRC Team Oversight',
+                    'Strategic Business Continuity & Disaster Recovery',
+                    'Rigorous Standards & Regulatory Alignment',
+                    'Proven Technology & Information Resilience'
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 text-xs sm:text-sm text-blue-100/80 font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
