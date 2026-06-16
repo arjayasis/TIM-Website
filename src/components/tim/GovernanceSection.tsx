@@ -269,7 +269,7 @@ export default function GovernanceSection({ isMerged = false }: GovernanceSectio
   const renderContent = () => (
     <div className="space-y-16">
       {/* Main Sequential Document Stream (Unified standard layout) */}
-      <div className="space-y-10">
+      <div className="space-y-14">
         {governanceDocument.map((sec) => {
           const SecIcon = sec.icon;
           return (
@@ -306,7 +306,7 @@ export default function GovernanceSection({ isMerged = false }: GovernanceSectio
               </p>
 
               {/* Dynamic structured content stream */}
-              <div className="space-y-5 relative z-10 max-w-4xl">
+              <div className="space-y-5 relative z-10 w-full">
                 {sec.content.map((block, idx) => {
                   if (block.type === 'paragraph') {
                     return (
@@ -341,34 +341,36 @@ export default function GovernanceSection({ isMerged = false }: GovernanceSectio
               </div>
 
               {sec.id === 'standards-alignment' && (
-                <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
                   {certifications.map((cert) => (
                     <div
                       key={cert.id}
                       id={cert.id}
-                      className="bg-white/[0.01] border border-white/5 rounded-3xl p-8 hover:border-blue-500/30 hover:bg-white/[0.03] transition-all duration-300 group relative overflow-hidden"
+                      className="bg-white/[0.01] border border-white/5 rounded-3xl p-6 sm:p-8 hover:border-blue-500/30 hover:bg-white/[0.03] transition-all duration-300 group relative overflow-hidden flex flex-col justify-between"
                     >
                       <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-                      <div className="flex items-center justify-between mb-6 relative z-10">
-                        <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center">
-                          <cert.icon className="w-6 h-6 text-blue-400" />
-                        </div>
-                        {cert.logo && (
-                          <div className="h-12 flex items-center justify-center bg-white/5 backdrop-blur-sm px-3 rounded-lg border border-white/5">
-                            <img 
-                              src={cert.logo} 
-                              alt={cert.name} 
-                              className="max-h-8 w-auto object-contain" 
-                              referrerPolicy="no-referrer"
-                            />
+                      <div>
+                        <div className="flex items-center justify-between mb-6 relative z-10 gap-4">
+                          <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center shrink-0">
+                            <cert.icon className="w-6 h-6 text-blue-400" />
                           </div>
-                        )}
+                          {cert.logo && (
+                            <div className="h-12 flex items-center justify-center bg-white/5 backdrop-blur-sm px-3 rounded-lg border border-white/5 max-w-[140px]">
+                              <img 
+                                src={cert.logo} 
+                                alt={cert.name} 
+                                className="max-h-8 w-auto object-contain" 
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                          )}
+                        </div>
+                        <h4 className="text-base font-bold text-white mb-2 relative z-10">{cert.title}</h4>
+                        <p className="text-xs text-blue-100/65 mb-6 font-semibold leading-relaxed relative z-10">
+                          {cert.desc}
+                        </p>
                       </div>
-                      <h4 className="text-base font-bold text-white mb-2 relative z-10">{cert.title}</h4>
-                      <p className="text-xs text-blue-100/65 mb-4 font-semibold leading-relaxed relative z-10">
-                        {cert.desc}
-                      </p>
-                      <div className="bg-blue-950/20 border border-blue-500/10 rounded-xl p-4 relative z-10">
+                      <div className="bg-blue-950/20 border border-blue-500/10 rounded-xl p-4 relative z-10 mt-auto">
                         <h5 className="text-[10px] uppercase tracking-wider text-blue-400 font-bold mb-1">What it means for you</h5>
                         <p className="text-xs text-blue-100/85 leading-relaxed">
                           {cert.meaning}
@@ -389,7 +391,7 @@ export default function GovernanceSection({ isMerged = false }: GovernanceSectio
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-20 p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-r from-blue-950/45 to-indigo-950/35 border border-blue-500/15 relative overflow-hidden"
+        className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-r from-blue-950/45 to-indigo-950/35 border border-blue-500/15 relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
         
