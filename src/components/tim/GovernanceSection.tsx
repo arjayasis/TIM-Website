@@ -68,7 +68,7 @@ const governanceDocument = [
   {
     id: 'grc-team',
     number: '02',
-    title: 'A Dedicated Governance, Risk and Compliance (GRC) Team',
+    title: 'A Dedicated Governance, Risk, Compliance & Information Security (GRCIS) Team',
     subtitle: 'Specialized Oversight & Guidance Office',
     icon: ShieldCheck,
     content: [
@@ -453,8 +453,8 @@ export default function GovernanceSection({ isMerged = false }: GovernanceSectio
                 viewport={{ once: true }}
                 className="text-4xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.9] mb-4 text-white"
               >
-                CORPORATE <br />
-                <span className="text-blue-500 italic font-serif">GOVERNANCE</span>
+                CORPORATE GOVERNANCE<br />
+                <span className="text-blue-500 italic font-serif">& RESILIENCY</span>
               </motion.h2>
               <div className="w-24 h-1 bg-blue-600 rounded-full my-6 mx-auto lg:mx-0" />
             </div>

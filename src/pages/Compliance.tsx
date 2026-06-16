@@ -165,7 +165,7 @@ export default function Compliance() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 mb-8"
             >
               <Shield className="w-4 h-4 text-blue-400" />
-              <span className="text-[10px] uppercase tracking-[0.4em] text-blue-400 font-black">Governance, Risk & Compliance (GRC)</span>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-blue-400 font-black">Governance, Risk, Compliance & Information Security</span>
             </motion.div>
             
             <motion.h2 
@@ -174,8 +174,8 @@ export default function Compliance() {
               viewport={{ once: true }}
               className="text-4xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-6"
             >
-              GOVERNANCE & <br />
-              <span className="text-blue-500 italic font-serif">STANDARDS</span>
+              GOVERNANCE &<br />
+              <span className="text-blue-500 italic font-serif">RESILIENCY</span>
             </motion.h2>
             
             <motion.p
@@ -184,7 +184,7 @@ export default function Compliance() {
               viewport={{ once: true }}
               className="text-lg lg:text-xl text-blue-100/60 font-medium leading-relaxed max-w-3xl mx-auto text-center"
             >
-              Our dual-engine commitment: validating our cloud & infrastructure via elite global standard certifications while steering our organizational ethics with transparent corporate governance.
+              Our dual-engine commitment: ensuring our technologies, cloud, infrastructure, and services meet global standards and compliance benchmarks, while reinforcing organizational integrity through operational resilience and robust corporate governance.
             </motion.p>
           </div>
 
