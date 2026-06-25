@@ -248,10 +248,10 @@ export default function Brochure() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">TECHNOLOGY <br /> PARTNER</span>
               </h3>
               <p className="text-2xl text-blue-100/60 font-medium leading-relaxed mb-8">
-                Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s most trusted business technology providers.
+                Since 1985, Total Information Management Corporation (TIM) has been helping organizations harness technology to drive growth, efficiency, and transformation.
               </p>
               <p className="text-xl text-blue-100/40 font-medium leading-relaxed">
-                What began as a supplier of IT equipment has grown into a full-service technology solutions company delivering systems integration, data center services, cloud platforms, cybersecurity, and managed IT operations.
+                Over the years, the company has grown into a leading end-to-end technology solutions partner, delivering solutions that enable businesses to adapt, innovate, and thrive in a rapidly evolving digital landscape.
               </p>
             </motion.div>
 

@@ -266,7 +266,9 @@ export default function ManagedSOC() {
                     {[
                       { name: 'PCI-DSS', id: 'pcidss', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
                       { name: 'ISO 27001', id: 'iso27001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311' },
-                      { name: 'SOC 2 Type II', id: 'soc2', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' }
+                      { name: 'SOC 2 Type II', id: 'soc2', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
+                      { name: 'HIPAA', id: 'hipaa', logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png' },
+                      { name: 'DTAP', id: 'dict-dtap', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png' }
                     ].map((cert) => (
                       <Link 
                         key={cert.id}
@@ -282,14 +284,6 @@ export default function ManagedSOC() {
                         />
                       </Link>
                     ))}
-                    {/* HIPAA badge */}
-                    <div className="h-10 px-3 bg-white/5 border border-white/10 hover:border-red-500/30 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all select-none">
-                      <span className="text-[10px] font-black tracking-widest text-red-500 uppercase font-mono">HIPAA</span>
-                    </div>
-                    {/* DTAP badge */}
-                    <div className="h-10 px-3 bg-white/5 border border-white/10 hover:border-red-500/30 hover:bg-white/10 rounded-xl flex items-center justify-center transition-all select-none">
-                      <span className="text-[10px] font-black tracking-widest text-red-500 uppercase font-mono">DTAP</span>
-                    </div>
                   </div>
                 )}
               </div>

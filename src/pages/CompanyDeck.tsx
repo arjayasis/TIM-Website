@@ -81,9 +81,9 @@ const slides = [
   {
     id: 'about',
     title: 'ABOUT TIM',
-    subtitle: 'Decades of Reliability. A Future of Innovation.',
+    subtitle: 'Decades of Innovation, Trust, and Excellence',
     content: {
-      description: 'Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers, helping organizations accelerate their digital transformation and unlock the full potential of modern IT.\n\nToday, TIM continues to deliver secure, scalable, and future-ready technology solutions that empower businesses to navigate the evolving demands of the digital economy with confidence.',
+      description: 'Since 1985, Total Information Management Corporation (TIM) has been helping organizations harness technology to drive growth, efficiency, and transformation. With decades of industry experience, TIM has earned a reputation as one of the country\'s trusted technology partners, delivering solutions that enable businesses to adapt, innovate, and thrive in a rapidly evolving digital landscape.\n\nToday, TIM continues to empower enterprises with secure, scalable, and future-ready technology solutions, helping them accelerate digital transformation, strengthen resilience, and achieve sustainable success in the digital economy.',
       stats: [
         { label: 'Founded', value: '1985' },
         { label: 'Experience', value: '40+ Yrs' },
@@ -94,12 +94,12 @@ const slides = [
   },
   {
     id: 'about-legacy',
-    title: 'THE LEGACY OF EXCELLENCE',
+    title: 'A LEGACY OF EXCELLENCE',
     subtitle: 'UNWAVERING TRUST SINCE 1985',
     content: {
       items: [
         { icon: Award, title: 'TRUSTED PARTNER', desc: 'Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers.' },
-        { icon: TrendingUp, title: 'DIGITAL ACCELERATION', desc: 'Helping organizations accelerate their digital transformation and unlock the full potential of modern IT.' },
+        { icon: TrendingUp, title: 'DIGITAL ACCELERATION', desc: 'Empowering organizations through innovative technology solutions and accelerating digital transformation.' },
         { icon: Globe, title: 'REGIONAL LEADERSHIP', desc: 'From a supplier of IT equipment to a full-service technology solutions company across the region.' }
       ]
     }

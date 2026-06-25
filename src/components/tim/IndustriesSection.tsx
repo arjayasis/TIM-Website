@@ -14,43 +14,43 @@ const industries = [
   {
     icon: Building2,
     title: 'Banking & Finance',
-    description: 'Secure compliant IT infrastructure, fraud mitigation, and high-availability systems for financial institutions.',
+    description: 'Delivering secure and regulatory-compliant technology infrastructures, robust fraud mitigation controls, and mission-critical high-availability platforms for the financial services sector.',
     image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=600&h=400&fit=crop&v=20260311'
   },
   {
     icon: HeartPulse,
     title: 'Healthcare',
-    description: 'Secure patient data management, cloud storage solutions, and high-performance telemedicine networks.',
+    description: 'Secure patient data management, scalable cloud solutions, and reliable telemedicine infrastructure designed to support seamless healthcare delivery and regulatory compliance.',
     image: 'https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80&w=1374&auto=format&fit=crop&v=20260311'
   },
   {
     icon: Briefcase,
     title: 'Professional Services',
-    description: 'End-to-end integration, AI automation, and cloud modernization for service-oriented businesses.',
+    description: 'Accelerate business growth with seamless system integration, AI-powered automation, and cloud modernization solutions tailored for service-driven organizations.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&v=20260311'
   },
   {
     icon: Factory,
     title: 'Manufacturing',
-    description: 'OT & IT integration for smarter production and comprehensive industrial environment security.',
+    description: 'Bridging operational technology (OT) and IT systems to optimize production, improve efficiency, and strengthen industrial security.',
     image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&h=400&fit=crop&v=20260311'
   },
   {
     icon: Radio,
     title: 'Telecommunications',
-    description: 'High-capacity backbone infrastructure, global connectivity, and advanced cybersecurity operations.',
+    description: 'Powering global communications with high-capacity network infrastructure, seamless connectivity, and advanced cybersecurity solutions for resilient, always-on operations.',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&v=20260311'
   },
   {
     icon: Film,
     title: 'Media & Entertainment',
-    description: 'Scalable asset storage, low-latency streaming infrastructure, and digital platform protection.',
+    description: 'Empowering digital media organizations with scalable content storage, low-latency streaming infrastructure, and robust platform security to deliver exceptional audience experiences.',
     image: 'https://marketing.timcorp.net.ph/hubfs/website/modern-television-broadcasting-movie-wide-screen-generative-ai.jpg?v=20260311'
   },
   {
     icon: Landmark,
     title: 'Utilities & Public Services',
-    description: 'Highly available systems for critical infrastructure and secure operation data management.',
+    description: 'Supporting critical infrastructure with highly available systems, secure operational data management, and resilient technology solutions that ensure continuous service delivery.',
     image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop&v=20260311'
   }
 ];

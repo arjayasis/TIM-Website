@@ -340,13 +340,13 @@ export default function AboutUs() {
             className="max-w-5xl"
           >
             <h1 className="text-[clamp(2rem,7vw,5.5rem)] font-avantgarde font-black leading-[0.95] tracking-tighter mb-12 uppercase">
-              <span className="block">THE LEGACY OF</span>
+              <span className="block">A LEGACY OF</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">EXCELLENCE</span>
             </h1>
             
             <div className="grid lg:grid-cols-2 gap-12 items-end">
               <p className="text-xl lg:text-3xl text-blue-100/60 leading-tight font-medium tracking-tight">
-                Empowering organizations to accelerate digital transformation and maximize the value of modern IT solutions since 1985.
+                Empowering organizations through innovative technology solutions and accelerating digital transformation since 1985.
               </p>
               <div className="flex gap-4 lg:justify-end">
                 <div className="h-px w-24 bg-blue-500/50 self-center hidden lg:block" />
@@ -393,7 +393,7 @@ export default function AboutUs() {
                 </h2>
 
                 <p className="text-lg sm:text-xl text-slate-400 leading-relaxed font-medium max-w-md">
-                  Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology partners.
+                  Since 1985, Total Information Management Corporation (TIM) has been helping organizations harness technology to drive growth, efficiency, and transformation.
                 </p>
 
                 <div className="hidden lg:block pt-12">
@@ -412,7 +412,7 @@ export default function AboutUs() {
               >
                 <h3 className="text-2xl font-bold text-white tracking-tight">The Inception</h3>
                 <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed">
-                  Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers, helping organizations accelerate their digital transformation and unlock the full potential of modern IT. What began as a supplier of IT equipment and peripherals has grown into a full-service technology solutions company delivering systems integration, data center services, cloud platforms, cybersecurity, and managed IT operations.
+                  Founded in 1985, Total Information Management Corporation (TIM) has grown alongside the evolution of technology, transforming from a trusted IT equipment provider into a leading end-to-end technology solutions partner. What began as a supplier of IT hardware and peripherals has evolved into a full-service technology company delivering systems integration, cloud solutions, data center infrastructure, cybersecurity, and managed services. For over four decades, TIM has helped organizations embrace innovation, modernize operations, and unlock the full potential of digital transformation.
                 </p>
               </motion.div>
 
@@ -425,7 +425,7 @@ export default function AboutUs() {
               >
                 <h3 className="text-2xl font-bold text-white tracking-tight">The Evolution</h3>
                 <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed">
-                  For four decades, TIM has supported leading enterprises, financial institutions, and emerging businesses with reliable infrastructure and strategic technology expertise. Its solutions help organizations modernize their IT environments, strengthen data protection, and operate resilient digital platforms in an increasingly connected world.
+                  As technology advanced, so did TIM's capabilities. Over the years, the company has become a trusted partner to leading enterprises, financial institutions, government agencies, and growing businesses. Through reliable infrastructure, strategic technology expertise, and industry-leading solutions, TIM has enabled organizations to modernize IT environments, strengthen cybersecurity, protect critical data, and build resilient digital platforms that support long-term growth and operational excellence.
                 </p>
               </motion.div>
 
@@ -438,7 +438,7 @@ export default function AboutUs() {
               >
                 <h3 className="text-2xl font-bold text-white tracking-tight">The Future</h3>
                 <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed">
-                  Today, TIM continues to deliver secure, scalable, and future-ready technology solutions that empower businesses to accelerate digital transformation and unlock the full potential of modern IT.
+                  Today, TIM continues to empower businesses with secure, scalable, and future-ready technology solutions designed for a rapidly evolving digital world. By combining deep industry expertise with innovative technologies, TIM helps organizations accelerate transformation, enhance resilience, drive operational efficiency, and realize the full value of modern IT. Committed to innovation and customer success, TIM remains focused on shaping the future of business through technology.
                 </p>
               </motion.div>
             </div>

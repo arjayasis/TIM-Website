@@ -60,9 +60,9 @@ const slides = [
   {
     id: 'legacy',
     title: 'OUR LEGACY',
-    subtitle: 'DECADES OF RELIABILITY',
+    subtitle: 'DECADES OF INNOVATION, TRUST, AND EXCELLENCE',
     content: {
-      description: 'Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers.',
+      description: 'Since 1985, Total Information Management Corporation (TIM) has been helping organizations harness technology to drive growth, efficiency, and transformation.',
       items: [
         { icon: Award, title: '1985', desc: 'Founded as ICT Pioneer' },
         { icon: Server, title: '1994', desc: 'Pioneered Commercial Data Center Services' },

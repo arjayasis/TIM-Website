@@ -28,17 +28,17 @@ export default function BrandStory() {
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 tracking-tighter leading-tight max-w-none text-slate-900">
             <span>Decades of </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">Reliability</span>
-            <span>, Relevance and </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 font-extrabold">Impact</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">Innovation</span>
+            <span>, Trust, and </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 font-extrabold">Excellence</span>
           </h2>
           
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-6 font-medium">
-            Founded in 1985, Total Information Management Corporation (TIM) has evolved into one of the country’s trusted business technology providers, helping organizations accelerate their digital transformation and unlock the full potential of modern IT.
+            Since 1985, Total Information Management Corporation (TIM) has been helping organizations harness technology to drive growth, efficiency, and transformation. With decades of industry experience, TIM has earned a reputation as one of the country's trusted technology partners, delivering solutions that enable businesses to adapt, innovate, and thrive in a rapidly evolving digital landscape.
           </p>
           
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium">
-            Today, TIM continues to deliver secure, scalable, and future-ready technology solutions that empower businesses to navigate the evolving demands of the digital economy with confidence.
+            Today, TIM continues to empower enterprises with secure, scalable, and future-ready technology solutions, helping them accelerate digital transformation, strengthen resilience, and achieve sustainable success in the digital economy.
           </p>
         </motion.div>
 
