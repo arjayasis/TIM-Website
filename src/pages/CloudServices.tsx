@@ -107,7 +107,7 @@ export default function CloudServices() {
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
-              Fully managed local cloud infrastructure designed for security, scalability, and compliance. Keep your application payloads running fast with data residency verified strictly within the Philippines.
+              Scale with confidence, meet regulatory requirements, and ensure data sovereignty with secure, high-performance cloud infrastructure hosted and managed entirely within the Philippines.
             </p>
 
             {/* CTAs */}

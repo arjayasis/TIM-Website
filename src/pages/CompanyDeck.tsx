@@ -478,7 +478,7 @@ const slides = [
     subtitle: 'AGILITY MEETS GLOBAL REACH',
     content: {
       icon: Globe,
-      tagline: 'Eliminate latency and high CAPEX with TIM’s agile backbone. Global Network Services (GNS) provide the speed mission-critical applications demand.',
+      tagline: 'Expand globally with confidence through high-performance network services that improve application responsiveness, enhance productivity, and enable seamless business operations across borders.',
       stats: [
         { label: 'Nodes', value: '5 Major' },
         { label: 'Backbone', value: 'AS#135423' },

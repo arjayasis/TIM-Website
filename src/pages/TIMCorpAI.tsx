@@ -205,10 +205,7 @@ export default function TIMCorpAI() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-[2.8rem] sm:text-[3.5rem] lg:text-[4.8rem] font-black mb-8 leading-[0.95] tracking-tighter uppercase font-sans text-[#0a194f]"
               >
-                ENTERPRISE AI.<br />
-                <span className="text-[#c1122a]">
-                  PRACTICALLY APPLIED.
-                </span>
+                ENTERPRISE AI
               </motion.h1>
               
               <motion.p 
@@ -217,7 +214,7 @@ export default function TIMCorpAI() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-600 leading-relaxed mb-10 max-w-2xl font-medium"
               >
-                TIM enables organizations to deploy enterprise AI solutions that improve operational efficiency, accelerate decision-making, and simplify complex workflows. Hosted inside secure, sovereign networks with local physical residency.
+                Unlock greater efficiency, faster insights, and smarter operations with enterprise AI solutions designed to automate workflows, enhance decision-making, and drive sustainable business growth—all within a secure sovereign infrastructure, locally hosted environment.
               </motion.p>
 
               <motion.div 

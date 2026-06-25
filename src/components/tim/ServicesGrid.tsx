@@ -41,7 +41,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: 'End-to-End Cybersecurity',
-    description: 'Comprehensive security protecting applications, data, and infrastructure against digital threats.',
+    description: 'Protect your business, minimize risk, and maintain operational continuity with comprehensive cybersecurity solutions that safeguard your applications, data, and infrastructure from evolving threats.',
     color: 'from-blue-500 to-blue-700',
     links: [
       { name: 'NIST Framework', url: '/Cybersecurity' },
@@ -94,7 +94,7 @@ export default function ServicesGrid() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">ICT Solutions</span>
           </h2>
           <p className="text-xl text-blue-100/40 max-w-2xl mx-auto font-medium">
-            Comprehensive technology services designed to transform and protect your business operations in the digital age.
+            Drive growth, improve operational efficiency, and reduce business risk with comprehensive ICT solutions designed to support your organization's evolving digital needs.
           </p>
         </motion.div>
 

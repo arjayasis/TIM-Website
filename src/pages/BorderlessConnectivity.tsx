@@ -151,7 +151,7 @@ export default function BorderlessConnectivity() {
               </h1>
               
               <p className="text-xl text-slate-500 mb-12 max-w-xl font-medium leading-relaxed">
-                Eliminate latency and high CAPEX with TIM's agile backbone. Global Network Services (GNS) provide the speed mission-critical applications demand.
+                Expand globally with confidence through high-performance network services that improve application responsiveness, enhance productivity, and enable seamless business operations across borders.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6">

@@ -141,7 +141,7 @@ export default function SystemIntegration() {
             </h1>
             
             <p className="text-xl lg:text-2xl text-blue-100/70 leading-relaxed mb-12 max-w-3xl mx-auto font-medium">
-              Unified, Optimized, and Architected for the Next Decade. TIM's Systems Integration bridges the gap between legacy hardware and modern cloud platforms.
+              Modernize with confidence through integrated infrastructure that connects legacy investments with next-generation technologies, improving performance, scalability, and long-term business agility.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -170,10 +170,10 @@ export default function SystemIntegration() {
                 <span className="text-xs uppercase tracking-widest text-blue-600 font-bold">The Blueprint</span>
               </div>
               <h2 className="text-3xl lg:text-6xl font-bold mb-8 leading-[0.9] tracking-tighter">
-                COHESIVE <br /> ARCHITECTURE.
+                COHESIVE <br /> ARCHITECTURE
               </h2>
               <p className="text-xl text-gray-500 font-medium mb-12 leading-relaxed">
-                We design and implement cohesive architectures that eliminate data silos, streamline workflows, and ensure your entire IT environment works in perfect harmony.
+                Unify your systems, data, and processes to improve operational efficiency, accelerate decision-making, and maximize the value of your technology investments.
               </p>
               
               <div className="space-y-6">
