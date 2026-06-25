@@ -346,7 +346,7 @@ export default function AboutUs() {
             
             <div className="grid lg:grid-cols-2 gap-12 items-end">
               <p className="text-xl lg:text-3xl text-blue-100/60 leading-tight font-medium tracking-tight">
-                Helping organizations accelerate their digital transformation and unlock the full potential of modern IT since 1985.
+                Empowering organizations to accelerate digital transformation and maximize the value of modern IT solutions since 1985.
               </p>
               <div className="flex gap-4 lg:justify-end">
                 <div className="h-px w-24 bg-blue-500/50 self-center hidden lg:block" />

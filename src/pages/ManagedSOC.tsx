@@ -82,7 +82,7 @@ export default function ManagedSOC() {
               </h1>
               
               <p className="text-lg text-red-100/60 mb-12 max-w-xl font-medium leading-relaxed">
-                TIM Managed Security Operations Center (MSOC) provides 24/7 monitoring, threat detection, and rapid incident response through a locally operated SOC — helping organizations stay protected before threats disrupt operations.
+                TIM Managed Security Operations Center (MSOC) delivers 24/7 security monitoring, advanced threat detection, and rapid incident response through a locally operated Security Operations Center (SOC), helping organizations proactively defend against cyber threats before they impact business operations.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6">
@@ -163,10 +163,10 @@ export default function ManagedSOC() {
               </h2>
               <div className="space-y-6 text-red-100/60 font-medium leading-relaxed text-lg">
                 <p>
-                  TIM Managed SOC acts as an extension of your internal IT and security teams — delivering 24/7 monitoring, threat detection, and rapid incident response through a dedicated team of security analysts.
+                  TIM Managed SOC acts as your trusted cybersecurity partner, seamlessly augmenting your IT and security teams with 24/7 monitoring, intelligent threat detection, and swift incident response.
                 </p>
                 <p>
-                  From early threat detection to full incident containment, we provide end-to-end security operations that help organizations reduce risk, maintain business continuity, and stay continuously protected.
+                  Our dedicated analysts manage the entire security lifecycle—from detecting threats before they escalate to containing incidents and restoring normal operations—helping your organization stay resilient, secure, and focused on business growth.
                 </p>
               </div>
             </motion.div>
@@ -242,7 +242,7 @@ export default function ManagedSOC() {
                 With <span className="text-red-500">TIM MSOC?</span>
               </h2>
               <p className="text-red-100/40 font-medium text-lg leading-relaxed max-w-3xl">
-                TIM MSOC combines advanced security technologies, experienced analysts, and 24/7 monitoring to help organizations detect threats faster, respond rapidly, and strengthen their overall security posture.
+                TIM MSOC provides around-the-clock security operations powered by cutting-edge technologies and a dedicated team of cybersecurity experts. With proactive threat monitoring, swift incident response, and continuous security oversight, we help organizations stay ahead of cyber threats, minimize operational disruption, and strengthen their overall cyber resilience.
               </p>
             </div>
           </div>

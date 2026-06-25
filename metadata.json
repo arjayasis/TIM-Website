@@ -1,5 +1,6 @@
 {
   "name": "TIM Corp",
   "description": "A professional corporate website for TIM Corp featuring managed operations, cybersecurity, cloud services, and AI solutions.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
