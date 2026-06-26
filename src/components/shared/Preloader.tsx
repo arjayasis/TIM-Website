@@ -75,7 +75,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         >
           <video
             ref={videoRef}
-            src="https://marketing.timcorp.net.ph/hubfs/website/logo%20animation_1.mp4"
+            src="https://marketing.timcorp.net.ph/hubfs/website/logo%20animation_website.mp4"
             className="w-full h-full object-cover"
             onEnded={handleVideoEnd}
             muted

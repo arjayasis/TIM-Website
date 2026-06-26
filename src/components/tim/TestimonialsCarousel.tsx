@@ -217,13 +217,26 @@ export default function TestimonialsCarousel() {
                       </div>
                       
                       {testimonials[currentIndex].logo && (
-                        <div className="h-12 sm:h-16 flex items-center lg:justify-end">
-                          <img
-                            src={testimonials[currentIndex].logo}
-                            alt={testimonials[currentIndex].company}
-                            className="max-h-8 sm:max-h-12 w-auto object-contain brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-500"
-                            referrerPolicy="no-referrer"
-                          />
+                        <div className="flex items-center lg:justify-end">
+                          <div 
+                            className={`w-32 sm:w-44 h-12 sm:h-16 flex items-center justify-center bg-white rounded-2xl shadow-sm transition-all duration-500 ${
+                              testimonials[currentIndex].company === 'HGC' || testimonials[currentIndex].company === 'Ardent' 
+                                ? 'p-1' 
+                                : 'p-2.5'
+                            }`}
+                            style={
+                              testimonials[currentIndex].company === 'HGC' || testimonials[currentIndex].company === 'Ardent'
+                                ? { transform: 'scale(1.25)' }
+                                : undefined
+                            }
+                          >
+                            <img
+                              src={testimonials[currentIndex].logo}
+                              alt={testimonials[currentIndex].company}
+                              className="max-h-full max-w-full object-contain transition-all duration-300"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
                         </div>
                       )}
                     </div>

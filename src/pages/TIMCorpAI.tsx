@@ -302,30 +302,6 @@ export default function TIMCorpAI() {
 
           </div>
 
-          {/* Hero Bottom Metrics Cards - Exactly matching the first image */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-24 pt-10 border-t border-slate-200/50">
-            {[
-              { value: '100%', title: 'DATA SOVEREIGNTY' },
-              { value: '< 50ms', title: 'SOVEREIGN LATENCY', red: true },
-              { value: 'Tier-3', title: 'PHYSICAL SECURITY' }
-            ].map((metric, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * idx + 0.3 }}
-                className="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_rgba(10,25,79,0.02)] text-left flex flex-col justify-between"
-              >
-                <div className={`text-[2.2rem] lg:text-[2.6rem] font-bold tracking-tight mb-2 leading-none ${metric.red ? 'text-[#c1122a]' : 'text-[#0a194f]'}`}>
-                  {metric.value}
-                </div>
-                <div className="text-[10px] uppercase tracking-wider text-slate-400 font-extrabold">
-                  {metric.title}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
         </div>
       </section>
 
@@ -1133,9 +1109,9 @@ export default function TIMCorpAI() {
                 Governances & Hardware Core
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a194f] leading-tight uppercase">
-                A FILIPINO-OWNED,
+                A SECURE AND
                 <br />
-                GOVERNED FOUNDATION
+                SOVEREIGN INTELLIGENCE
               </h2>
             </div>
             <div className="lg:col-span-6 text-left">

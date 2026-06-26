@@ -890,7 +890,7 @@ const slides = [
         { name: 'Rocket', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/rocket-software-logo.png' },
         { name: 'Omnissa', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/omnissa.png' },
         { name: 'Trellix', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/trellix.png' },
-        { name: 'Westcon', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/westcon.png' },
+        { name: 'WestCon', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/westcon.png' },
         { name: 'Sangfor', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/sangfor.jpg' },
         { name: 'CRIF', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/Crif_logo.png' },
         { name: 'Archer', logo: 'https://marketing.timcorp.net.ph/hubfs/website/partners/Archer%20logo%202.webp' },
