@@ -32,8 +32,8 @@ export default function ExcellenceSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8"
           >
-            Built on <span className="text-blue-500 italic font-serif">Governance</span> & <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Service Delivery Excellence</span>
+            Driven by <span className="text-blue-500 italic font-serif">Strong Governance</span> <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">and Service Excellence</span>
           </motion.h2>
           
           <motion.p
@@ -43,7 +43,7 @@ export default function ExcellenceSection() {
             transition={{ delay: 0.2 }}
             className="text-xl text-blue-100/60 max-w-3xl mx-auto font-medium leading-relaxed"
           >
-            We combine our Project Management Center of Excellence (PMCOE) with a world-class service delivery framework to ensure your digital transformation is seamless, secure, and successful.
+            By integrating our Project Management Center of Excellence (PMCOE) with proven service delivery practices, we help organizations achieve secure, seamless, and successful digital transformation outcomes.
           </motion.p>
         </div>
 
@@ -70,7 +70,7 @@ export default function ExcellenceSection() {
                 </h3>
                 
                 <p className="text-sm sm:text-base text-blue-100/70 mb-6 font-semibold leading-relaxed">
-                  Our PMCOE drives value-focused project management across the organization, implementing standardized, scalable, and customer-centric practices that ensure strong governance and measurable outcomes.
+                  We ensure projects deliver more than milestones—they deliver business results. Through strong governance, standardized methodologies, and expert oversight, our PMCOE drives efficiency, mitigates risk, and accelerates transformation success.
                 </p>
                 
                 <div className="space-y-3.5 mb-8">

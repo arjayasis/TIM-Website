@@ -311,9 +311,12 @@ export default function PMCOESection() {
             </div>
             
             <div className="relative z-10 max-w-4xl mx-auto text-center">
-              <h3 className="text-4xl lg:text-6xl font-black text-blue-500 uppercase tracking-tighter mb-10">ABOUT PMCOE</h3>
+              <div className="text-[10px] uppercase tracking-[0.4em] text-blue-400 font-black mb-4">About PMCOE</div>
+              <h3 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-10 leading-tight">
+                Standardizing Success Through <br className="hidden md:inline" /> Our Project Management Center of Excellence
+              </h3>
               <p className="text-xl lg:text-2xl text-blue-100/80 font-medium leading-relaxed mb-16">
-                We are PMCOE (Project Management Center of Excellence), driving value-focused project management across the organization. We implement standardized, scalable, and customer-centric practices that ensure strong governance, efficient execution, and measurable business outcomes.
+                As the Project Management Center of Excellence (PMCOE), we transform strategy into results by delivering projects with discipline, consistency, and accountability. Our standardized and scalable approach drives operational efficiency, strengthens governance, and accelerates business value realization.
               </p>
               
               <div className="grid md:grid-cols-3 gap-8">
@@ -348,7 +351,7 @@ export default function PMCOESection() {
                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Our Mission</h3>
               </div>
               <p className="text-lg text-blue-100/60 font-medium leading-relaxed">
-                To transition from a traditional PMO to a PMCOE by establishing standardized, scalable, and efficient project management practices that deliver measurable business value. The PMCOE empowers globally competitive project managers through continuous learning, certifications, and adoption of industry best practices.
+                To deliver measurable business value through project excellence, innovation, and continuous capability development, enabled by standardized methodologies, scalable governance, and industry-leading best practices.
               </p>
             </motion.div>
 
@@ -365,7 +368,7 @@ export default function PMCOESection() {
                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Our Vision</h3>
               </div>
               <p className="text-lg text-blue-100/60 font-medium leading-relaxed">
-                To be a globally recognized Project Management Center of Excellence that drives organizational success by delivering high-value, impactful projects, while developing project managers who meet international standards of excellence.
+                To be the leading Project Management Center of Excellence and trusted partner for project delivery, driving strategic business value, consistent outcomes, operational excellence, and business growth through globally competitive project leadership and continuous capability development.
               </p>
             </motion.div>
           </div>
