@@ -256,7 +256,7 @@ const certifications = [
   },
   {
     name: 'CMMC Level 1',
-    logo: 'https://hyperproof.io/wp-content/uploads/2023/06/framework-informational-page_hero-badges-cmm.png'
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/cmmc%20final_level1.png'
   },
   {
     name: 'HIPAA',

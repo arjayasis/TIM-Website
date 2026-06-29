@@ -50,7 +50,7 @@ export const certifications = [
     id: 'cmmc',
     name: 'CMMC Level 1',
     title: 'CMMC Level 1: Cybersecurity Maturity Model Assessed',
-    logo: 'https://hyperproof.io/wp-content/uploads/2023/06/framework-informational-page_hero-badges-cmm.png',
+    logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/cmmc%20final_level1.png',
     desc: 'CMMC is a US-mandated security framework developed by the Department of Defense (DoD). As of late 2025, it is a legal requirement for any company—regardless of location—that wishes to participate in the U.S. defense supply chain. It focuses on "Basic Cyber Hygiene," ensuring that foundational security practices like access control and system integrity are not just present, but verified.',
     meaning: 'Our adherence to these rigorous U.S. federal standards provides you with a hardened infrastructure designed to withstand 90% of common cyber threats. By partnering with a CMMC-assessed provider, you gain a future-proof foundation that simplifies your own compliance audits and ensures your business remains eligible for high-value international and defense-related projects.',
     icon: CheckCircle2
