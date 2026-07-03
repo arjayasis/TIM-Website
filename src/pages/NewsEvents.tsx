@@ -4,10 +4,13 @@ import { newsEvents, NewsEvent } from '@/lib/newsData';
 import { Calendar, Tag, ArrowRight, Share2, Bookmark, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { createPageUrl } from '@/utils';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import { toast } from 'sonner';
 
 export default function NewsEvents() {
-  const [selectedEvent, setSelectedEvent] = useState<NewsEvent | null>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const eventId = searchParams.get('id');
+  const selectedEvent = newsEvents.find(e => e.id === eventId) || null;
   const [visibleCount, setVisibleCount] = useState(9);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -22,8 +25,62 @@ export default function NewsEvents() {
 
   // Handle scroll to top when selecting an article
   const handleSelectEvent = (event: NewsEvent) => {
-    setSelectedEvent(event);
+    setSearchParams({ id: event.id });
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleShare = (event: NewsEvent) => {
+    const baseUrl = window.location.origin + window.location.pathname;
+    const shareUrl = `${baseUrl}?id=${event.id}`;
+    
+    const fallbackCopy = (text: string) => {
+      try {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.top = "-999999px";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (successful) {
+          toast.success(`Link for "${event.title.substring(0, 30)}..." copied to clipboard!`);
+        } else {
+          throw new Error('Copy command unsuccessful');
+        }
+      } catch (err) {
+        console.error('Fallback copy failed: ', err);
+        // If everything fails (highly restricted sandbox), display a friendly manual copy popup inside toast
+        toast.info(
+          <div className="flex flex-col gap-2 p-1">
+            <span className="font-bold text-xs text-white">Copy link manually:</span>
+            <input 
+              type="text" 
+              readOnly 
+              value={text} 
+              onClick={(e) => (e.target as HTMLInputElement).select()}
+              className="bg-white/10 text-white text-xs px-2 py-1.5 rounded border border-white/20 select-all cursor-pointer w-full focus:outline-none focus:border-blue-500" 
+            />
+          </div>,
+          { duration: 10000 }
+        );
+      }
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(shareUrl)
+        .then(() => {
+          toast.success(`Link for "${event.title.substring(0, 30)}..." copied to clipboard!`);
+        })
+        .catch((err) => {
+          console.warn('Clipboard write error, falling back: ', err);
+          fallbackCopy(shareUrl);
+        });
+    } else {
+      fallbackCopy(shareUrl);
+    }
   };
 
   return (
@@ -68,7 +125,7 @@ export default function NewsEvents() {
                 {/* Top Section: Back Button */}
                 <div className="pt-4">
                   <button
-                    onClick={() => setSelectedEvent(null)}
+                    onClick={() => setSearchParams({})}
                     className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[11px] transition-colors group cursor-pointer"
                   >
                     <span>←</span> BACK TO NEWS
@@ -127,7 +184,11 @@ export default function NewsEvents() {
 
                   {/* Share and Save Action buttons */}
                   <div className="flex items-center gap-2">
-                    <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
+                    <button 
+                      onClick={() => handleShare(selectedEvent)}
+                      className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer"
+                      title="Share Article"
+                    >
                       <Share2 size={15} />
                     </button>
                     <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
@@ -182,7 +243,7 @@ export default function NewsEvents() {
                   </div>
                   
                   <Button 
-                    onClick={() => setSelectedEvent(null)}
+                    onClick={() => setSearchParams({})}
                     className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-16 py-8 h-auto font-black uppercase tracking-widest text-sm transition-all shadow-xl shadow-blue-600/20 cursor-pointer"
                   >
                     Back to All News
@@ -316,7 +377,11 @@ export default function NewsEvents() {
                 <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
               </Button>
 
-              <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
+              <button 
+                onClick={() => handleShare(featuredEvent)}
+                className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer"
+                title="Share Article"
+              >
                 <Share2 size={15} />
               </button>
               <button className="w-10 h-10 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer">
@@ -419,7 +484,7 @@ export default function NewsEvents() {
                   <p className="text-blue-100/40 text-sm leading-relaxed line-clamp-3">
                     {event.content}
                   </p>
-                  <div className="pt-4 flex items-center">
+                  <div className="pt-4 flex items-center justify-between">
                     <Button 
                       variant="outline" 
                       className="border-blue-600/50 text-blue-400 hover:bg-blue-600 hover:text-white rounded-full px-6 py-4 h-auto font-black uppercase tracking-widest text-[10px] transition-all group/btn bg-white/5"
@@ -427,6 +492,16 @@ export default function NewsEvents() {
                       Read Full Article
                       <ChevronRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleShare(event);
+                      }}
+                      className="w-9 h-9 rounded-full border border-white/10 text-white/40 hover:text-blue-400 hover:border-blue-400/50 hover:bg-white/5 transition-all flex items-center justify-center p-0 cursor-pointer"
+                      title="Share Article"
+                    >
+                      <Share2 size={14} />
+                    </button>
                   </div>
                 </div>
               </motion.div>
