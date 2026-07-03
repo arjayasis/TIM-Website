@@ -33,15 +33,16 @@ import { jsPDF } from 'jspdf';
 import { toast } from 'sonner';
 
 const milestones = [
-  { year: '1985', event: 'Founded as ICT Pioneer', icon: Award },
+  { year: '1985', event: 'Incorporated TIM Corporation', details: 'Pioneered enterprise ICT solutions in the PH.', icon: Award },
   { 
     year: '1994', 
-    event: 'Pioneered Commercial Data Center Services', 
-    details: 'Infrastructure acquired by Equinix in 2025',
+    event: 'Pioneered Data Center Services', 
+    details: 'Kings Court Facility (Transacted to Equinix in 2025)',
     icon: Server 
   },
-  { year: '2020', event: 'Regional Expansion & Cloud Leadership', icon: Globe },
-  { year: '2025', event: 'AI-Powered Enterprise Solutions', icon: Zap }
+  { year: '2018', event: 'Launched TIM Cloud Platform', details: 'Sovereign multi-tenant enterprise cloud hosting.', icon: Cloud },
+  { year: '2020', event: 'Operationalized 24/7 MNOC & MSOC', details: 'Proactive global network & security operations.', icon: Monitor },
+  { year: '2026', event: 'TIM AI Innovation Program', details: 'Generative AI integration & dedicated Sovereign LLM nodes.', icon: Brain }
 ];
 
 const services = [
@@ -50,7 +51,7 @@ const services = [
     icon: Cloud,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
-    items: ["Infrastructure as a Service (IaaS)", "S3 Object Storage", "Backup as a Service (BaaS)", "Disaster Recovery (DRaaS)"],
+    items: ["Cloud Computing (IaaS)", "Data Protection (BaaS)", "Business Continuity (DRaaS)", "Cloud Security (SecaaS)", "Zero-Egress Cloud Networking"],
     link: "CloudServices"
   },
   {
@@ -58,7 +59,7 @@ const services = [
     icon: Shield,
     color: "text-red-400",
     bg: "bg-red-500/10",
-    items: ["Vulnerability Assessment (VAPT)", "Endpoint Protection (EDR/XDR)", "DDoS Mitigation", "NIST Framework Alignment"],
+    items: ["DICT RCAP Assessment (VAPT)", "Managed SOC & MSOC Security", "Endpoint Detection & EDR/XDR", "Next-Gen DDoS Mitigation", "NIST Cybersecurity Compliance"],
     link: "Cybersecurity"
   },
   {
@@ -66,7 +67,7 @@ const services = [
     icon: Monitor,
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
-    items: ["24/7 Network Ops (MNOC)", "24/7 Security Ops (MSOC)", "Incident Response", "SLA-driven Support"],
+    items: ["24/7 Managed Network (MNOC)", "24/7 Managed Security (MSOC)", "Proactive Incident Response", "SLA-Driven Technical Support", "Managed Infrastructure Tier-1/2"],
     link: "ManagedOps"
   },
   {
@@ -74,7 +75,7 @@ const services = [
     icon: Layers,
     color: "text-purple-400",
     bg: "bg-purple-500/10",
-    items: ["Enterprise Architecture", "Data Center Solutions", "Hardware Unification", "Hybrid Cloud Sync"],
+    items: ["Enterprise Architecture Design", "Unified Multi-Vendor Hardware", "Hybrid & Multi-Cloud Sync", "Enterprise Network Optimization", "Bare-Metal Deployments"],
     link: "SystemIntegration"
   },
   {
@@ -82,7 +83,7 @@ const services = [
     icon: Globe,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",
-    items: ["Global Network Services (GNS)", "Low-Latency IP Transit", "Managed SD-WAN", "Direct Cloud Interconnects"],
+    items: ["Global Network Services (GNS)", "Low-Latency IP Transit", "Carrier-Neutral Transit Routing", "Secure Managed SD-WAN", "Direct Sovereign Interconnects"],
     link: "BorderlessConnectivity"
   },
   {
@@ -90,7 +91,7 @@ const services = [
     icon: Brain,
     color: "text-amber-400",
     bg: "bg-amber-500/10",
-    items: ["In-Country GenAI", "Custom AI Agents", "GPU-as-a-Service", "LLM Orchestration"],
+    items: ["RackCorp AI Assistant (RASK)", "Managed n8n Workflows", "LLM-as-a-Service (LLMaaS)", "Autonomous AI Workers & Agents"],
     link: "TIMCorpAI"
   }
 ];
@@ -99,8 +100,10 @@ const certifications = [
   { name: 'ISO 9001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/high%20res.png?v=20260311' },
   { name: 'ISO 27001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311' },
   { name: 'SOC 2 Type II', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
-  { name: 'ISO 22301', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301.png' },
+  { name: 'ISO 22301', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301%20white.png' },
   { name: 'PCI-DSS', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
+  { name: 'CMMC Level 1', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/cmmc%20final_level1.png' },
+  { name: 'HIPAA', logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png' },
   { name: 'DICT D-TAP', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png' },
   { name: 'CSA STAR Level 1', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/CSA%20STAR%201.svg' }
 ];
@@ -290,7 +293,7 @@ export default function Brochure() {
             </motion.div>
           </div>
 
-          <div className="grid lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
+          <div className="grid lg:grid-cols-5 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.year}

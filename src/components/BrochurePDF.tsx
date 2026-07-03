@@ -12,27 +12,30 @@ import {
 } from 'lucide-react';
 
 const milestones = [
-  { year: '1985', event: 'Founded as ICT Pioneer' },
-  { year: '1994', event: 'Pioneered Commercial Data Center Services' },
-  { year: '2020', event: 'Regional Expansion & Cloud Leadership' },
-  { year: '2025', event: 'AI-Powered Enterprise Solutions' }
+  { year: '1985', event: 'Incorporated TIM Corporation' },
+  { year: '1994', event: 'Pioneered Data Center Services' },
+  { year: '2018', event: 'Launched TIM Cloud Platform' },
+  { year: '2020', event: 'Operationalized 24/7 MNOC & MSOC' },
+  { year: '2026', event: 'TIM AI Innovation Program' }
 ];
 
 const services = [
-  { category: "Cloud Services", icon: Cloud, items: ["IaaS", "S3 Storage", "BaaS", "DRaaS"] },
-  { category: "Cybersecurity", icon: Shield, items: ["VAPT", "EDR/XDR", "DDoS", "NIST"] },
-  { category: "Managed Ops", icon: Monitor, items: ["MNOC", "MSOC", "IR", "SLA"] },
-  { category: "Systems Integration", icon: Layers, items: ["Architecture", "Data Center", "Hardware", "Hybrid"] },
-  { category: "Connectivity", icon: Globe, items: ["GNS", "IP Transit", "SD-WAN", "Direct Cloud"] },
-  { category: "Enterprise AI", icon: Brain, items: ["GenAI", "AI Agents", "GPUaaS", "LLM"] }
+  { category: "Cloud Services", icon: Cloud, items: ["Compute IaaS", "Data BaaS", "Recovery DRaaS", "Cloud SecaaS", "Zero-Egress Net"] },
+  { category: "Cybersecurity", icon: Shield, items: ["DICT VAPT", "Managed SOC", "EDR / XDR", "DDoS Protect", "NIST Align"] },
+  { category: "Managed Ops", icon: Monitor, items: ["24/7 MNOC", "24/7 MSOC", "Incident Resp", "SLA Support", "Infrastructure"] },
+  { category: "Systems Integration", icon: Layers, items: ["Enterprise Arch", "Multi-Vendor HW", "Hybrid Cloud", "Net Optimization", "Bare-Metal"] },
+  { category: "Connectivity", icon: Globe, items: ["Global GNS", "IP Transit", "Transit Routing", "Managed SD-WAN", "Sovereign Cloud"] },
+  { category: "Enterprise AI", icon: Brain, items: ["Secure RASK", "n8n Workflows", "LLMaaS Compute", "Autonomous Agents"] }
 ];
 
 const certifications = [
   { name: 'ISO 9001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/high%20res.png?v=20260311' },
   { name: 'ISO 27001', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/iso%2027001.png?v=20260311' },
   { name: 'SOC 2 Type II', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/AICPA-Logo.png?v=20260311' },
-  { name: 'ISO 22301', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301.png' },
+  { name: 'ISO 22301', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/iso-22301%20white.png' },
   { name: 'PCI-DSS', logo: 'https://20245415.fs1.hubspotusercontent-na2.net/hubfs/20245415/certifications/PCIDSS%20CERTIFIED.png?v=20260311' },
+  { name: 'CMMC Level 1', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/cmmc%20final_level1.png' },
+  { name: 'HIPAA', logo: 'https://marketing.timcorp.net.ph/hubfs/website/hipaa_asset.png' },
   { name: 'DICT D-TAP', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/DTAP-Logo.png' },
   { name: 'CSA STAR Level 1', logo: 'https://marketing.timcorp.net.ph/hubfs/certifications/CSA%20STAR%201.svg' }
 ];
@@ -67,11 +70,11 @@ export const BrochurePDF = React.forwardRef<HTMLDivElement>((props, ref) => {
             <p style={{ fontSize: '0.875rem', lineHeight: 1.625, marginBottom: '2rem', color: colors.gray600 }}>
               We adhere to the most stringent global standards for quality management, information security, and business continuity.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '0.75rem 0.5rem', marginTop: '1.5rem' }}>
               {certifications.map(cert => (
                 <div key={cert.name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <img src={cert.logo} alt={cert.name} style={{ height: '2rem', width: 'auto', marginBottom: '0.5rem', filter: 'grayscale(100%)' }} crossOrigin="anonymous" referrerPolicy="no-referrer" />
-                  <span style={{ fontSize: '8px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '-0.025em', color: colors.gray400 }}>{cert.name}</span>
+                  <img src={cert.logo} alt={cert.name} style={{ height: '1.5rem', width: 'auto', marginBottom: '0.4rem', filter: 'grayscale(100%)' }} crossOrigin="anonymous" referrerPolicy="no-referrer" />
+                  <span style={{ fontSize: '7.5px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '-0.025em', color: colors.gray500 }}>{cert.name}</span>
                 </div>
               ))}
             </div>
