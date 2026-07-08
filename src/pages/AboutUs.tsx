@@ -28,7 +28,7 @@ const officers = [
 const managementTeam = [
   { name: 'Edgar R. Gutierrez', title: 'Sr. Vice President – Chief Revenue Officer & Head of Business Development' },
   { name: 'Maria Ruby R. Yu', title: 'Sr. Assistant Vice President – Operations, PMO and Marketing Director' },
-  { name: 'Robin S. Pantuca', title: 'Sr. Assistant Vice President – Pre-sales and Product Management' },
+  { name: 'Robin S. Pantuca', title: 'Field CTO' },
   { name: 'Michael M. De Guzman', title: 'Vice President – FSI Business' },
   { name: 'Mylene B. Espinola', title: 'Sr. Assistant Vice President – Managed Services and Technical Support Group' },
   { name: 'Bryan Paul L. Javier', title: 'Assistant Vice President – Enterprise Sales' },
