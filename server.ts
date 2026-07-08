@@ -1,9 +1,11 @@
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
+import fs from "fs";
 import multer from "multer";
 import { Resend } from "resend";
 import dotenv from "dotenv";
+import { newsEvents } from "./src/lib/newsData.js";
 
 dotenv.config();
 
@@ -134,12 +136,83 @@ async function startServer() {
     }
   });
 
+  let vite: any = null;
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
+    vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
+  }
+
+  // Intercept NewsEvents requests to dynamically inject Open Graph tags (e.g. cover image)
+  app.get("/NewsEvents", async (req, res, next) => {
+    try {
+      const eventId = req.query.id as string | undefined;
+      const protocol = req.secure || req.headers['x-forwarded-proto'] === 'https' ? 'https' : 'http';
+      const requestUrl = `${protocol}://${req.get('host')}${req.originalUrl}`;
+      
+      let htmlPath = "";
+      let isDev = process.env.NODE_ENV !== "production";
+      
+      if (isDev) {
+        htmlPath = path.join(process.cwd(), "index.html");
+      } else {
+        htmlPath = path.join(process.cwd(), "dist", "index.html");
+      }
+
+      if (!fs.existsSync(htmlPath)) {
+        return next();
+      }
+
+      let html = fs.readFileSync(htmlPath, "utf-8");
+
+      if (isDev && vite) {
+        html = await vite.transformIndexHtml(req.originalUrl, html);
+      }
+
+      const event = eventId ? newsEvents.find(e => e.id === eventId) : null;
+      
+      let title = "TIM Corp | Welcome";
+      let description = "Total Information Management Corporation (TIM) is a leading Filipino technology solutions provider.";
+      let imageUrl = "https://marketing.timcorp.net.ph/hubfs/logo/TIM%20Logo%20only.png";
+      
+      if (event) {
+        title = `${event.title} | TIM Corp News & Events`;
+        description = event.content.replace(/\s+/g, ' ').substring(0, 200).trim() + "...";
+        imageUrl = event.image;
+      }
+      
+      const metaTags = `
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="${requestUrl}" />
+    <meta property="og:title" content="${title.replace(/"/g, '&quot;')}" />
+    <meta property="og:description" content="${description.replace(/"/g, '&quot;')}" />
+    <meta property="og:image" content="${imageUrl}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="${requestUrl}" />
+    <meta name="twitter:title" content="${title.replace(/"/g, '&quot;')}" />
+    <meta name="twitter:description" content="${description.replace(/"/g, '&quot;')}" />
+    <meta name="twitter:image" content="${imageUrl}" />
+      `;
+      
+      if (event) {
+        html = html.replace(/<title>[^<]*<\/title>/, `<title>${title.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</title>`);
+      }
+
+      const injectedHtml = html.replace("</head>", `${metaTags}\n  </head>`);
+      res.setHeader("Content-Type", "text/html");
+      return res.send(injectedHtml);
+    } catch (err) {
+      console.error("Error serving NewsEvents with meta tags:", err);
+      next(err);
+    }
+  });
+
+  if (process.env.NODE_ENV !== "production") {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");

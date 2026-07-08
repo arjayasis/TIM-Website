@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { newsEvents, NewsEvent } from '@/lib/newsData';
 import { Calendar, Tag, ArrowRight, Share2, Bookmark, ChevronRight } from 'lucide-react';
@@ -22,6 +22,38 @@ export default function NewsEvents() {
   const remainingEvents = newsEvents.slice(1);
 
   const yParallax = useTransform(scrollYProgress, [0, 0.2], [0, 200]);
+
+  // Synchronize browser title and Open Graph meta tags client-side
+  useEffect(() => {
+    if (selectedEvent) {
+      document.title = `${selectedEvent.title} | TIM Corp News & Events`;
+      
+      const updateMeta = (propertyOrName: string, content: string, isProperty = true) => {
+        const attribute = isProperty ? 'property' : 'name';
+        let element = document.querySelector(`meta[${attribute}="${propertyOrName}"]`);
+        if (!element) {
+          element = document.createElement('meta');
+          element.setAttribute(attribute, propertyOrName);
+          document.head.appendChild(element);
+        }
+        element.setAttribute('content', content);
+      };
+
+      updateMeta('og:title', `${selectedEvent.title} | TIM Corp News & Events`);
+      updateMeta('og:description', selectedEvent.content.replace(/\s+/g, ' ').substring(0, 200).trim() + "...");
+      updateMeta('og:image', selectedEvent.image);
+      updateMeta('og:type', 'article');
+      updateMeta('og:url', window.location.href);
+      
+      updateMeta('twitter:card', 'summary_large_image', false);
+      updateMeta('twitter:title', `${selectedEvent.title} | TIM Corp News & Events`, false);
+      updateMeta('twitter:description', selectedEvent.content.replace(/\s+/g, ' ').substring(0, 200).trim() + "...", false);
+      updateMeta('twitter:image', selectedEvent.image, false);
+      updateMeta('twitter:url', window.location.href, false);
+    } else {
+      document.title = "News & Events | TIM Corp";
+    }
+  }, [selectedEvent]);
 
   // Handle scroll to top when selecting an article
   const handleSelectEvent = (event: NewsEvent) => {
