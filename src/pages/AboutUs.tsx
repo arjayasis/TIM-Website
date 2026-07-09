@@ -35,7 +35,7 @@ const managementTeam = [
   { name: 'Kristian Rey Trinidad', title: 'Chief Risk and Information Security Officer' },
   { name: 'Jayson C. Chico', title: 'Information and Communications Technology Head' },
   { name: 'Ivy B. Kua', title: 'Organizational Capability and Design Head' },
-  { name: 'Jose Carlo C. La Rosa', title: 'Technology Solutions Delivery Group Head' }
+  { name: 'Jose Carlo C. La Rosa', title: 'Technical Solution Delivery Head' }
 ];
 
 const milestones = [
