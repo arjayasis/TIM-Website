@@ -9,6 +9,7 @@ import { createPageUrl } from '@/utils';
 import { toast } from 'sonner';
 
 export default function ContactUs() {
+  const [selectedOffice, setSelectedOffice] = useState<'makati' | 'cebu'>('makati');
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -199,39 +200,101 @@ export default function ContactUs() {
               </div>
             </motion.div>
 
-            {/* Office Info Card */}
+            {/* Office Info Cards */}
+            {/* Headquarters Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="md:col-span-12 group relative"
+              transition={{ delay: 0.1 }}
+              className="col-span-12 md:col-span-6 group relative cursor-pointer"
+              onClick={() => setSelectedOffice('makati')}
             >
-              <div className="relative bg-gradient-to-br from-blue-600 to-blue-900 rounded-[2.5rem] p-10 lg:p-14 overflow-hidden shadow-2xl">
-                <div className="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-[100px]" />
+              <div className={`absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-[2.5rem] blur transition duration-500 ${selectedOffice === 'makati' ? 'opacity-30' : 'opacity-0 group-hover:opacity-10'}`} />
+              <div className={`relative h-full bg-white/5 backdrop-blur-3xl border rounded-[2.5rem] p-8 lg:p-10 flex flex-col justify-between overflow-hidden transition-all duration-300 ${selectedOffice === 'makati' ? 'border-blue-500 bg-blue-950/20' : 'border-white/10 hover:border-white/20'}`}>
+                <div className="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-[100px]" />
                 
-                <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div className="relative z-10 flex flex-col justify-between h-full gap-8">
                   <div>
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${selectedOffice === 'makati' ? 'bg-blue-600 text-white' : 'bg-white/10 text-white/70'}`}>
+                        <MapPin className="w-6 h-6" />
                       </div>
-                      <h3 className="text-2xl font-black uppercase tracking-tight text-white">Headquarters</h3>
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400">Main Office</span>
+                        <h3 className="text-2xl font-black uppercase tracking-tight text-white mt-0.5">Headquarters</h3>
+                      </div>
                     </div>
-                    <p className="text-blue-100 text-lg font-medium leading-relaxed">
+                    <p className="text-blue-100/90 text-base font-medium leading-relaxed">
                       5600 Pres. Sergio Osmeña Highway<br />
                       corner Arellano Street<br />
                       Brgy. Palanan, Makati City 1235
                     </p>
                   </div>
-                  <div className="flex flex-col gap-6">
-                    <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-                      <div className="text-[10px] font-black uppercase tracking-widest text-blue-200/60 mb-2">Direct Line</div>
-                      <div className="text-2xl font-black text-white">+63 (2) 8857 1846</div>
+                  
+                  <div className="flex flex-col gap-4 mt-auto">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+                      <div className="text-[10px] font-black uppercase tracking-widest text-blue-200/60 mb-1">Direct Line</div>
+                      <div className="text-xl font-black text-white">+63 (2) 8857 1846</div>
                     </div>
-                    <div className="flex items-center gap-4 text-blue-200/60">
-                      <Globe size={16} />
-                      <span className="text-xs font-bold uppercase tracking-widest">Makati Command Center</span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5 text-blue-200/60">
+                        <Globe size={14} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">Makati Command Center</span>
+                      </div>
+                      <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${selectedOffice === 'makati' ? 'bg-blue-500/20 border-blue-500/40 text-blue-300' : 'border-transparent text-blue-400/40'}`}>
+                        {selectedOffice === 'makati' ? 'Selected' : 'Click to View Map'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Cebu Office Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="col-span-12 md:col-span-6 group relative cursor-pointer"
+              onClick={() => setSelectedOffice('cebu')}
+            >
+              <div className={`absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-[2.5rem] blur transition duration-500 ${selectedOffice === 'cebu' ? 'opacity-30' : 'opacity-0 group-hover:opacity-10'}`} />
+              <div className={`relative h-full bg-white/5 backdrop-blur-3xl border rounded-[2.5rem] p-8 lg:p-10 flex flex-col justify-between overflow-hidden transition-all duration-300 ${selectedOffice === 'cebu' ? 'border-blue-500 bg-blue-950/20' : 'border-white/10 hover:border-white/20'}`}>
+                <div className="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-[100px]" />
+                
+                <div className="relative z-10 flex flex-col justify-between h-full gap-8">
+                  <div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${selectedOffice === 'cebu' ? 'bg-blue-600 text-white' : 'bg-white/10 text-white/70'}`}>
+                        <MapPin className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400">Regional Hub</span>
+                        <h3 className="text-2xl font-black uppercase tracking-tight text-white mt-0.5">Cebu Office</h3>
+                      </div>
+                    </div>
+                    <p className="text-blue-100/90 text-base font-medium leading-relaxed">
+                      12th Floor, 2 Quad Building, Cardinal<br />
+                      Rosales Avenue, cor Sumilon Rd.,<br />
+                      Cebu Business Park, Cebu City 6000
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col gap-4 mt-auto">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+                      <div className="text-[10px] font-black uppercase tracking-widest text-blue-200/60 mb-1">Telephone Number</div>
+                      <div className="text-xl font-black text-white">(+63) (32) 253 1659</div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5 text-blue-200/60">
+                        <Globe size={14} />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">Cebu Business Hub</span>
+                      </div>
+                      <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${selectedOffice === 'cebu' ? 'bg-blue-500/20 border-blue-500/40 text-blue-300' : 'border-transparent text-blue-400/40'}`}>
+                        {selectedOffice === 'cebu' ? 'Selected' : 'Click to View Map'}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -255,14 +318,17 @@ export default function ContactUs() {
             <div className="relative h-[600px] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl grayscale invert opacity-60 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-1000">
               <div className="absolute inset-0 bg-blue-900/10 pointer-events-none z-10" />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.562102669605!2d121.00487786979382!3d14.562102669604814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDMzJzQzLjYiTiAxMjHCsDAwJzE3LjYiRQ!5e0!3m2!1sen!2sph!4v1234567890123!5m2!1sen!2sph"
+                src={selectedOffice === 'makati'
+                  ? "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.562102669605!2d121.00487786979382!3d14.562102669604814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDMzJzQzLjYiTiAxMjHCsDAwJzE3LjYiRQ!5e0!3m2!1sen!2sph!4v1234567890123!5m2!1sen!2sph"
+                  : "https://maps.google.com/maps?q=12th%20Floor,%202%20Quad%20Building,%20Cardinal%20Rosales%20Avenue,%20cor%20Sumilon%20Rd.,%20Cebu%20Business%20Park,%20Cebu%20City%206000&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                }
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="TIM Corporation Command Center"
+                title={selectedOffice === 'makati' ? "TIM Corporation Headquarters Command Center" : "TIM Corporation Cebu Office Regional Hub"}
               />
             </div>
             
@@ -270,9 +336,13 @@ export default function ContactUs() {
             <div className="absolute bottom-10 left-10 p-6 bg-[#00021a]/80 backdrop-blur-xl border border-white/10 rounded-2xl pointer-events-none hidden md:block">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">Location Locked</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">
+                  {selectedOffice === 'makati' ? 'Makati Locked' : 'Cebu Locked'}
+                </span>
               </div>
-              <div className="text-xs font-bold text-white/60">14.5621° N, 121.0049° E</div>
+              <div className="text-xs font-bold text-white/60">
+                {selectedOffice === 'makati' ? '14.5621° N, 121.0049° E' : '10.3157° N, 123.9061° E'}
+              </div>
             </div>
           </motion.div>
         </div>
