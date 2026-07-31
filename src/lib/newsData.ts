@@ -10,6 +10,65 @@ export interface NewsEvent {
 
 export const newsEvents: NewsEvent[] = [
   {
+    id: 'dell-platinum-partner-2026',
+    title: "A Proud Milestone in TIM's Growth Journey 🚀 — Dell Technologies Platinum Partner Status",
+    date: "July 23, 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/dell%20img%20poster%201.png",
+    content: `A Proud Milestone in TIM's Growth Journey 🚀
+
+We are honored and excited to announce that TIM has officially achieved Dell Technologies Platinum Partner status! This prestigious recognition was awarded during the Dell Technologies Partner Appreciation Night 2026 at The Peninsula Manila, marking a significant milestone in our commitment to delivering transformative technology solutions across the Philippines.
+
+Achieving Platinum Tier is more than just an accomplishment. It is a reflection of our team's passion, expertise, and unwavering dedication to helping organizations navigate complexity, accelerate innovation, strengthen governance, and build operational resilience.
+
+As a Dell Technologies Platinum Partner, we are even better positioned to empower businesses with end-to-end solutions that drive meaningful outcomes and long-term success.
+
+We proudly share this achievement with our valued clients, trusted partners, and dedicated team members. Your confidence, collaboration, and support have made this possible, and we are deeply grateful.
+
+Together, we are shaping the future of digital transformation in the Philippines.
+
+What strategic IT priorities are driving your organization this year? Let's connect and explore how we can help accelerate your transformation journey.
+
+#TIM #DellTechnologies #PlatinumPartner #DigitalTransformation #ITInfrastructure #BusinessExcellence #PhilippinesIT`,
+    theme: "Partnership Success, Digital Transformation, IT Infrastructure",
+    type: "Award / Partner Recognition"
+  },
+  {
+    id: 'phnog-2026-cebu',
+    title: "What an incredible week at PhNOG 2026+ in Cebu!",
+    date: "July 6-10, 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/PhNOG%202026.jpg",
+    content: `What an incredible week at PhNOG 2026+ in Cebu! 🇵🇭
+
+Thank you to everyone who visited us at Sheraton Cebu Mactan, shared insights, and exchanged ideas on networking, infrastructure, and cybersecurity.
+
+Events like these remind us how strong and passionate the Philippine Internet community truly is.
+
+We're heading back energized and more committed than ever to supporting resilient, secure, and high-performing networks through our ASN #135423 Global Network Services (GNS), backed by powerful protection from Intrusion Shield, NexusGuard, and Whalebone.
+
+If we missed you during the event, let's connect. We are always ready to discuss how our connectivity and security solutions can support your network goals.
+
+Until next time, PhNOG! 👋
+
+#PhNOG2026 #NetworkEngineering #Cybersecurity #InternetInfrastructure #Telecoms #PhilippineTech`,
+    theme: "Network Engineering, Cybersecurity, Global Network Services",
+    type: "Industry Event / Conference"
+  },
+  {
+    id: 'lenovo-highest-growth-partner-2026',
+    title: "BIG WIN FOR TEAM TIM! Highest Growth Partner Award at Lenovo 360 Evolve Kickoff 2026",
+    date: "June 25, 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/lenovo.jpg",
+    content: `We're honored to receive the Highest Growth Partner Award at the Lenovo 360 Evolve Kickoff 2026 at Clark Marriott Hotel, Pampanga!
+
+This recognition highlights the strength of our partnership with Lenovo, the dedication of our incredible team, and the trust of our valued clients. Together, we've achieved remarkable growth—and we're just getting started.
+
+Thank you, Lenovo, for this prestigious recognition. Here's to reaching new heights, driving innovation, and delivering even greater value in 2026 and beyond!
+
+#TIM #Lenovo #HighestGrowthPartner #Lenovo360Evolve2026 #AwardWinning #TechInnovation #BusinessGrowth #TeamTIM #PartnershipSuccess`,
+    theme: "Partnership Success, Tech Innovation, Business Growth",
+    type: "Award / Partner Recognition"
+  },
+  {
     id: 'rackcorp-ai-launch-2026',
     title: "A significant milestone for the Philippine digital ecosystem.",
     date: "June 2026",
