@@ -70,17 +70,79 @@ Thank you, Lenovo, for this prestigious recognition. Here's to reaching new heig
   },
   {
     id: 'rackcorp-ai-launch-2026',
-    title: "A significant milestone for the Philippine digital ecosystem.",
-    date: "June 2026",
+    title: "RackCorp and TIM Launch Sovereign AI Suite for Philippine Regulated Industries",
+    date: "June 3, 2026",
     image: "https://marketing.timcorp.net.ph/hubfs/blogs/rackcorp.jpg",
-    content: `RackCorp.ai by TIM has been formally launched at Lanson Place, Mall of Asia. The discussion centered on AI sovereignty and governance.
+    content: `*RackCorp.ai by TIM delivers enterprise AI for Philippine financial services, government agencies, healthcare providers and educational institutions running on locally-operated data centres with full data residency, predictable pricing and 24/7 Philippine-based technical support.*
 
-As data becomes a critical strategic asset, maintaining operational control, data residency, and governance over AI infrastructure is emerging as a baseline requirement across the Philippine enterprise landscape. Localizing these capabilities enables organizations to address regulatory requirements, mitigate data risks, and retain full lifecycle oversight of AI workloads.
+**MANILA, PHILIPPINES, 3 June 2026** — RackCorp, the leading global cloud and AI solutions provider, and Total Information Management Corporation (TIM), one of the Philippines’ longest‑established IT services and consulting companies, today launched RackCorp.ai by TIM, a sovereign artificial intelligence (AI) suite purpose‑built for Philippine regulated industries.
 
-By deploying sovereign AI infrastructure within the country, Filipino enterprises are better positioned to scale AI adoption, accelerate innovation pipelines, and maintain competitive advantage while ensuring compliance and data integrity.
+The suite removes a key barrier to enterprise AI adoption in the Philippines: organisations have had to choose between advanced generative AI and control of their data. RackCorp.ai by TIM resolves that trade-off by running AI workloads on Philippine infrastructure operated by a Philippine company with an established compliance posture, while leveraging RackCorp’s proven cloud architecture.
 
-This marks the transition toward sovereign, governed, and high-performance AI systems in the Philippines.`,
-    theme: "AI Sovereignty, Data Residency, AI Governance",
+> "Filipino organisations no longer have to choose between AI capability and data control,"
+> — Sunver Z. Bastes, President of Total Information Management Corporation
+> 
+> "RackCorp.ai by TIM combines our local compliance record and on‑the‑ground infrastructure so customers can use advanced AI without transferring data abroad."
+
+---
+
+### The Suite Packages 4 Capabilities Under a Single Sovereign Architecture:
+
+1. RackCorp Assistant for Secure Knowledge (RASK)
+   An enterprise copilot that searches files, intranet systems, and emails, drafts content and updates tickets, all while enforcing roles and permissions.
+
+2. LLM-as-a-Service
+   Dedicated CPU/GPU hosting for open-source models with fine-tuning on business data that never leaves the customer environment.
+
+3. GPU-as-a-Service
+   Powerful GPU compute for AI applications, available as dedicated GPU servers, bare-metal servers with GPUs, or GPU-enabled virtual machines, managed through the RackCorp platform.
+
+4. Custom AI Applications
+   Customised AI applications built to organisational requirements, delivered through two options:
+   a. Managed n8n Workflows: Private, low-code automation that connects AI models to business systems without exposing data to public services.
+   b. RackCorp.ai Agents: Environment-specific AI agents that can call internal APIs and tools while operating under centralised access control.
+
+---
+
+### Built on Infrastructure from Industry Leaders
+
+RackCorp.ai by TIM is built on infrastructure from industry leaders:
+- **NVIDIA:** Provides accelerated compute for training and inference.
+- **HPE:** Delivers the compute infrastructure that runs AI workloads with the performance and reliability regulated industries require.
+- **Hitachi Vantara:** Provides the high-performance data storage layer for model training, fine-tuning artefacts and customer datasets.
+- **Cisco:** Securely connects this infrastructure, providing observability and end-to-end security for the development and use of AI applications through Cisco AI Defense.
+
+Together, these technology partners form the sovereign AI stack operating inside Philippine data centres, delivering low-latency inference, 99.9% uptime and 24/7 NOC/SOC coverage. The result is **Local, Dedicated, Private, Secure and Sovereign AI for Philippine enterprises.**
+
+All customer data, prompts, embeddings, fine‑tuning artefacts and outputs remain within Philippine jurisdiction at every stage. TIM provides 24/7 Philippine‑based support from Manila and handles sales, implementation and managed services. RackCorp supplies the sovereign cloud platform, AI engineering and global infrastructure backbone; joint engineering teams will localise the platform for Philippine compliance and language needs.
+
+> "The Philippines deserves AI infrastructure that respects national sovereignty,"
+> — Lawrence Michael, CEO, RackCorp
+> 
+> "Together with our technology partners, we deliver enterprise performance, predictable pricing on dedicated infrastructure, and AI that scales with business needs."
+
+---
+
+### Event Highlights & Sector Applications
+
+The launch at Lanson Place Mall of Asia featured keynote sessions and panels on sovereign AI and sector‑specific use cases. Key speakers included **Stephen Dendtler** (CTO, RackCorp), **Walter So** (MD, HPE Philippines), **Matthew Hardman** (CTO APAC, Hitachi Vantara) and **David Siroky** (AI CTO APJC, Cisco). These sessions examined how each layer of the sovereign AI stack supports regulated workloads and the practical considerations for moving enterprise AI from experimentation to production.
+
+The event drew partners and customers from across the Philippine economy, including telecommunications providers, systems integrators, managed service providers, internet service providers, software developers, government agencies, healthcare providers, educational institutions, and a cross‑section of Philippine banks and financial services that TIM has supported for more than four decades.
+
+RackCorp.ai by TIM serves sectors where data residency, regulatory compliance and operational reliability are non‑negotiable. Use cases include banks keeping customer data and training artefacts on‑premises; government agencies processing public records without extraterritorial exposure; healthcare providers applying AI to patient records under the Data Privacy Act; and universities running research and student services on shared sovereign infrastructure.
+
+TIM is RackCorp’s regional partner in the Philippines, managing sales, deployment and customer success. RackCorp provides the underlying sovereign cloud platform and AI engineering. RackCorp.ai by TIM is available from today; pilot applications open immediately. Request a demo at **RackCorp.ai by TIM** or contact TIM.
+
+---
+
+### About the Partner Organizations
+
+#### About RackCorp
+RackCorp is an Australian-owned sovereign cloud provider operating in more than 35 data centres across 25 cities in 16 countries worldwide. Specialising in secure, high-performance infrastructure-as-a-service via its OneStack platform, it serves regulated industries, government agencies and enterprises requiring data sovereignty, low-latency compute and 24/7 local support. RackCorp.ai brings enterprise AI capability to this footprint, allowing customers to deploy generative AI inside national borders. For details, visit [www.rackcorp.com](https://www.rackcorp.com).
+
+#### About Total Information Management Corporation (TIM)
+TIM is one of the Philippines’ longest‑established technology solutions providers, founded in 1985 and Filipino‑owned. TIM operates as a leading cybersecurity and digital infrastructure specialist, delivering Protective DNS, threat intelligence, managed security services, cloud and connectivity, and compliance-driven solutions to ISPs, enterprises and government agencies. TIM holds ISO 9001, ISO 27001, ISO 22301 Business Continuity Management, PCI-DSS and AICPA SOC certifications, and partners with global technology leaders. TIM is headquartered in Makati City and serves customers across the Philippines.`,
+    theme: "Sovereign AI, Data Residency, Regulated Industries, AI Governance",
     type: "Formal Launch / Press Release"
   },
   {
@@ -156,13 +218,13 @@ TIM extends its sincere thanks to all attendees, as well as to its partners at E
     image: "https://marketing.timcorp.net.ph/hubfs/blogs/tim-tim%20engineering.jpg",
     content: `In partnership with TIM Engineering, Total Information Management Corporation (TIM) showcased its key enterprise solutions on January 28, 2026, highlighting the company’s continued focus on innovation, operational excellence, and technology-driven collaboration.
 
-During the session, TIM presented its advanced capabilities in Managed Security Operations Center (MSOC), Managed Network Operations Center (MNOC), TIMCorp.AI, and TIM Cloud. These solutions reflect TIM’s commitment to helping organizations strengthen their digital infrastructure through smarter, more secure, and more resilient enterprise technologies.
+During the session, TIM presented its advanced capabilities in Managed Security Operations Center (MSOC), Managed Network Operations Center (MNOC), RackCorp.ai by TIM, and TIM Cloud. These solutions reflect TIM’s commitment to helping organizations strengthen their digital infrastructure through smarter, more secure, and more resilient enterprise technologies.
 
 The event also underscored the strength of the collaboration between TIM and TIM Engineering. By working closely together, both teams demonstrated how strategic partnership within the organization can support the delivery of future-ready solutions that address the evolving needs of modern enterprises.
 
 As TIM continues to drive innovation across its service portfolio, collaborations like this reinforce its mission to build stronger enterprise capabilities and deliver technology solutions that empower businesses for the future.
 
-#TIMInnovation #TIMCorpAI #TIMCloud #PartnershipInAction #EnterpriseTechnology`,
+#TIMInnovation #RackCorpAIbyTIM #TIMCloud #PartnershipInAction #EnterpriseTechnology`,
     theme: "Innovation, Enterprise Solutions, Collaboration",
     type: "Showcase / Technology Update"
   },

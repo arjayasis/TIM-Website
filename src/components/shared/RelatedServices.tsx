@@ -90,7 +90,7 @@ const services = [
     bg: 'bg-blue-400/10'
   },
   {
-    name: 'TIMCorp AI',
+    name: 'RackCorp.ai by TIM',
     path: 'TIMCorpAI',
     desc: 'Enterprise Intelligence & Automation',
     icon: Cpu,

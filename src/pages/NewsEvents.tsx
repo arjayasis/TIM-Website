@@ -240,10 +240,132 @@ export default function NewsEvents() {
                     Full Report
                   </div>
                   
-                  <div className="prose prose-xl prose-invert max-w-none">
-                    <p className="text-blue-100/60 leading-[1.8] text-lg md:text-xl font-medium whitespace-pre-wrap">
-                      {selectedEvent.content}
-                    </p>
+                  <div className="prose prose-xl prose-invert max-w-none text-blue-100/80 leading-[1.8] text-base md:text-lg font-normal">
+                    {selectedEvent.content.split('\n\n').map((paragraph, idx) => {
+                      const trimmed = paragraph.trim();
+                      if (!trimmed) return null;
+
+                      // Blockquote rendering (for quotes - no box container)
+                      if (trimmed.startsWith('>')) {
+                        const quoteLines = trimmed.split('\n').map(l => l.replace(/^>\s?/, '').replace(/\*/g, '').trim());
+                        return (
+                          <div key={idx} className="my-8 border-l-4 border-blue-500 pl-6 md:pl-8 py-1 space-y-2">
+                            {quoteLines.map((line, qIdx) => {
+                              if (!line) return null;
+                              if (line.startsWith('—')) {
+                                return (
+                                  <p key={qIdx} className="text-blue-400 text-xs md:text-sm font-semibold tracking-wider my-1">
+                                    {line}
+                                  </p>
+                                );
+                              }
+                              return (
+                                <p key={qIdx} className="text-blue-100/90 text-base md:text-lg font-normal leading-relaxed">
+                                  {line}
+                                </p>
+                              );
+                            })}
+                          </div>
+                        );
+                      }
+
+                      // Horizontal rule / Section divider
+                      if (trimmed === '---') {
+                        return <div key={idx} className="my-10 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />;
+                      }
+
+                      // Headings (Sentence/Title case - no forced uppercase)
+                      if (trimmed.startsWith('### ')) {
+                        return (
+                          <h3 key={idx} className="text-xl md:text-2xl font-bold text-white tracking-tight my-6 flex items-center gap-3">
+                            <span className="w-2 h-6 bg-blue-500 rounded-full inline-block shrink-0" />
+                            {trimmed.replace('### ', '')}
+                          </h3>
+                        );
+                      }
+
+                      if (trimmed.startsWith('#### ')) {
+                        return (
+                          <h4 key={idx} className="text-lg md:text-xl font-bold text-blue-200 tracking-tight my-4">
+                            {trimmed.replace('#### ', '')}
+                          </h4>
+                        );
+                      }
+
+                      // Italic single lead paragraph
+                      if (trimmed.startsWith('*') && trimmed.endsWith('*') && !trimmed.includes('\n')) {
+                        return (
+                          <p key={idx} className="my-6 text-blue-200 text-lg md:text-xl font-medium italic leading-relaxed border-b border-white/10 pb-6">
+                            {trimmed.slice(1, -1)}
+                          </p>
+                        );
+                      }
+
+                      // Capabilities or numbered bullet list - Regular text with clean indentation (no box, no bolding on all text)
+                      if (/^\d+\.\s/.test(trimmed) || trimmed.startsWith('• ')) {
+                        const lines = trimmed.split('\n').filter(Boolean);
+                        return (
+                          <div key={idx} className="space-y-3 my-6 pl-2">
+                            {lines.map((line, lIdx) => {
+                              const trimmedLine = line.trim();
+                              // Main numbered item (e.g. 1. RackCorp Assistant for Secure Knowledge...)
+                              if (/^\d+\.\s/.test(trimmedLine) || /^•\s/.test(trimmedLine)) {
+                                return (
+                                  <div key={lIdx} className="text-white text-base md:text-lg font-semibold mt-4 mb-1">
+                                    {trimmedLine.replace(/^•\s?/, '')}
+                                  </div>
+                                );
+                              }
+                              // Sub-items (e.g. a. Managed n8n Workflows... or b. RackCorp.ai Agents...)
+                              if (/^[a-z]\.\s/i.test(trimmedLine) || /^-\s[a-z]\./i.test(trimmedLine)) {
+                                return (
+                                  <div key={lIdx} className="pl-8 md:pl-10 text-blue-100/80 text-base leading-relaxed my-1">
+                                    {trimmedLine.replace(/^-\s?/, '')}
+                                  </div>
+                                );
+                              }
+                              // Indented description text under main item
+                              return (
+                                <div key={lIdx} className="pl-6 md:pl-8 text-blue-100/80 text-base leading-relaxed mb-3">
+                                  {trimmedLine}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        );
+                      }
+
+                      // Partner bullet points
+                      if (trimmed.startsWith('- **')) {
+                        const listItems = trimmed.split('\n').filter(Boolean);
+                        return (
+                          <ul key={idx} className="space-y-3 my-6 pl-2">
+                            {listItems.map((li, lIdx) => (
+                              <li key={lIdx} className="flex items-start gap-3 text-sm md:text-base text-blue-100/90">
+                                <span className="w-2 h-2 rounded-full bg-blue-400 mt-2.5 shrink-0" />
+                                <span>
+                                  {li.replace(/^- \*\*(.*?)\*\*:\s?/, '').trim() ? (
+                                    <>
+                                      <strong className="text-white font-bold">{li.match(/\*\*(.*?)\*\*/)?.[1]}: </strong>
+                                      {li.replace(/^- \*\*(.*?)\*\*:\s?/, '')}
+                                    </>
+                                  ) : li.replace(/^- /, '')}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        );
+                      }
+
+                      // Default paragraphs with bolding & link support
+                      return (
+                        <p key={idx} className="my-4 text-blue-100/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
+                          {trimmed.split('**').map((part, pIdx) => 
+                            pIdx % 2 === 1 ? <strong key={pIdx} className="text-white font-bold">{part}</strong> : part
+                          )}
+                        </p>
+                      );
+                    })}
                   </div>
                   
                   <div className="bg-white/5 p-10 md:p-16 rounded-[3rem] border border-white/10 mt-20 backdrop-blur-xl">

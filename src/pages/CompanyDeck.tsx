@@ -645,11 +645,11 @@ const slides = [
     }
   },
 
-  // TIMCORP.AI SECTION
+  // RACKCORP.AI BY TIM SECTION
   {
     id: 'ai-cover',
     type: 'service-cover',
-    title: 'TIMCORP.AI',
+    title: 'RACKCORP.AI BY TIM',
     subtitle: 'THE FUTURE OF ENTERPRISE INTELLIGENCE',
     content: {
       icon: Brain,
@@ -689,7 +689,7 @@ const slides = [
   },
   {
     id: 'ai-why',
-    title: 'WHY TIMCORP.AI?',
+    title: 'WHY RACKCORP.AI BY TIM?',
     subtitle: 'THE AI ADVANTAGE',
     content: {
       points: [
@@ -806,7 +806,7 @@ const slides = [
         },
         { 
           title: 'AI Transformation Initiative', 
-          desc: 'Launching TIMCorp.AI to drive enterprise-wide artificial intelligence adoption and operational excellence.',
+          desc: 'Launching RackCorp.ai by TIM to drive enterprise-wide artificial intelligence adoption and operational excellence.',
           date: '2024'
         }
       ]

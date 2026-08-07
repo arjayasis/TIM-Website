@@ -41,7 +41,7 @@ export default function Footer() {
               <li><Link to={createPageUrl('Cybersecurity')} className="hover:text-white transition-colors">Cybersecurity</Link></li>
               <li><Link to={createPageUrl('ManagedOps')} className="hover:text-white transition-colors">Managed Operations</Link></li>
               <li><Link to={createPageUrl('SystemIntegration')} className="hover:text-white transition-colors">System Integration</Link></li>
-              <li><Link to={createPageUrl('TIMCorpAI')} className="hover:text-white transition-colors">TIMCorp.AI</Link></li>
+              <li><Link to={createPageUrl('TIMCorpAI')} className="hover:text-white transition-colors">RackCorp.ai by TIM</Link></li>
             </ul>
           </div>
 

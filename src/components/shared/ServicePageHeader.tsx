@@ -14,7 +14,7 @@ export default function ServicePageHeader() {
     { label: 'TIM Cloud', page: 'CloudServices' },
     { label: 'GNS Connectivity', page: 'BorderlessConnectivity' },
     { label: 'Cybersecurity', page: 'Cybersecurity' },
-    { label: 'TIMCorp.AI', page: 'TIMCorpAI' },
+    { label: 'RackCorp.ai by TIM', page: 'TIMCorpAI' },
     { label: 'Integration', page: 'SystemIntegration' }
   ];
 
