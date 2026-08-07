@@ -75,7 +75,13 @@ const AuthenticatedApp = () => {
 
 
 function App() {
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [showPreloader, setShowPreloader] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const pathname = window.location.pathname.toLowerCase().replace(/\/$/, '');
+      return pathname === '' || pathname === '/home';
+    }
+    return true;
+  });
 
   return (
     <AuthProvider>
