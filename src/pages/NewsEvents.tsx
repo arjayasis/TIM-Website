@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { newsEvents, NewsEvent } from '@/lib/newsData';
-import { Calendar, Tag, ArrowRight, Share2, Bookmark, ChevronRight } from 'lucide-react';
+import { Calendar, Tag, ArrowRight, Share2, Bookmark, ChevronRight, Camera, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { createPageUrl } from '@/utils';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -12,6 +12,7 @@ export default function NewsEvents() {
   const eventId = searchParams.get('id');
   const selectedEvent = newsEvents.find(e => e.id === eventId) || null;
   const [visibleCount, setVisibleCount] = useState(9);
+  const [previewPhoto, setPreviewPhoto] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -367,6 +368,77 @@ export default function NewsEvents() {
                       );
                     })}
                   </div>
+
+                  {/* Event Photos Section */}
+                  {selectedEvent.eventPhotos && selectedEvent.eventPhotos.length > 0 && (
+                    <div className="mt-16 pt-12 border-t border-white/10">
+                      <div className="flex items-center gap-3 mb-8">
+                        <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                          <Camera className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                            Event Photos
+                          </h3>
+                          <p className="text-xs md:text-sm text-blue-200/60 font-medium mt-0.5">
+                            Highlights and photos from the official Sovereign AI launch event
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                        {selectedEvent.eventPhotos.map((photoUrl, pIdx) => (
+                          <div 
+                            key={pIdx} 
+                            onClick={() => setPreviewPhoto(photoUrl)}
+                            className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 cursor-pointer transition-all duration-300 hover:border-blue-400/60 hover:shadow-2xl hover:shadow-blue-500/20"
+                          >
+                            <img 
+                              src={photoUrl} 
+                              alt={`Launch Event Photo ${pIdx + 1}`}
+                              loading="lazy"
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                              <span className="text-xs font-semibold text-white/90 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
+                                <Camera className="w-3.5 h-3.5 text-blue-400" />
+                                View Photo {pIdx + 1}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Lightbox Modal */}
+                  <AnimatePresence>
+                    {previewPhoto && (
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setPreviewPhoto(null)}
+                        className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
+                      >
+                        <button 
+                          onClick={() => setPreviewPhoto(null)}
+                          className="absolute top-6 right-6 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/20 z-10 cursor-pointer"
+                        >
+                          <X className="w-6 h-6" />
+                        </button>
+                        <motion.img 
+                          initial={{ scale: 0.9, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0.9, opacity: 0 }}
+                          src={previewPhoto} 
+                          alt="Event Photo Preview"
+                          className="max-w-full max-h-[88vh] rounded-2xl object-contain border border-white/10 shadow-2xl"
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                   
                   <div className="bg-white/5 p-10 md:p-16 rounded-[3rem] border border-white/10 mt-20 backdrop-blur-xl">
                     <h4 className="text-white font-black uppercase tracking-widest text-sm mb-8 flex items-center gap-3">

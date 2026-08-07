@@ -6,6 +6,7 @@ export interface NewsEvent {
   content: string;
   theme: string;
   type: string;
+  eventPhotos?: string[];
 }
 
 export const newsEvents: NewsEvent[] = [
@@ -143,7 +144,16 @@ RackCorp is an Australian-owned sovereign cloud provider operating in more than 
 #### About Total Information Management Corporation (TIM)
 TIM is one of the Philippines’ longest‑established technology solutions providers, founded in 1985 and Filipino‑owned. TIM operates as a leading cybersecurity and digital infrastructure specialist, delivering Protective DNS, threat intelligence, managed security services, cloud and connectivity, and compliance-driven solutions to ISPs, enterprises and government agencies. TIM holds ISO 9001, ISO 27001, ISO 22301 Business Continuity Management, PCI-DSS and AICPA SOC certifications, and partners with global technology leaders. TIM is headquartered in Makati City and serves customers across the Philippines.`,
     theme: "Sovereign AI, Data Residency, Regulated Industries, AI Governance",
-    type: "Formal Launch / Press Release"
+    type: "Formal Launch / Press Release",
+    eventPhotos: [
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/7W3A9789.jpg",
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/_MG_4314.jpg",
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/7W3A9357.jpg",
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/_MG_4985.jpg",
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/_MG_4359.jpg",
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/7W3A0100.jpg",
+      "https://marketing.timcorp.net.ph/hubfs/blogs/AI%20launching%20event%20photos/7W3A9612.jpg"
+    ]
   },
   {
     id: 'cyber-resiliency-rubrik-2026',
