@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Linkedin, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -20,14 +20,11 @@ export default function Footer() {
               Empowering enterprises with secure, scalable, and future-ready ICT solutions and services.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.linkedin.com/company/timcorporation" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/timcorp/" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.facebook.com/TIMCorporationPH" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/totalinformationmanagement" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>

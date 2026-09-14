@@ -16,8 +16,8 @@ export default function ContactFooter() {
         <div>
           <h4 className="text-white font-bold mb-4">Follow Us</h4>
           <div className="flex gap-4">
-            <span>LinkedIn</span>
-            <span>Twitter</span>
+            <a href="https://www.linkedin.com/company/timcorp/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://www.facebook.com/totalinformationmanagement" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
           </div>
         </div>
       </div>
