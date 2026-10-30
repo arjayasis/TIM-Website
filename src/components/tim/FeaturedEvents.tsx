@@ -57,7 +57,7 @@ export default function FeaturedEvents() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <Link to={createPageUrl('NewsEvents')} className="block">
+              <Link to={`${createPageUrl('NewsEvents')}?id=${event.id}`} className="block">
                 <div className="relative h-72 rounded-[2rem] overflow-hidden mb-6">
                   <img
                     src={event.image}

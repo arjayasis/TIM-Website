@@ -11,6 +11,29 @@ export interface NewsEvent {
 
 export const newsEvents: NewsEvent[] = [
   {
+    id: 'philippine-cybercon-dict-award-2026',
+    title: "TIM Recognized for Excellence in Government Cybersecurity at Philippine CyberCon 2026",
+    date: "October 22, 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/Cybersecurity%20Conference%20Recognition%20Ceremony%20Group%20Photo.png",
+    content: `# TIM Recognized for Excellence in Government Cybersecurity at Philippine CyberCon 2026
+
+**Manila, Philippines – October 22, 2026** – Total Information Management Corporation (TIM) proudly received the **Top-Performing DICT-Trusted Assessment Provider Award** from the **Department of Information and Communications Technology (DICT)** during the **Philippine Cybersecurity Conference 2026 (Philippine CyberCon 2026)**, held on October 20–22, 2026, at Sheraton Manila Bay, Manila.
+
+The recognition highlights TIM's outstanding contributions to government cybersecurity, particularly in identifying security vulnerabilities, strengthening government information systems, and safeguarding critical digital assets.
+
+Guided by the conference theme, *“Cyber Balangayan: Forging a Resilient Nation Through Cooperation, Capability, and Collective Defense,”* the event brought together cybersecurity stakeholders to promote collaboration, strengthen technical capabilities, and advance the nation's collective cyber resilience.
+
+This achievement reflects TIM's continued dedication to delivering reliable cybersecurity solutions and supporting organizations in addressing evolving digital threats.
+
+TIM extends its sincere appreciation to DICT for this recognition and acknowledges the dedication and expertise of its team in making this milestone possible.
+
+As the cybersecurity landscape continues to evolve, **TIM remains committed to helping build a safer, stronger, and more resilient digital Philippines.**
+
+**Turning Technology into Business Efficiency.**`,
+    theme: "Government Cybersecurity, DICT Recognition, National Cyber Resilience",
+    type: "Award Recognition"
+  },
+  {
     id: 'dell-platinum-partner-2026',
     title: "A Proud Milestone in TIM's Growth Journey 🚀 — Dell Technologies Platinum Partner Status",
     date: "July 23, 2026",

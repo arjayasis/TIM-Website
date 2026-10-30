@@ -275,6 +275,27 @@ export default function NewsEvents() {
                         return <div key={idx} className="my-10 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />;
                       }
 
+                      // Top level Heading
+                      if (trimmed.startsWith('# ')) {
+                        const headingText = trimmed.replace('# ', '').trim();
+                        if (headingText.toLowerCase() === selectedEvent.title.toLowerCase()) {
+                          return null;
+                        }
+                        return (
+                          <h2 key={idx} className="text-2xl md:text-3xl font-extrabold text-white tracking-tight my-6">
+                            {headingText}
+                          </h2>
+                        );
+                      }
+
+                      if (trimmed.startsWith('## ')) {
+                        return (
+                          <h3 key={idx} className="text-xl md:text-2xl font-bold text-white tracking-tight my-5">
+                            {trimmed.replace('## ', '')}
+                          </h3>
+                        );
+                      }
+
                       // Headings (Sentence/Title case - no forced uppercase)
                       if (trimmed.startsWith('### ')) {
                         return (
@@ -336,6 +357,25 @@ export default function NewsEvents() {
                         );
                       }
 
+                      // Helper function for inline bold and italic formatting
+                      const renderFormattedText = (text: string) => {
+                        return text.split('**').map((part, pIdx) => {
+                          if (pIdx % 2 === 1) {
+                            return <strong key={pIdx} className="text-white font-bold">{part}</strong>;
+                          }
+                          if (part.includes('*')) {
+                            return (
+                              <React.Fragment key={pIdx}>
+                                {part.split('*').map((subPart, sIdx) => 
+                                  sIdx % 2 === 1 ? <em key={sIdx} className="text-blue-200 italic font-medium">{subPart}</em> : subPart
+                                )}
+                              </React.Fragment>
+                            );
+                          }
+                          return part;
+                        });
+                      };
+
                       // Partner bullet points
                       if (trimmed.startsWith('- **')) {
                         const listItems = trimmed.split('\n').filter(Boolean);
@@ -348,9 +388,9 @@ export default function NewsEvents() {
                                   {li.replace(/^- \*\*(.*?)\*\*:\s?/, '').trim() ? (
                                     <>
                                       <strong className="text-white font-bold">{li.match(/\*\*(.*?)\*\*/)?.[1]}: </strong>
-                                      {li.replace(/^- \*\*(.*?)\*\*:\s?/, '')}
+                                      {renderFormattedText(li.replace(/^- \*\*(.*?)\*\*:\s?/, ''))}
                                     </>
-                                  ) : li.replace(/^- /, '')}
+                                  ) : renderFormattedText(li.replace(/^- /, ''))}
                                 </span>
                               </li>
                             ))}
@@ -361,9 +401,7 @@ export default function NewsEvents() {
                       // Default paragraphs with bolding & link support
                       return (
                         <p key={idx} className="my-4 text-blue-100/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
-                          {trimmed.split('**').map((part, pIdx) => 
-                            pIdx % 2 === 1 ? <strong key={pIdx} className="text-white font-bold">{part}</strong> : part
-                          )}
+                          {renderFormattedText(trimmed)}
                         </p>
                       );
                     })}
