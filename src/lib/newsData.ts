@@ -26,6 +26,21 @@ TIM extends its gratitude to NetApp for this recognition and reaffirms its commi
     type: "Award / Partner Recognition"
   },
   {
+    id: 'itip-23rd-national-conference-2026',
+    title: "Empowering a Connected Nation Through AI, Security, and Innovation",
+    date: "November 6, 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/ITIP%20poster%20copy%203.png",
+    content: `**Total Information Management Corporation (TIM)**, in collaboration with NetApp, proudly participated in the 23rd Annual National Conference of the **Information Technology Industry of the Philippines (ITIP)** held at the Iloilo Convention Center (ICON).
+
+The conference brought together distinguished industry leaders, technology experts, and business decision-makers from across the country to exchange insights on the evolving landscape of artificial intelligence, cybersecurity, leadership, and digital transformation. As organizations continue to navigate an increasingly data-driven environment, TIM and NetApp remain committed to enabling enterprises to modernize their data infrastructure, enhance operational resilience, and accelerate innovation.
+
+The event provided a valuable platform for fostering collaboration, sharing best practices, and exploring strategies that will help shape a more secure, connected, and digitally empowered future.
+
+We extend our sincere appreciation to ITIP, our valued partner NetApp, and all conference delegates for contributing to the success of this meaningful gathering and for advancing the collective pursuit of technological excellence and innovation.`,
+    theme: "Artificial Intelligence, Cybersecurity, Digital Transformation, Data Infrastructure",
+    type: "Industry Event / Conference"
+  },
+  {
     id: 'philippine-cybercon-dict-award-2026',
     title: "TIM Recognized for Excellence in Government Cybersecurity at Philippine CyberCon 2026",
     date: "October 22, 2026",
