@@ -11,6 +11,21 @@ export interface NewsEvent {
 
 export const newsEvents: NewsEvent[] = [
   {
+    id: 'netapp-partner-summit-2026-gcas',
+    title: "TIM Earns Dual Recognition at NetApp Partner Summit 2026 GCAS",
+    date: "November 11, 2026",
+    image: "https://marketing.timcorp.net.ph/hubfs/blogs/website%20image.png",
+    content: `Total Information Management Corporation (TIM) proudly celebrates a remarkable milestone at the **NetApp Partner Summit 2026 GCAS**, held in Ho Chi Minh City, Vietnam. TIM was honored with the prestigious **FY26 Rising Star Award**, recognizing the company's exceptional growth, commitment, and contributions to the NetApp partner ecosystem.
+
+Adding to this achievement, **Karen Louise de Guzman** received the **FY26 Top Achiever Award – Philippines**, recognizing outstanding dedication, sales excellence, and significant contributions to driving NetApp business success in the country.
+
+These awards reflect TIM's continued commitment to delivering innovative data infrastructure, cloud, and digital transformation solutions while strengthening its strategic partnership with NetApp. The recognition highlights both the organization's collective achievements and the exceptional performance of its people in creating value for customers across industries.
+
+TIM extends its gratitude to NetApp for this recognition and reaffirms its commitment to accelerating customer success through trusted expertise, innovation, and collaboration.`,
+    theme: "Partnership Success, Data Infrastructure, Cloud & Digital Transformation",
+    type: "Award / Partner Recognition"
+  },
+  {
     id: 'philippine-cybercon-dict-award-2026',
     title: "TIM Recognized for Excellence in Government Cybersecurity at Philippine CyberCon 2026",
     date: "October 22, 2026",
